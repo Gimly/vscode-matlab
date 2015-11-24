@@ -1,0 +1,26 @@
+{
+	"name": "matlab",
+	"displayName": "Matlab",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "Gimly",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "matlab",
+			"aliases": ["MATLAB", "matlab"],
+			"extensions": [".m"],
+			"configuration": "./matlab.configuration.json"
+		}],
+		"grammars": [{
+			"language": "matlab",
+			"scopeName": "source.matlab",
+			"path": "./syntaxes/matlab.tmLanguage"
+		}]
+	}
+}
