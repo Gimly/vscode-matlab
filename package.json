@@ -1,8 +1,8 @@
 {
 	"name": "matlab",
 	"displayName": "Matlab",
-	"description": "",
-	"version": "0.0.1",
+	"description": "MATLAB support for Visual Studio Code",
+	"version": "0.0.2",
 	"publisher": "Gimly81",
 	"engines": {
 		"vscode": "^0.10.1"
@@ -10,6 +10,13 @@
 	"categories": [
 		"Languages"
 	],
+	"homepage": "https://github.com/Gimly/matlab-vscode/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Gimly/matlab-vscode.git"
+	},
+	"icon": "images/icon.png",
+	"bugs": "https://github.com/Gimly/matlab-vscode/issues",
 	"contributes": {
 		"languages": [{
 			"id": "matlab",
