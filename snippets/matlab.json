@@ -1,5 +1,5 @@
 {
-	"if":{
+	"if": {
 		"prefix": "if",
 		"body": [
 			"if ${1:condition}",
@@ -7,8 +7,7 @@
 			"end"
 		]
 	},
-	
-	"if else":{
+	"if else": {
 		"prefix": "ifelse",
 		"body": [
 			"if ${1:condition}",
