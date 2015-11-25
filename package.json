@@ -8,43 +8,73 @@
 		"vscode": "^0.10.1"
 	},
 	"categories": [
-		"Languages", "Snippets"
+		"Languages",
+		"Snippets",
+		"Other"
 	],
 	"homepage": "https://github.com/Gimly/matlab-vscode/blob/master/README.md",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Gimly/matlab-vscode.git"
 	},
+	"activationEvents": [
+		"onCommand:extension.sayHello"
+	],
+	"main": "./out/src/extension",
 	"icon": "images/icon.png",
 	"bugs": "https://github.com/Gimly/matlab-vscode/issues",
 	"contributes": {
-		"languages": [{
-			"id": "matlab",
-			"aliases": ["MATLAB", "matlab"],
-			"extensions": [".m"],
-			"configuration": "./matlab.configuration.json"
-		}],
-		"grammars": [{
-			"language": "matlab",
-			"scopeName": "source.matlab",
-			"path": "./syntaxes/matlab.tmLanguage"
-		}],
+		"languages": [
+			{
+				"id": "matlab",
+				"aliases": [
+					"MATLAB",
+					"matlab"
+				],
+				"extensions": [
+					".m"
+				],
+				"configuration": "./matlab.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "matlab",
+				"scopeName": "source.matlab",
+				"path": "./syntaxes/matlab.tmLanguage"
+			}
+		],
 		"snippets": [
 			{
 				"language": "matlab",
 				"path": "./snippets/matlab.json"
 			}
 		],
+		"commands": [
+			{
+				"command": "extension.sayHello",
+				"title": "Hello World",
+				"description": "Says hello world"
+			}
+		],
 		"configuration": {
 			"title": "Matlab configuration",
 			"type": "object",
 			"properties": {
-				"matlab.matlabpath" :{
+				"matlab.matlabpath": {
 					"type": "string",
 					"default": null,
 					"description": "Specifies the path to the MATLAB installation."
 				}
 			}
 		}
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
 	}
 }
