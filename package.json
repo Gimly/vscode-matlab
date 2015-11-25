@@ -8,7 +8,7 @@
 		"vscode": "^0.10.1"
 	},
 	"categories": [
-		"Languages"
+		"Languages", "Snippets"
 	],
 	"homepage": "https://github.com/Gimly/matlab-vscode/blob/master/README.md",
 	"repository": {
@@ -28,6 +28,12 @@
 			"language": "matlab",
 			"scopeName": "source.matlab",
 			"path": "./syntaxes/matlab.tmLanguage"
-		}]
+		}],
+		"snippets": [
+			{
+				"language": "matlab",
+				"path": "./snippets/matlab.json"
+			}
+		]
 	}
 }

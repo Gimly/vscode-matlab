@@ -1,20 +1,129 @@
 {
+	"^": {
+		"prefix": "^",
+		"body": "^($1) $2"
+	},
+	"case": {
+		"prefix": "case",
+		"body": [
+			"case ${condition}",
+			"\t$1"
+		],
+		"description": "case statement"
+	},
+	"dsp": {
+		"prefix": "dsp",
+		"body": [
+			"disp(sprintf('${format}, $1'});"
+		],
+		"description": "dsp sprintf"
+	},
+	"disp": {
+		"prefix": "disp",
+		"body": "disp('${text}')",
+		"description": "Displays text"
+	},
+	"dlmwrite": {
+		"prefix": "dlmwrite",
+		"body": "dlmwrite('${1:filename}.txt', [${2:variables}]${3:, '${4:delimiter}', '${5:\\t}'});",
+		"description": "Write matrix to ASCII-delimited file"
+	},
+	"else": {
+		"prefix": "else",
+		"body": [
+			"else",
+			"\t${body}"
+		],
+		"description": "else statement"
+	},
+	"elseif": {
+		"prefix": "elseif",
+		"body": [
+			"elseif ${condition}",
+			"\t${body}"
+		],
+		"description": "elseif statement"
+	},
+	"error": {
+		"prefix": "error",
+		"body": "error('${1:error description}'${2:, ${3:A1}})",
+		"description": "Throw error and display message"
+	},
+	"e": {
+		"prefix": "e",
+		"body": "exp(${X})$1",
+		"description": "Exponential"
+	},
+	"fors": {
+		"prefix": "fors",
+		"body": [
+			"for ${1:s} = transpose(${2:strings}(:)); $1 = $1{1}",
+			"\t$0",
+			"end;",
+			"clear $1;"
+		],
+		"description": "for … end cell strings"
+	},
+	"for": {
+		"prefix": "for",
+		"body": [
+			"for ${1:index} = ${2:1}${3::${4:n}}",
+			"\t$0",
+			"end"
+		],
+		"description": "Execute statements specified number of times"
+	},
+	"fordr": {
+		"prefix": "fordr",
+		"body": [
+			"for ${1:index} = ${2:$drange(${3:colonop})}",
+			"\t$0",
+			"end"
+		],
+		"description": "for-loop over distributed range"
+	},
+	"fprintf": {
+		"prefix": "fpr",
+		"body": "fprintf(${1:fileID}, ${2:formatSpec}, ${A1})",
+		"description": "Write data to text file"
+	},
+	"function": {
+		"prefix": "function",
+		"body": [
+			"function ${1:output} = ${2:myFun}(${3:input})",
+			"%$2 - ${4:Description}",
+			"%",
+			"% Syntax: $1 = $2($3)",
+			"%",
+			"% ${5:Long description}",
+			"\t$0",
+			"end"
+		],
+		"description": "Declare function name, inputs, and outputs"
+	},
+	"get": {
+		"prefix": "get",
+		"body": "get(${1:gca}, '${2:propertyName}');",
+		"description": "Query graphics object properties"
+	},
 	"if": {
 		"prefix": "if",
 		"body": [
-			"if ${1:condition}",
-			"\t$2",
+			"if ${condition}",
+			"\t$1",
 			"end"
-		]
+		],
+		"description": "if statement"
 	},
 	"if else": {
 		"prefix": "ifelse",
 		"body": [
-			"if ${1:condition}",
-			"\t$2",
+			"if ${condition}",
+			"\t$1",
 			"else",
-			"\t$3",
+			"\t$2",
 			"end"
-		]
+		],
+		"description": "if else statement"
 	}
 }
