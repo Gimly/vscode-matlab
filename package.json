@@ -34,6 +34,17 @@
 				"language": "matlab",
 				"path": "./snippets/matlab.json"
 			}
-		]
+		],
+		"configuration": {
+			"title": "Matlab configuration",
+			"type": "object",
+			"properties": {
+				"matlab.matlabpath" :{
+					"type": "string",
+					"default": null,
+					"description": "Specifies the path to the MATLAB installation."
+				}
+			}
+		}
 	}
 }
