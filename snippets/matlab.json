@@ -6,8 +6,8 @@
 	"case": {
 		"prefix": "case",
 		"body": [
-			"case ${condition}",
-			"\t$1"
+			"case ${1:'${2:string}'}",
+			"\t$0"
 		],
 		"description": "case statement"
 	},
@@ -106,11 +106,16 @@
 		"body": "get(${1:gca}, '${2:propertyName}');",
 		"description": "Query graphics object properties"
 	},
+	"griddata": {
+		"prefix": "griddata",
+		"body": "griddata(${1:x}, ${2:y}, ${3:z}, ${4:xq}, ${5:yq}, ${6:zq});",
+		"description": "Interpolate scattered data"
+	},
 	"if": {
 		"prefix": "if",
 		"body": [
-			"if ${condition}",
-			"\t$1",
+			"if ${1:condition}",
+			"\t$2",
 			"end"
 		],
 		"description": "if statement"
@@ -118,12 +123,146 @@
 	"if else": {
 		"prefix": "ifelse",
 		"body": [
-			"if ${condition}",
-			"\t$1",
-			"else",
+			"if ${1:condition}",
 			"\t$2",
+			"else",
+			"\t$3",
 			"end"
 		],
 		"description": "if else statement"
+	},
+	"if elseif": {
+		"prefix": "ifelif",
+		"body": [
+			"if ${1:condition}",
+			"\t$2",
+			"elseif ${3:condition}",
+			"\t$4",
+			"else",
+			"\t $5",
+			"end"
+		],
+		"description": "if elseif statement"
+	},
+	"line": {
+		"prefix": "line",
+		"body": "line(${1:X}, ${2:Y}${3:, 'Color', '${4:b}, 'LineWidth', ${5:1}, 'LineStyle', ${6:-}'})",
+		"description": "Create line object"
+	},
+	"line3D": {
+		"prefix": "line3D",
+		"body": "line(${1:X}, ${2:Y}, ${3:Z}${4:, 'Color', '${5:b}, 'LineWidth', ${6:1}, 'LineStyle', ${7:-}'})",
+		"description": "Create 3D line object"
+	},
+	"narginchk": {
+		"prefix": "narginchk",
+		"body": "narginchk(${1:minargs}, ${2:maxargs})",
+		"description": "Validate number of input arguments"
+	},
+	"set": {
+		"prefix": "set",
+		"body": "set(${1:get(${2:gca}, '${3:PropertyName}')}, '${4:PropertyName}', ${5:PropertyValue});",
+		"description": "Set graphics object properties"
+	},
+	"func": {
+		"prefix": "func",
+		"body": [
+			"function ${1:output} = ${2:myFun}(${3:input})",
+			"\t$0",
+			"end"
+		],
+		"description": "Small function"
+	},
+	"sprintf": {
+		"prefix": "sprintf",
+		"body": "sprintf(${1:formatSpec}, ${2:A1})",
+		"description": "Format data into string"
+	},
+	"switch": {
+		"prefix": "switch",
+		"body": [
+			"switch ${1:variable}",
+			"case ${2:'${3:string}'}",
+			"\t$0",
+			"end"
+		],
+		"description": "switch ... case ... end"
+	},
+	"switcho": {
+		"prefix": "switcho",
+		"body": [
+			"switch ${1:variable}",
+			"case ${2:'${3:string}'}",
+			"\t$4",
+			"otherwise",
+			"\t$5",
+			"end"
+		],
+		"description": "switch ... case ... otherwise ... end"
+	},
+	"title": {
+		"prefix": "title",
+		"body": "set(get(gca, 'Title'), 'String', ${1:'${2}'});",
+		"description": "Sets the title of the current axe handle"
+	},
+	"try": {
+		"prefix": "try",
+		"body": [
+			"try",
+			"\t$1",
+			"catch",
+			"\t$2",
+			"end"
+		],
+		"description": "try ... catch ... end"
+	},
+	"unix": {
+		"prefix": "unix",
+		"body": "[${1:status}, ${2:cmdout}] = unix('${3:command}');",
+		"description": "Execute UNIX command and return output"
+	},
+	"oncleanup": {
+		"prefix": "oncleanup",
+		"body": "${1:cleanupObj} = onCleanup(${2:cleanupFunc})",
+		"description": "Cleanup tasks upon function completion"
+	},
+	"warning": {
+		"prefix": "warning",
+		"body": "warning('${1:warning description}'${2:, ${3:A1}})",
+		"description": "Display warning message"
+	},
+	"while": {
+		"prefix": "while",
+		"body": [
+			"while ${1:condition}",
+			"\t$2",
+			"end"
+		],
+		"description": "Repeat execution of statements while condition is true"
+	},
+	"xlabel": {
+		"prefix": "xlabel",
+		"body": "set(get(gca, 'XLabel'), 'String', ${1:'${2}'});",
+		"description": "Label x-axis"
+	},
+	"ylabel": {
+		"prefix": "ylabel",
+		"body": "set(get(gca, 'YLabel'), 'String', ${1:'${2}'});",
+		"description": "Label y-axis"
+	},
+	"zlabel": {
+		"prefix": "zlabel",
+		"body": "set(get(gca, 'ZLabel'), 'String', ${1:'${2}'});",
+		"description": "Label z-axis"
+	},
+		"xtick": {
+		"prefix": "xtick",
+		"body": "set(get(gca, 'XTick'), 'String', ${1:'${2}'});",
+		"description": "Change X-Axis Tick Value Locations and Labels"
+	},
+		"ytick": {
+		"prefix": "ytick",
+		"body": "set(get(gca, 'YTick'), 'String', ${1:'${2}'});",
+		"description": "Change Y-Axis Tick Value Locations and Labels"
 	}
 }
