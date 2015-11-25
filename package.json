@@ -18,9 +18,9 @@
 		"url": "https://github.com/Gimly/matlab-vscode.git"
 	},
 	"activationEvents": [
-		"onCommand:extension.sayHello"
+		"onLanguage:matlab"
 	],
-	"main": "./out/src/extension",
+	"main": "./out/src/matlabMain",
 	"icon": "images/icon.png",
 	"bugs": "https://github.com/Gimly/matlab-vscode/issues",
 	"contributes": {
@@ -52,9 +52,9 @@
 		],
 		"commands": [
 			{
-				"command": "extension.sayHello",
-				"title": "Hello World",
-				"description": "Says hello world"
+				"command": "matlab.build",
+				"title": "MATLAB Build",
+				"description": "Builds the current file using matlab."
 			}
 		],
 		"configuration": {
