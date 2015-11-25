@@ -4,10 +4,12 @@ This extension adds support for MATLAB to VS Code, including:
 
 ## Colorization 
 ![syntax](images/syntax.png)
+
 (imported from [Textmate's syntax](https://github.com/textmate/matlab.tmbundle))
 
 ## Snippets
 ![snippets](images/snippets.png)
+
 (Translated from TextMate's snippets)
 
 ## Usage
