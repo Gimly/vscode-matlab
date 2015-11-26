@@ -50,13 +50,6 @@
 				"path": "./snippets/matlab.json"
 			}
 		],
-		"commands": [
-			{
-				"command": "matlab.build",
-				"title": "MATLAB Build",
-				"description": "Builds the current file using matlab."
-			}
-		],
 		"configuration": {
 			"title": "Matlab configuration",
 			"type": "object",
@@ -64,7 +57,17 @@
 				"matlab.matlabpath": {
 					"type": "string",
 					"default": null,
-					"description": "Specifies the path to the MATLAB installation."
+					"description": "The path to the matlab executable."
+				},
+				"matlab.mlintpath": {
+					"type": "string",
+					"default": null,
+					"description": "The path to the mlint executable"
+				},
+				"matlab.lintOnSave": {
+					"type": "boolean",
+					"default": true,
+					"description": "Run the linting on save of file."
 				}
 			}
 		}
