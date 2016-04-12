@@ -1,83 +1,83 @@
 {
-	"name": "matlab",
-	"displayName": "Matlab",
-	"description": "MATLAB support for Visual Studio Code",
-	"version": "0.2.2",
-	"publisher": "Gimly81",
-	"engines": {
-		"vscode": "^0.10.1"
-	},
-	"categories": [
-		"Languages",
-		"Snippets",
-		"Linters"
-	],
-	"homepage": "https://github.com/Gimly/matlab-vscode/blob/master/README.md",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Gimly/matlab-vscode.git"
-	},
-	"activationEvents": [
-		"onLanguage:matlab"
-	],
-	"main": "./out/src/matlabMain",
-	"icon": "images/icon.png",
-	"bugs": "https://github.com/Gimly/matlab-vscode/issues",
-	"contributes": {
-		"languages": [
-			{
-				"id": "matlab",
-				"aliases": [
-					"MATLAB",
-					"matlab"
-				],
-				"extensions": [
-					".m"
-				],
-				"configuration": "./matlab.configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "matlab",
-				"scopeName": "source.matlab",
-				"path": "./syntaxes/matlab.tmLanguage"
-			}
-		],
-		"snippets": [
-			{
-				"language": "matlab",
-				"path": "./snippets/matlab.json"
-			}
-		],
-		"configuration": {
-			"title": "Matlab configuration",
-			"type": "object",
-			"properties": {
-				"matlab.matlabpath": {
-					"type": "string",
-					"default": null,
-					"description": "The path to the matlab executable."
-				},
-				"matlab.mlintpath": {
-					"type": "string",
-					"default": null,
-					"description": "The path to the mlint executable"
-				},
-				"matlab.lintOnSave": {
-					"type": "boolean",
-					"default": true,
-					"description": "Run the linting on save of file."
-				}
-			}
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
-	},
-	"devDependencies": {
-		"typescript": "^1.6.2",
-		"vscode": "0.10.x"
-	}
+    "name": "matlab",
+    "displayName": "Matlab",
+    "description": "MATLAB support for Visual Studio Code",
+    "version": "0.3.0",
+    "publisher": "Gimly81",
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "categories": [
+        "Languages",
+        "Snippets",
+        "Linters"
+    ],
+    "homepage": "https://github.com/Gimly/matlab-vscode/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Gimly/matlab-vscode.git"
+    },
+    "activationEvents": [
+        "onLanguage:matlab"
+    ],
+    "main": "./out/src/matlabMain",
+    "icon": "images/icon.png",
+    "bugs": "https://github.com/Gimly/matlab-vscode/issues",
+    "contributes": {
+        "languages": [
+            {
+                "id": "matlab",
+                "aliases": [
+                    "MATLAB",
+                    "matlab"
+                ],
+                "extensions": [
+                    ".m"
+                ],
+                "configuration": "./matlab.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "matlab",
+                "scopeName": "source.matlab",
+                "path": "./syntaxes/matlab.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "matlab",
+                "path": "./snippets/matlab.json"
+            }
+        ],
+        "configuration": {
+            "title": "Matlab configuration",
+            "type": "object",
+            "properties": {
+                "matlab.matlabpath": {
+                    "type": "string",
+                    "default": null,
+                    "description": "The path to the matlab executable."
+                },
+                "matlab.mlintpath": {
+                    "type": "string",
+                    "default": null,
+                    "description": "The path to the mlint executable"
+                },
+                "matlab.lintOnSave": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Run the linting on save of file."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+    },
+    "devDependencies": {
+        "typescript": "^1.6.2",
+        "vscode": "0.10.x"
+    }
 }
