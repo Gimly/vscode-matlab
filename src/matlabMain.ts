@@ -38,10 +38,11 @@ export function activate(context: vscode.ExtensionContext) {
 	diagnosticCollection = vscode.languages.createDiagnosticCollection("matlab");
 	context.subscriptions.push(diagnosticCollection);
 
-	context.subscriptions.push(startLintOnSaveWatcher(mlintPath));
+	context.subscriptions.push(workspace.onDidSaveTextDocument(document => {lintDocument(document, mlintPath)});
+	context.subscriptions.push(workspace.onDidOpenTextDocument(document => {lintDocument(document, mlintPath)});
 }
 
-function startLintOnSaveWatcher(mlintPath: string) {
+function lintDocument(document: TextDocument, mlintPath: string) {
 
 	function mapSeverityToVSCodeSeverity(sev: string) {
 		switch (sev) {
@@ -51,50 +52,48 @@ function startLintOnSaveWatcher(mlintPath: string) {
 		}
 	}
 
+	if (document.languageId != "matlab") {
+		return;
+	}
+	
 	let matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-	return workspace.onDidSaveTextDocument(document => {
-		if (document.languageId != "matlab") {
-			return;
-		}
+	check(document.uri.fsPath, matlabConfig['lintOnSave'], mlintPath).then(errors => {
+		diagnosticCollection.clear();
+		
+		let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
 
-		check(document.uri.fsPath, matlabConfig['lintOnSave'], mlintPath).then(errors => {
-			diagnosticCollection.clear();
+		errors.forEach(error => {
+			let targetUri = vscode.Uri.file(error.file);
 
-			let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
+			var line = error.line - 1;
+			if (line < 0) line = 0;
 
-			errors.forEach(error => {
-				let targetUri = vscode.Uri.file(error.file);
+			var startColumn = error.column[0] - 1;
+			if (startColumn < 0) startColumn = 0;
 
-				var line = error.line - 1;
-				if (line < 0) line = 0;
+			var endColumn = error.column[1] - 1;
+			if (endColumn < 0) endColumn = 0;
 
-				var startColumn = error.column[0] - 1;
-				if (startColumn < 0) startColumn = 0;
+			let range = new vscode.Range(line, startColumn, line, endColumn);
+			let diagnostic = new vscode.Diagnostic(range, error.msg, mapSeverityToVSCodeSeverity(error.severity));
 
-				var endColumn = error.column[1] - 1;
-				if (endColumn < 0) endColumn = 0;
+			let diagnostics = diagnosticMap.get(targetUri);
+			if (!diagnostics) {
+				diagnostics = [];
+			}
 
-				let range = new vscode.Range(line, startColumn, line, endColumn);
-				let diagnostic = new vscode.Diagnostic(range, error.msg, mapSeverityToVSCodeSeverity(error.severity));
-
-				let diagnostics = diagnosticMap.get(targetUri);
-				if (!diagnostics) {
-					diagnostics = [];
-				}
-
-				diagnostics.push(diagnostic);
-				diagnosticMap.set(targetUri, diagnostics);
-			});
-
-			let entries: [vscode.Uri, vscode.Diagnostic[]][] = [];
-			diagnosticMap.forEach((diags, uri) => {
-				entries.push([uri, diags]);
-			});
-
-			diagnosticCollection.set(entries);
-		}).catch(err => {
-			vscode.window.showErrorMessage(err);
+			diagnostics.push(diagnostic);
+			diagnosticMap.set(targetUri, diagnostics);
 		});
+
+		let entries: [vscode.Uri, vscode.Diagnostic[]][] = [];
+		diagnosticMap.forEach((diags, uri) => {
+			entries.push([uri, diags]);
+		});
+
+		diagnosticCollection.set(entries);
+	}).catch(err => {
+		vscode.window.showErrorMessage(err);
 	});
 }
