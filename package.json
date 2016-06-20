@@ -4,6 +4,7 @@
     "description": "MATLAB support for Visual Studio Code",
     "version": "0.3.0",
     "publisher": "Gimly81",
+    "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
         "vscode": "^0.10.1"
     },

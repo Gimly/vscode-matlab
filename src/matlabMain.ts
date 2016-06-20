@@ -38,11 +38,11 @@ export function activate(context: vscode.ExtensionContext) {
 	diagnosticCollection = vscode.languages.createDiagnosticCollection("matlab");
 	context.subscriptions.push(diagnosticCollection);
 
-	context.subscriptions.push(workspace.onDidSaveTextDocument(document => {lintDocument(document, mlintPath)});
-	context.subscriptions.push(workspace.onDidOpenTextDocument(document => {lintDocument(document, mlintPath)});
+	context.subscriptions.push(workspace.onDidSaveTextDocument(document => {lintDocument(document, mlintPath)}));
+	context.subscriptions.push(workspace.onDidOpenTextDocument(document => {lintDocument(document, mlintPath)}));
 }
 
-function lintDocument(document: TextDocument, mlintPath: string) {
+function lintDocument(document: vscode.TextDocument, mlintPath: string) {
 
 	function mapSeverityToVSCodeSeverity(sev: string) {
 		switch (sev) {
