@@ -49,3 +49,9 @@ Alternatively, saving the file with a `.m` extension, will allow VS Code to unde
 * Now, when you open a Matlab document (*.m*), VS Code displays warnings and errors. 
   
   **Remark:** If you don't want the *lint on save* option and you want to remove the error message being displayed when the extension activates, change the `matlab.lintOnSave` option in the settings file to `False`.
+
+### Changing the default file association
+Visual Studio Code's default file association for `.m` files is _Objective-C_, if you want to setup the default file associationt to be Matlab go to the Users preference (*File*>*Preferences*>*User Settings*) and add the following line:
+```
+"files.associations": {"*.m": "matlab"}
+```
