@@ -11,6 +11,26 @@
 		],
 		"description": "case statement"
 	},
+	"classdef":{
+		"prefix": "classdef",
+		"body": ["classdef (${ClassAttributes}) ${ClassName}",
+				 "\t$0",
+				 "end"]
+	},
+	"properties":{
+		"prefix": "properties",
+		"body": ["properties (${PropertyAttributes})", 
+      			"\t$0",
+   				"end"]
+	},
+	"methods":{
+		"prefix": "methods",
+		"body": ["methods (${MethodAttributes})",
+      			 "\tfunction ${obj} = ${methodName}(${obj},${args})",
+         		"\t\t$0",
+      			"\tend",
+   				"end"]
+	},
 	"dsp": {
 		"prefix": "dsp",
 		"body": [
@@ -53,6 +73,18 @@
 		"prefix": "e",
 		"body": "exp(${X})$1",
 		"description": "Exponential"
+	},
+	"events":{
+		"prefix": "events",
+		"body": ["events (${EventAttributes})", 
+      			 "\t$0",
+   				 "end"]
+	},
+	"enumeration":{
+		"prefix": "enumeration",
+		"body": ["enumeration",
+      			 "\t$0",
+   			     "end"]
 	},
 	"fors": {
 		"prefix": "fors",
