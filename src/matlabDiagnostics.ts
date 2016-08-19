@@ -20,12 +20,12 @@ export function check(filename: string, lintOnSave = true, mlintPath = ""): Prom
 
 		cp.execFile(mlintPath, [filename], (err, stdout, stderr) => {
 			try {
-				var errors = stderr.toString().split('\n');
+				var errors = stderr.toString('utf8').split('\n');
 
 				var ret: ICheckResult[] = [];
 
 				errors.forEach(error => {
-					var regex = /^L (\d+) \(C (\d+)-?(\d+)?\): (.*)/;
+					var regex = /L (\d+) \(C (\d+)-?(\d+)?\): (.*)/;
 					var match = regex.exec(error);
 
 					if (match != null) {
