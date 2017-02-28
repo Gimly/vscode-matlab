@@ -2,11 +2,11 @@
     "name": "matlab",
     "displayName": "Matlab",
     "description": "MATLAB support for Visual Studio Code",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "publisher": "Gimly81",
     "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
-        "vscode": "^0.10.1"
+        "vscode": "^1.0.4"
     },
     "categories": [
         "Languages",
@@ -78,7 +78,7 @@
         "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
     },
     "devDependencies": {
-        "typescript": "^1.6.2",
-        "vscode": "0.10.x"
+        "typescript": "^2.2.1",
+        "vscode": "1.0.4"
     }
 }
