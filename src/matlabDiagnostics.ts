@@ -20,7 +20,7 @@ export function check(filename: string, lintOnSave = true, mlintPath = ""): Prom
 
 		cp.execFile(mlintPath, [filename], (err, stdout, stderr) => {
 			try {
-				var errors = stderr.toString('utf8').split('\n');
+				var errors = stderr.split('\n');
 
 				var ret: ICheckResult[] = [];
 
