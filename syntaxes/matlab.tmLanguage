@@ -239,7 +239,7 @@
 							</array>
 						</dict>
 						<dict>
-							<key>beginCaptures</key>
+							<key>captures</key>
 							<dict>
 								<key>0</key>
 								<dict>
@@ -270,7 +270,7 @@
 							<string>meta.elseif.matlab</string>
 						</dict>
 						<dict>
-							<key>beginCaptures</key>
+							<key>captures</key>
 							<dict>
 								<key>0</key>
 								<dict>
@@ -393,7 +393,7 @@
 							</array>
 						</dict>
 						<dict>
-							<key>beginCaptures</key>
+							<key>captures</key>
 							<dict>
 								<key>0</key>
 								<dict>
@@ -424,7 +424,7 @@
 							<string>meta.case.matlab</string>
 						</dict>
 						<dict>
-							<key>beginCaptures</key>
+							<key>captures</key>
 							<dict>
 								<key>0</key>
 								<dict>
@@ -476,7 +476,7 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>beginCaptures</key>
+							<key>captures</key>
 							<dict>
 								<key>0</key>
 								<dict>
