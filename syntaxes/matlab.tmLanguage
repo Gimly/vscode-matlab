@@ -1401,7 +1401,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>%\{</string>
+					<string>(^[\s]*)%\{\n</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
