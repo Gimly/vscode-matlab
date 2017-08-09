@@ -6,7 +6,7 @@
     "publisher": "Gimly81",
     "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
-        "vscode": "^1.0.4"
+        "vscode": "^1.14.0"
     },
     "categories": [
         "Languages",
@@ -80,7 +80,7 @@
     },
     "devDependencies": {
         "typescript": "^2.0.3",
-        "vscode": "1.0.4",
+        "vscode": "1.14.0",
         "@types/node": "^6.0.40"
     }
 }
