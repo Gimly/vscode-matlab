@@ -2,7 +2,7 @@
     "name": "matlab",
     "displayName": "Matlab",
     "description": "MATLAB support for Visual Studio Code",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "publisher": "Gimly81",
     "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
@@ -80,7 +80,7 @@
     },
     "devDependencies": {
         "typescript": "^2.0.3",
-        "vscode": "1.14.0",
+        "vscode": "1.1.4",
         "@types/node": "^6.0.40"
     }
 }
