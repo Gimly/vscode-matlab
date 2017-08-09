@@ -1533,7 +1533,7 @@
 							)
 							\s* = \s*
 						)?
-						([a-zA-Z_]\w*)						# Function name
+						((?:set\.|get\.)?[a-zA-Z_]\w*)						# Function name
 						\s*									# Trailing space
 					</string>
 					<key>beginCaptures</key>
