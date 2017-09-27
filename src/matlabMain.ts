@@ -6,7 +6,8 @@ import path = require('path');
 import fs = require('fs');
 import { check, ICheckResult } from './matlabDiagnostics';
 
-import {commands, window, workspace, InputBoxOptions} from 'vscode';
+import { commands, window, workspace, InputBoxOptions } from 'vscode';
+import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
 
 var canLint = true;
 let diagnosticCollection: vscode.DiagnosticCollection;
@@ -38,8 +39,14 @@ export function activate(context: vscode.ExtensionContext) {
 	diagnosticCollection = vscode.languages.createDiagnosticCollection("matlab");
 	context.subscriptions.push(diagnosticCollection);
 
-	context.subscriptions.push(workspace.onDidSaveTextDocument(document => {lintDocument(document, mlintPath)}));
-	context.subscriptions.push(workspace.onDidOpenTextDocument(document => {lintDocument(document, mlintPath)}));
+	context.subscriptions.push(
+		vscode.languages.registerDocumentSymbolProvider(
+			'matlab', new MatlabDocumentSymbolProvider()
+		)
+	);
+
+	context.subscriptions.push(workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
+	context.subscriptions.push(workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
 }
 
 function lintDocument(document: vscode.TextDocument, mlintPath: string) {
@@ -55,12 +62,12 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
 	if (document.languageId != "matlab") {
 		return;
 	}
-	
+
 	let matlabConfig = vscode.workspace.getConfiguration('matlab');
 
 	check(document.uri.fsPath, matlabConfig['lintOnSave'], mlintPath).then(errors => {
 		diagnosticCollection.clear();
-		
+
 		let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
 
 		errors.forEach(error => {
