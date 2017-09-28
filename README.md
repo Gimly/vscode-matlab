@@ -50,6 +50,9 @@ Alternatively, saving the file with a `.m` extension, will allow VS Code to unde
   
   **Remark:** If you don't want the *lint on save* option and you want to remove the error message being displayed when the extension activates, change the `matlab.lintOnSave` option in the settings file to `False`.
 
+#### Setting the linter encoding
+For some languages, like Chinese, the return of the linter is not using the default utf-8 encoding, but a different encoding (gb2312 for Chinese). If the linting doesn't show correctly, change the `matlab.linterEncoding` to the encoding used by your Windows console. For example, if your Windows is installed in Chinese, add `"matlab.linterEncoding" : "gb2312"` to your settings.json.
+
 ### Changing the default file association
 Visual Studio Code's default file association for `.m` files is _Objective-C_, if you want to setup the default file associationt to be Matlab go to the Users preference (*File*>*Preferences*>*User Settings*) and add the following line:
 ```
