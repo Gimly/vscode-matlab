@@ -2,7 +2,7 @@
     "name": "matlab",
     "displayName": "Matlab",
     "description": "MATLAB support for Visual Studio Code",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "publisher": "Gimly81",
     "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
@@ -70,9 +70,9 @@
                     "default": true,
                     "description": "Run the linting on save of file."
                 },
-                "matlab.linterEncoding":{
-                    "type":"string",
-                    "default":"utf8",
+                "matlab.linterEncoding": {
+                    "type": "string",
+                    "default": "utf8",
                     "description": "This sets the encoding for the linting, default is utf8. Use if your console uses a different encoding."
                 }
             }
