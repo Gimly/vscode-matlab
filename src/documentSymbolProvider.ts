@@ -8,14 +8,14 @@ export class MatlabDocumentSymbolProvider implements vscode.DocumentSymbolProvid
         document: vscode.TextDocument,
         token: vscode.CancellationToken): vscode.SymbolInformation[] {
 
-        const _functionPattern = /function *(?:(?:(?:\[(?: *\w+ *,? *)+\])|(?:\w+)) *= *)?\w+ *\(.*?\)/;
+        const _functionPattern = /function *(?:(?:(?:\[(?: *\w+ *,? *)+\])|(?:\w+)) *= *)?(?:\w.?)+ *\(.*?\)/;
 
         const result: vscode.SymbolInformation[] = [];
 
         for (let line = 0; line < document.lineCount; line++) {
             const { text } = document.lineAt(line);
 
-            if (_functionPattern.test(text)) {
+            if (!text.startsWith("%") && _functionPattern.test(text)) {
                 result.push(
                     new vscode.SymbolInformation(
                         text, 
