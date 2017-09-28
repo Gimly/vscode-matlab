@@ -69,6 +69,11 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Run the linting on save of file."
+                },
+                "matlab.linterEncoding":{
+                    "type":"string",
+                    "default":"utf8",
+                    "description": "This sets the encoding for the linting, default is utf8. Use if your console uses a different encoding."
                 }
             }
         }
