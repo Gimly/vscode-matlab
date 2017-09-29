@@ -29,10 +29,12 @@ export function check(filename: string, lintOnSave = true, mlintPath = ""): Prom
 		cp.execFile(
 			mlintPath,
 			[filename],
-			{ encoding: fileEncoding } as cp.ExecFileOptionsWithStringEncoding,
-			(err, stdout, stderr) => {
+			{ encoding: 'buffer' },
+			(err : Error, stdout, stderr) => {
 				try {
-					var errors = stderr.split('\n');
+					let errorsString = stderr.toString();
+
+					var errors = errorsString.split('\n');
 
 					var ret: ICheckResult[] = [];
 
@@ -54,6 +56,7 @@ export function check(filename: string, lintOnSave = true, mlintPath = ""): Prom
 
 					resolve(ret);
 				} catch (error) {
+					console.error(error);
 					reject(error);
 				}
 			});
