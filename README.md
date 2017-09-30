@@ -1,7 +1,22 @@
 # MATLAB for Visual Studio Code
 
-This extension adds support for MATLAB to VS Code, including:
+This extension adds language support for MATLAB to Visual Studio Code.
 
+[![Marketplace](http://vsmarketplacebadge.apphb.com/version-short/Gimly81.matlab.svg)](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/Gimly81.matlab.svg)](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab)
+[![GitHub issues](https://img.shields.io/github/issues/Gimly/vscode-matlab.svg)](https://github.com/Gimly/vscode-matlab/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/Gimly/vscode-matlab.svg)](https://github.com/Gimly/vscode-matlab/pulls)
+[![License](https://img.shields.io/github/license/Gimly/vscode-matlab.svg)](https://github.com/Gimly/vscode-matlab/blob/master/LICENSE)
+
+Like this extension and would like to help me?
+
+Know some code? Contribute, head up to the issues and start killing those pesky bugs.
+
+Don't know how to code? No issues, you can buy me a beer, or a coffee :smile:. [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/gimly81)
+
+Prefer to send something physical? http://amzn.eu/bPCnc5f 
+
+# Main features
 ## Colorization 
 ![syntax](images/syntax.png)
 
