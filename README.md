@@ -12,7 +12,9 @@ Like this extension and would like to help me?
 
 Know some code? Contribute, head up to the issues and start killing those pesky bugs.
 
-Don't know how to code? No issues, you can buy me a beer, or a coffee :smile:. [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/gimly81)
+Don't know how to code? No issues, you can buy me a beer, or a coffee :smile:. 
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/gimly81)
 
 Prefer to send something physical? http://amzn.eu/bPCnc5f 
 
