@@ -3,6 +3,7 @@
 import vscode = require('vscode');
 import path = require('path');
 import cp = require('child_process');
+import iconv = require('iconv-lite');
 
 import { window } from 'vscode';
 
@@ -30,9 +31,9 @@ export function check(filename: string, lintOnSave = true, mlintPath = ""): Prom
 			mlintPath,
 			[filename],
 			{ encoding: 'buffer' },
-			(err : Error, stdout, stderr) => {
+			(err: Error, stdout, stderr) => {
 				try {
-					let errorsString = stderr.toString();
+					let errorsString = iconv.decode(stderr, fileEncoding);
 
 					var errors = errorsString.split('\n');
 
