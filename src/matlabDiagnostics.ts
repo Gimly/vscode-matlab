@@ -29,7 +29,7 @@ export function check(filename: string, lintOnSave = true, mlintPath = ""): Prom
 
 		cp.execFile(
 			mlintPath,
-			[filename],
+			['-all', filename],
 			{ encoding: 'buffer' },
 			(err: Error, stdout, stderr) => {
 				try {
