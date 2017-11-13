@@ -17,6 +17,12 @@ let diagnosticCollection: vscode.DiagnosticCollection;
 export function activate(context: vscode.ExtensionContext) {
 
 	console.log("Activating extension Matlab");
+	
+	context.subscriptions.push(
+		vscode.languages.registerDocumentSymbolProvider(
+			'matlab', new MatlabDocumentSymbolProvider()
+		)
+	);
 
 	var matlabConfig = workspace.getConfiguration('matlab');
 
@@ -38,12 +44,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 	diagnosticCollection = vscode.languages.createDiagnosticCollection("matlab");
 	context.subscriptions.push(diagnosticCollection);
-
-	context.subscriptions.push(
-		vscode.languages.registerDocumentSymbolProvider(
-			'matlab', new MatlabDocumentSymbolProvider()
-		)
-	);
 
 	context.subscriptions.push(workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
 	context.subscriptions.push(workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
