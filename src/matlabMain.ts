@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 	var mlintPath = matlabConfig['mlintpath'];
 
 	if (!fs.existsSync(mlintPath)) {
-		window.showErrorMessage("The cannot find mlint at the given path, please check your configuration file.")
+		window.showErrorMessage("Cannot find mlint at the given path, please check your configuration file.")
 		return;
 	}
 
