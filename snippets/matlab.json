@@ -26,7 +26,7 @@
 	"methods":{
 		"prefix": "methods",
 		"body": ["methods (${1:MethodAttributes})",
-      			 "\tfunction ${obj:obj} = ${2:methodName}(${3:obj},${4:args})",
+      			 "\tfunction ${2:obj} = ${3:methodName}(${4:obj},${5:args})",
          		"\t\t$0",
       			"\tend",
    				"end"]
@@ -71,7 +71,7 @@
 	},
 	"e": {
 		"prefix": "e",
-		"body": "exp(${X:X})$1",
+		"body": "exp(${1:X})$0",
 		"description": "Exponential"
 	},
 	"events":{
@@ -108,7 +108,7 @@
 	"fordr": {
 		"prefix": "fordr",
 		"body": [
-			"for ${1:index} = ${2:${drange:drange(${3:colonop})}}",
+			"for ${1:index} = ${2:${4:drange(${3:colonop})}}",
 			"\t$0",
 			"end"
 		],
