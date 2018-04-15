@@ -18,6 +18,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	console.log("Activating extension Matlab");
 	
+	let newMatFunc = vscode.commands.registerCommand('matlabMain.newMatFunc', function (){
+		vscode.window.showInformationMessage('Hello, new Function created');
+	})
 	context.subscriptions.push(
 		vscode.languages.registerDocumentSymbolProvider(
 			{ language: 'matlab', scheme: 'file' }, new MatlabDocumentSymbolProvider()
