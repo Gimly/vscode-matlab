@@ -19,7 +19,7 @@
 	},
 	"properties":{
 		"prefix": "properties",
-		"body": ["properties (${1:PropertyAttributes})", 
+		"body": ["properties (${1|AbortSet,Abstract,Access,Constant,Dependent,GetAccess,GetObservable,Hidden,NonCopyable,SetAccess,SetObservable,Transient|})", 
       			"\t$0",
    				"end"]
 	},
@@ -122,7 +122,7 @@
 	"function": {
 		"prefix": "function",
 		"body": [
-			"function ${1:output} = ${2:myFun}(${3:input})",
+			"function [ ${1:output} ] = ${2:${TM_FILENAME_BASE:myFun}}(${3:input})",
 			"%$2 - ${4:Description}",
 			"%",
 			"% Syntax: $1 = $2($3)",
