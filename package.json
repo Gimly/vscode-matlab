@@ -51,6 +51,12 @@
                 "path": "./snippets/matlab.json"
             }
         ],
+        "commands": [
+            {
+                "command": "matlabMain.newMatFunc",
+                "title": "New MatLab Function"
+            }
+        ],
         "configuration": {
             "title": "Matlab configuration",
             "type": "object",
