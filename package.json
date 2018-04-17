@@ -35,7 +35,7 @@
                 "extensions": [
                     ".m"
                 ],
-                "configuration": "./matlab.configuration.json"
+                "configuration": "language-configuration.json"
             }
         ],
         "grammars": [
