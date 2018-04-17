@@ -21,15 +21,21 @@ export function check(filename: string, lintOnSave = true, mlintPath = ""): Prom
 
 		let matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-		let fileEncoding = 'utf8';
+		let args: string[] = ['-all'];
+		if (matlabConfig.has('linterConfig') && matlabConfig['linterConfig'] != null) {
+			args.push(`-config=${matlabConfig['linterConfig']}`);
+		}
 
+		args.push(filename);
+
+		let fileEncoding = 'utf8';
 		if (matlabConfig.has('linterEncoding') && matlabConfig['linterEncoding'] != null) {
 			fileEncoding = matlabConfig['linterEncoding'];
 		}
 
 		cp.execFile(
 			mlintPath,
-			['-all', filename],
+			args,
 			{ encoding: 'buffer' },
 			(err: Error, stdout, stderr) => {
 				try {
