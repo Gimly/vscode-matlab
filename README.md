@@ -67,6 +67,9 @@ Alternatively, saving the file with a `.m` extension, will allow VS Code to unde
   
   **Remark:** If you don't want the *lint on save* option and you want to remove the error message being displayed when the extension activates, change the `matlab.lintOnSave` option in the settings file to `False`.
 
+#### Setting the linter congiguration
+By adding `"matlab.linterConfig" : "path-to-linter-config-file"` to your VSCode configuration file, you can pass a configuration file to the mlint call. Check [Matlab's documentation](https://uk.mathworks.com/help/matlab/ref/mlint.html) to create this configuration file.
+
 #### Setting the linter encoding
 For some languages, like Chinese, the return of the linter is not using the default utf-8 encoding, but a different encoding (gb2312 for Chinese). If the linting doesn't show correctly, change the `matlab.linterEncoding` to the encoding used by your Windows console. For example, if your Windows is installed in Chinese, add `"matlab.linterEncoding" : "gb2312"` to your settings.json.
 
