@@ -13,20 +13,20 @@
 	},
 	"classdef":{
 		"prefix": "classdef",
-		"body": ["classdef (${ClassAttributes}) ${ClassName}",
+		"body": ["classdef (${1:ClassAttributes}) ${2:ClassName}",
 				 "\t$0",
 				 "end"]
 	},
 	"properties":{
 		"prefix": "properties",
-		"body": ["properties (${PropertyAttributes})", 
+		"body": ["properties (${1:PropertyAttributes})", 
       			"\t$0",
    				"end"]
 	},
 	"methods":{
 		"prefix": "methods",
-		"body": ["methods (${MethodAttributes})",
-      			 "\tfunction ${obj} = ${methodName}(${obj},${args})",
+		"body": ["methods (${1:MethodAttributes})",
+      			 "\tfunction ${2:obj} = ${3:methodName}(${4:obj},${5:args})",
          		"\t\t$0",
       			"\tend",
    				"end"]
@@ -34,13 +34,13 @@
 	"dsp": {
 		"prefix": "dsp",
 		"body": [
-			"disp(sprintf('${format}, $1'});"
+			"disp(sprintf('${2:format}, $1'});"
 		],
 		"description": "dsp sprintf"
 	},
 	"disp": {
 		"prefix": "disp",
-		"body": "disp('${text}')",
+		"body": "disp('${1:text}')",
 		"description": "Displays text"
 	},
 	"dlmwrite": {
@@ -52,15 +52,15 @@
 		"prefix": "else",
 		"body": [
 			"else",
-			"\t${body}"
+			"\t${1:body}"
 		],
 		"description": "else statement"
 	},
 	"elseif": {
 		"prefix": "elseif",
 		"body": [
-			"elseif ${condition}",
-			"\t${body}"
+			"elseif ${1:condition}",
+			"\t${0:body}"
 		],
 		"description": "elseif statement"
 	},
@@ -71,12 +71,12 @@
 	},
 	"e": {
 		"prefix": "e",
-		"body": "exp(${X})$1",
+		"body": "exp(${1:X})$0",
 		"description": "Exponential"
 	},
 	"events":{
 		"prefix": "events",
-		"body": ["events (${EventAttributes})", 
+		"body": ["events (${1:EventAttributes})", 
       			 "\t$0",
    				 "end"]
 	},
@@ -108,7 +108,7 @@
 	"fordr": {
 		"prefix": "fordr",
 		"body": [
-			"for ${1:index} = ${2:$drange(${3:colonop})}",
+			"for ${1:index} = ${2:${4:drange(${3:colonop})}}",
 			"\t$0",
 			"end"
 		],
@@ -116,7 +116,7 @@
 	},
 	"fprintf": {
 		"prefix": "fpr",
-		"body": "fprintf(${1:fileID}, ${2:formatSpec}, ${A1})",
+		"body": "fprintf(${1:fileID}, ${2:formatSpec}, ${3:A1})",
 		"description": "Write data to text file"
 	},
 	"function": {
