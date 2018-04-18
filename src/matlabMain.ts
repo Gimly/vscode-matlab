@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	context.subscriptions.push(
 		vscode.languages.registerDocumentSymbolProvider(
-			'matlab', new MatlabDocumentSymbolProvider()
+			{ language: 'matlab', scheme: 'file' }, new MatlabDocumentSymbolProvider()
 		)
 	);
 

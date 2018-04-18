@@ -2,7 +2,7 @@
     "name": "matlab",
     "displayName": "Matlab",
     "description": "MATLAB support for Visual Studio Code",
-    "version": "0.8.1",
+    "version": "0.9.0",
     "publisher": "Gimly81",
     "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
@@ -35,7 +35,7 @@
                 "extensions": [
                     ".m"
                 ],
-                "configuration": "./matlab.configuration.json"
+                "configuration": "language-configuration.json"
             }
         ],
         "grammars": [
@@ -74,6 +74,11 @@
                     "type": "string",
                     "default": "utf8",
                     "description": "This sets the encoding for the linting, default is utf8. Use if your console uses a different encoding."
+                },
+                "matlab.linterConfig": {
+                    "type": "string",
+                    "default": null,
+                    "description": "This allows to pass a configuration settings file for the mlint linter. Enter the full path for the linter settings file to use."
                 }
             }
         }
