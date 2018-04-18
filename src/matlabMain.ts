@@ -20,6 +20,10 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	let newMatFunc = vscode.commands.registerCommand('matlabMain.newMatFunc', function (){
 		vscode.window.showInformationMessage('Hello, new Function created');
+		let newFile = vscode.workspace.openTextDocument({language:'matlab',content:'function'})
+		newFile.then(document => vscode.window.showTextDocument(document));
+		// let newDoc = vscode.workspace.openTextDocument({language:'matlab'});
+		// vscode.window.showTextDocument(vscode.Uri.file('abc.m'));
 	})
 	context.subscriptions.push(
 		vscode.languages.registerDocumentSymbolProvider(

@@ -31,7 +31,7 @@ end
 
 methods (MethodAttributes)
     function obj = methodName(obj,args)
-            
+            adsf 
     end
 end
 
@@ -39,9 +39,23 @@ classdef (ClassAttributes) ClassName
     
 end
 
+function output = myFun(input)
+
+end
+
+variablasd = 1;
+variablasd
+
 
  classdef (ClassAttributes) ClassName
-    
+    properties (PropertyAttributes)
+        dasf 
+    end
+    methods ()
+        function obj = methodName(obj,args)
+            dasf w
+        end
+    end
 end
 
 function 
@@ -64,7 +78,7 @@ properties (|one,two,three|)
     
 end
 
-properties (Constant)
+properties (PropertyAttributes)
     
 end
 
