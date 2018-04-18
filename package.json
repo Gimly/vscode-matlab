@@ -6,7 +6,7 @@
     "publisher": "Gimly81",
     "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
-        "vscode": "^1.16.0"
+        "vscode": "^1.17.0"
     },
     "categories": [
         "Languages",
@@ -53,8 +53,8 @@
         ],
         "commands": [
             {
-                "command": "matlabMain.newMatFunc",
-                "title": "New MatLab Function"
+                "command": "matlab.newFunction",
+                "title": "New Matlab Function"
             }
         ],
         "configuration": {
