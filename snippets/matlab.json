@@ -122,12 +122,12 @@
 	"function": {
 		"prefix": "function",
 		"body": [
-			"function [ ${1:output} ] = ${2:${TM_FILENAME_BASE:myFun}}(${3:input})",
-			"%$2 - ${4:Description}",
+			"function [ ${1:output} ] = ${TM_FILENAME_BASE}(${2:input})",
+			"%${TM_FILENAME_BASE} - ${3:Description}",
 			"%",
-			"% Syntax: $1 = $2($3)",
+			"% Syntax: $1 = ${TM_FILENAME_BASE}($2)",
 			"%",
-			"% ${5:Long description}",
+			"% ${4:Long description}",
 			"\t$0",
 			"end"
 		],

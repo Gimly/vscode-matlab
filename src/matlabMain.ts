@@ -5,8 +5,9 @@ import cp = require('child_process');
 import path = require('path');
 import fs = require('fs');
 import { check, ICheckResult } from './matlabDiagnostics';
+import { matlabFileWatcher } from './matlabFile';
 
-import { commands, window, workspace, InputBoxOptions, OpenDialogOptions, SaveDialogOptions } from 'vscode';
+import { commands, window, workspace } from 'vscode';
 import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
 
 var canLint = true;
@@ -17,31 +18,13 @@ let diagnosticCollection: vscode.DiagnosticCollection;
 export function activate(context: vscode.ExtensionContext) {
 
 	console.log("Activating extension Matlab");
-	
-	let newMatFunc = vscode.commands.registerCommand('matlab.newFunction', function (){
-		vscode.window.showInformationMessage('Hello, new Function created');
-		// let newFile = vscode.workspace.openTextDocument({language:'matlab',content:'function'})
-		// newFile.then(document => vscode.window.showTextDocument(document));
-		// const options: vscode.OpenDialogOptions = {
-		// 	canSelectMany: false,
-		// 	openLabel: 'Open',
-		// }
-		// vscode.window.showOpenDialog(options);
-		// const options: vscode.SaveDialogOptions = {
-		// }
-		// let win = vscode.window.showSaveDialog(options);
-		// let newDoc = vscode.workspace.openTextDocument({language:'matlab'});
-		// vscode.window.showTextDocument(vscode.Uri.file('abc.m'));
-		let cmd = vscode.commands.executeCommand('explorer.newFile');
-		cmd.then(function (){
-			console.log('Command executed');
-		},function(){
-			console.log('Second command executed');
-		});
-		vscode.workspace.onDidOpenTextDocument(function(event){
-			console.log('New Event' + event.getText());
-		});
-	})
+	console.log(workspace.workspaceFolders[0].uri.fsPath);
+	let matlabWatcher = new matlabFileWatcher();
+	context.subscriptions.push(vscode.commands.registerCommand('matlab.newFunction', (args) => {
+		matlabWatcher.newMatlabFunction();
+	}));
+
+	context.subscriptions.push(matlabWatcher);
 	context.subscriptions.push(
 		vscode.languages.registerDocumentSymbolProvider(
 			{ language: 'matlab', scheme: 'file' }, new MatlabDocumentSymbolProvider()

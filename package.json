@@ -54,7 +54,7 @@
         "commands": [
             {
                 "command": "matlab.newFunction",
-                "title": "New Matlab Function"
+                "title": "Matlab: New Function"
             }
         ],
         "configuration": {
