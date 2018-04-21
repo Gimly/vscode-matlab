@@ -33,6 +33,10 @@ Prefer to send something physical? http://amzn.eu/bPCnc5f
 Uses *mlint* for checking the MATLAB code for problems on save.
 ![snippets](images/linter.png)
 
+## Command
+Use `Ctrl+Shift+P` then `MatLab: New Function` to invoke function create command.
+![snippets](images/function.gif)
+
 ## Usage
 ### Install the extension in VS Code
 * Open the command palette using `Ctrl+Shift+P`
