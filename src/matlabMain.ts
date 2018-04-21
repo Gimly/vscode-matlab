@@ -5,7 +5,7 @@ import cp = require('child_process');
 import path = require('path');
 import fs = require('fs');
 import { check, ICheckResult } from './matlabDiagnostics';
-import { matlabFileWatcher } from './matlabFile';
+import { matlabFile } from './matlabFile';
 
 import { commands, window, workspace } from 'vscode';
 import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
@@ -18,13 +18,14 @@ let diagnosticCollection: vscode.DiagnosticCollection;
 export function activate(context: vscode.ExtensionContext) {
 
 	console.log("Activating extension Matlab");
-	console.log(workspace.workspaceFolders[0].uri.fsPath);
-	let matlabWatcher = new matlabFileWatcher();
+	
+	let matFiles = new matlabFile();
+
 	context.subscriptions.push(vscode.commands.registerCommand('matlab.newFunction', (args) => {
-		matlabWatcher.newMatlabFunction();
+		matFiles.newMatlabFunction();
 	}));
 
-	context.subscriptions.push(matlabWatcher);
+	context.subscriptions.push(matFiles);
 	context.subscriptions.push(
 		vscode.languages.registerDocumentSymbolProvider(
 			{ language: 'matlab', scheme: 'file' }, new MatlabDocumentSymbolProvider()

@@ -19,7 +19,7 @@
 	},
 	"properties":{
 		"prefix": "properties",
-		"body": ["properties (${1|AbortSet,Abstract,Access,Constant,Dependent,GetAccess,GetObservable,Hidden,NonCopyable,SetAccess,SetObservable,Transient|})", 
+		"body": ["properties (${1:PropertyAttributes})", 
       			"\t$0",
    				"end"]
 	},
