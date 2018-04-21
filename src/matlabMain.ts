@@ -59,7 +59,7 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
 		}
 	}
 
-	if (document.languageId != "matlab") {
+	if (document.languageId != "matlab" || document.uri.scheme != 'file') {
 		return;
 	}
 
