@@ -50,18 +50,14 @@ export class matlabFileWatcher {
             }
         }
         let win = vscode.window.showSaveDialog(functionSaveOption).then(fileName => {
-            
             if (fileName) {
                 if (fs.existsSync(fileName.fsPath)) {
-                    fs.unlink(fileName.fsPath, () => {
-                        console.log('Deleted');
-                        this.matlabFunctionCreator(fileName);
-                    });
+                    fs.unlinkSync(fileName.fsPath);
+                    console.log('Deleted');
                 } else {
                     console.log('Newly created');
-                    this.matlabFunctionCreator(fileName);
                 }
-
+                this.matlabFunctionCreator(fileName);
             } else {
                 console.log('Save cancel');
             }
@@ -81,21 +77,19 @@ export class matlabFileWatcher {
         // call if we are safe to create
         console.log(fileName.fsPath);
         vscode.workspace.openTextDocument(fileName.with({ scheme: 'untitled' })).then(document => {
-            let edit = vscode.window.showTextDocument(document);
-            edit.then(editor => {
-                console.log('Document shown succeeded');
-                document.save().then(success => {
-                    if (success) {
-                        console.log('Saved successful');
-                        window.showTextDocument(fileName).then(iEditor => {
-                            iEditor.insertSnippet(this.functionSnippet, new vscode.Position(0, 0));
+            document.save().then(success => {
+                if (success) {
+                    console.log('Saved successful');
+                    workspace.openTextDocument(fileName).then(doc => {
+                        window.showTextDocument(doc).then(editor => {
+                            editor.insertSnippet(this.functionSnippet, new vscode.Position(0, 0));
                         });
-                        window.showInformationMessage('Function ' + fileName.fragment + ' was created.');
-                    } else {
-                        console.log('Saved failed');
-                        window.showErrorMessage('Unable to save the document, please check your path \n' + fileName.toString());
-                    }
-                });
+                        window.showInformationMessage('Function ' + path.basename(fileName.fsPath) + ' was created.');
+                    })
+                } else {
+                    console.log('Saved failed');
+                    window.showErrorMessage('Unable to save the document, please check your path \n' + fileName.toString());
+                }
             });
         });
         console.log('Show dialog ' + fileName);
