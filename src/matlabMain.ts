@@ -79,8 +79,7 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
 			var startColumn = error.column[0] - 1;
 			if (startColumn < 0) startColumn = 0;
 
-			var endColumn = error.column[1] - 1;
-			if (endColumn < 0) endColumn = 0;
+			var endColumn = error.column[1];
 
 			let range = new vscode.Range(line, startColumn, line, endColumn);
 			let diagnostic = new vscode.Diagnostic(range, error.msg, mapSeverityToVSCodeSeverity(error.severity));
