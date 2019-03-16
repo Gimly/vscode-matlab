@@ -47,7 +47,7 @@ Alternatively, saving the file with a `.m` extension, will allow VS Code to unde
 ### Using snippets
 * Bring-up the *autocomplete* menu by hitting the `Ctrl+Shift` key combination
 * Select the snippet that you want to use in the list
-* Use `tab` to navigate trough the snippet's variables
+* Use `tab` to navigate through the snippet's variables
 
 ### Setting-up linter
 * Open the *User Settings* by going to *File*>*Preferences*>*User Settings*
@@ -67,14 +67,14 @@ Alternatively, saving the file with a `.m` extension, will allow VS Code to unde
   
   **Remark:** If you don't want the *lint on save* option and you want to remove the error message being displayed when the extension activates, change the `matlab.lintOnSave` option in the settings file to `False`.
 
-#### Setting the linter congiguration
+#### Setting the linter configuration
 By adding `"matlab.linterConfig" : "path-to-linter-config-file"` to your VSCode configuration file, you can pass a configuration file to the mlint call. Check [Matlab's documentation](https://uk.mathworks.com/help/matlab/ref/mlint.html) to create this configuration file.
 
 #### Setting the linter encoding
 For some languages, like Chinese, the return of the linter is not using the default utf-8 encoding, but a different encoding (gb2312 for Chinese). If the linting doesn't show correctly, change the `matlab.linterEncoding` to the encoding used by your Windows console. For example, if your Windows is installed in Chinese, add `"matlab.linterEncoding" : "gb2312"` to your settings.json.
 
 ### Changing the default file association
-Visual Studio Code's default file association for `.m` files is _Objective-C_, if you want to setup the default file associationt to be Matlab go to the Users preference (*File*>*Preferences*>*User Settings*) and add the following line:
+Visual Studio Code's default file association for `.m` files is _Objective-C_, if you want to set up the default file association to be Matlab go to the Users preference (*File*>*Preferences*>*User Settings*) and add the following line:
 ```
 "files.associations": {"*.m": "matlab"}
 ```
