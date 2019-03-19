@@ -42,7 +42,7 @@
             {
                 "language": "matlab",
                 "scopeName": "source.matlab",
-                "path": "./syntaxes/matlab.tmLanguage"
+                "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
             }
         ],
         "snippets": [
