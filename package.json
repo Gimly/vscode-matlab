@@ -1,101 +1,101 @@
 {
-    "name": "matlab",
-    "displayName": "Matlab",
-    "description": "MATLAB support for Visual Studio Code",
-    "version": "0.9.0",
-    "publisher": "Gimly81",
-    "license": "SEE LICENSE IN LICENSE.md",
-    "engines": {
-        "vscode": "^1.16.0"
-    },
-    "categories": [
-        "Languages",
-        "Snippets",
-        "Linters"
+  "name": "matlab",
+  "displayName": "Matlab",
+  "description": "MATLAB support for Visual Studio Code",
+  "version": "1.0.0",
+  "publisher": "Gimly81",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "engines": {
+    "vscode": "^1.16.0"
+  },
+  "categories": [
+    "Languages",
+    "Snippets",
+    "Linters"
+  ],
+  "homepage": "https://github.com/Gimly/matlab-vscode/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gimly/matlab-vscode.git"
+  },
+  "activationEvents": [
+    "onLanguage:matlab"
+  ],
+  "main": "./out/src/matlabMain",
+  "icon": "images/icon.png",
+  "bugs": "https://github.com/Gimly/matlab-vscode/issues",
+  "contributes": {
+    "languages": [
+      {
+        "id": "matlab",
+        "aliases": [
+          "MATLAB",
+          "matlab"
+        ],
+        "extensions": [
+          ".m"
+        ],
+        "configuration": "language-configuration.json"
+      }
     ],
-    "homepage": "https://github.com/Gimly/matlab-vscode/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Gimly/matlab-vscode.git"
-    },
-    "activationEvents": [
-        "onLanguage:matlab"
+    "grammars": [
+      {
+        "language": "matlab",
+        "scopeName": "source.matlab",
+        "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
+      }
     ],
-    "main": "./out/src/matlabMain",
-    "icon": "images/icon.png",
-    "bugs": "https://github.com/Gimly/matlab-vscode/issues",
-    "contributes": {
-        "languages": [
-            {
-                "id": "matlab",
-                "aliases": [
-                    "MATLAB",
-                    "matlab"
-                ],
-                "extensions": [
-                    ".m"
-                ],
-                "configuration": "language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "matlab",
-                "scopeName": "source.matlab",
-                "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "matlab",
-                "path": "./snippets/matlab.json"
-            }
-        ],
-        "configuration": {
-            "title": "Matlab configuration",
-            "type": "object",
-            "properties": {
-                "matlab.matlabpath": {
-                    "type": "string",
-                    "default": null,
-                    "description": "The path to the matlab executable."
-                },
-                "matlab.mlintpath": {
-                    "type": "string",
-                    "default": null,
-                    "description": "The path to the mlint executable"
-                },
-                "matlab.lintOnSave": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Run the linting on save of file."
-                },
-                "matlab.linterEncoding": {
-                    "type": "string",
-                    "default": "utf8",
-                    "description": "This sets the encoding for the linting, default is utf8. Use if your console uses a different encoding."
-                },
-                "matlab.linterConfig": {
-                    "type": "string",
-                    "default": null,
-                    "description": "This allows to pass a configuration settings file for the mlint linter. Enter the full path for the linter settings file to use."
-                }
-            }
+    "snippets": [
+      {
+        "language": "matlab",
+        "path": "./snippets/matlab.json"
+      }
+    ],
+    "configuration": {
+      "title": "Matlab configuration",
+      "type": "object",
+      "properties": {
+        "matlab.matlabpath": {
+          "type": "string",
+          "default": null,
+          "description": "The path to the matlab executable."
+        },
+        "matlab.mlintpath": {
+          "type": "string",
+          "default": null,
+          "description": "The path to the mlint executable"
+        },
+        "matlab.lintOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run the linting on save of file."
+        },
+        "matlab.linterEncoding": {
+          "type": "string",
+          "default": "utf8",
+          "description": "This sets the encoding for the linting, default is utf8. Use if your console uses a different encoding."
+        },
+        "matlab.linterConfig": {
+          "type": "string",
+          "default": null,
+          "description": "This allows to pass a configuration settings file for the mlint linter. Enter the full path for the linter settings file to use."
         }
-    },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "typescript": "^2.5.2",
-        "vscode": "^1.1.5",
-        "mocha": "^3.5.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
-    },
-    "dependencies": {
-        "iconv-lite": "^0.4.19"
+      }
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.2",
+    "vscode": "^1.1.5",
+    "mocha": "^3.5.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.4.19"
+  }
 }
