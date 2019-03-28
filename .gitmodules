@@ -1,3 +1,3 @@
 [submodule "syntaxes/MATLAB-Language-grammar"]
 	path = syntaxes/MATLAB-Language-grammar
-	url = git@github.com:mathworks/MATLAB-Language-grammar.git
+	url = https://github.com/mathworks/MATLAB-Language-grammar.git
