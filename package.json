@@ -43,6 +43,13 @@
         "language": "matlab",
         "scopeName": "source.matlab",
         "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
+      },
+      {
+        "injectTo": [
+          "source.matlab"
+        ],
+        "scopeName": "matlab-functions.injection",
+        "path": "./syntaxes/matlab-functions.tmLanguage"
       }
     ],
     "snippets": [
