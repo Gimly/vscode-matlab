@@ -2,6 +2,11 @@
 
 All notable changes to the "matlab" extension will be documented in this file.
 
+## [1.1.0]
+
+- Fixes the functions highlighting that were removed in version 1.0 when switching to Matlab's official syntax.
+- Updates to a more recent version of Matlab's official syntax that should fix a few highlighting issue.
+
 ## [1.0.0]
 
 - Switches the syntax highlighting to the official [Mathworks Matlab syntax](https://github.com/mathworks/MATLAB-Language-grammar). It should greatly improve the syntax highlighting and fix most (hopefully all) issues that were related to it. Thanks to [rlivings39](https://github.com/rlivings39) for the PR.
