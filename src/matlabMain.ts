@@ -47,6 +47,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
 	context.subscriptions.push(workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
+
+	// Run mlint on any open documents since our onDidOpenTextDocument callback won't be hit for those
+	workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
 }
 
 function lintDocument(document: vscode.TextDocument, mlintPath: string) {
@@ -65,7 +68,7 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
 
 	let matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-	check(document.uri.fsPath, matlabConfig['lintOnSave'], mlintPath).then(errors => {
+	check(document, matlabConfig['lintOnSave'], mlintPath).then(errors => {
 		diagnosticCollection.delete(document.uri);
 
 		let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
