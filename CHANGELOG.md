@@ -1,6 +1,11 @@
 # Change Log
 
-All notable changes to the "matlab" extension will be documented in this file.
+## [1.2.0]
+
+- Fixes a few issues linked to the linter and improve performances
+- Add properties, methods, events, and enumeration to intent patterns
+- Run mlint on already opened files when activating extension
+Thanks again to [Ryan Livingston](https://github.com/rlivings39) for the great work.
 
 ## [1.1.0]
 
