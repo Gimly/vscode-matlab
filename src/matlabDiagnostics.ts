@@ -15,9 +15,9 @@ export interface ICheckResult {
 	severity: string
 }
 
-export function check(filename: string, lintOnSave = true, mlintPath = ""): Promise<ICheckResult[]> {
+export function check(document: vscode.TextDocument, lintOnSave = true, mlintPath = ""): Promise<ICheckResult[]> {
 	var matlabLint = !lintOnSave ? Promise.resolve([]) : new Promise((resolve, reject) => {
-		var filename = window.activeTextEditor.document.fileName;
+		var filename = document.uri.fsPath;
 
 		let matlabConfig = vscode.workspace.getConfiguration('matlab');
 
