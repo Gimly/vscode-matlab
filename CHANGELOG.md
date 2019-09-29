@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.3.0]
+
+- Updates to the latest version of the official [Mathworks matlab syntax](https://github.com/mathworks/MATLAB-Language-grammar)
+
 ## [1.2.0]
 
 - Fixes a few issues linked to the linter and improve performances
