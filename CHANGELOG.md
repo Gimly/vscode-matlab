@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.4.0]
+
+- Support for function argument validation. Matlab now supports function argument validation (see https://www.mathworks.com/help/matlab/ref/arguments.html). This new version adds coloration support for it through an update from the official syntax.
+
 ## [1.3.0]
 
 - Updates to the latest version of the official [Mathworks matlab syntax](https://github.com/mathworks/MATLAB-Language-grammar)
