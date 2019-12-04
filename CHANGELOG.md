@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.4.1]
+
+- Update the Matlab syntax, fix an issue with end of line comment.
+
 ## [1.4.0]
 
 - Support for function argument validation. Matlab now supports function argument validation (see https://www.mathworks.com/help/matlab/ref/arguments.html). This new version adds coloration support for it through an update from the official syntax.
