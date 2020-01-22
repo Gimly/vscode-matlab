@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.4.2]
+
+- Update the Matlab syntax, fix issues with color highlightings in
+  if statements and event block in class.
+
 ## [1.4.1]
 
 - Update the Matlab syntax, fix an issue with end of line comment.
