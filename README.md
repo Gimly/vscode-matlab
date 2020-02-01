@@ -12,7 +12,7 @@ This extension adds language support for MATLAB to Visual Studio Code.
 ## Colorization 
 ![syntax](images/syntax.png)
 
-(imported from [Textmate's syntax](https://github.com/textmate/matlab.tmbundle))
+(imported from [MathWorks TextMate grammar](https://github.com/mathworks/MATLAB-Language-grammar))
 
 ## Snippets
 ![snippets](images/snippets.png)
