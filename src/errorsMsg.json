@@ -1,7 +1,4 @@
 [
-  "Invalid syntax",
-  "Parse error",
-  "An END might be missing",
   "'active-set' has been removed. Use 'trust-region-reflective' or 'interior-point' instead.",
   "'adaptfilt.adjlms' has been removed. There is no simple replacement for this.",
   "'adaptfilt.ap' has been removed. Use 'dsp.AffineProjectionFilter' instead.",
