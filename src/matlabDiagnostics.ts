@@ -57,17 +57,29 @@ export function check(document: vscode.TextDocument, lintOnSave = true, mlintPat
 								endCol = startCol;
 							}
 
-							ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "warning" });
+							var errorsMsg = require('./errorsMsg.json');
+							if (errorsMsg.includes(msg)) {
+								ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "error" });
+							}
+							else {
+								if (msg.includes("Parse error") || msg.includes("Invalid syntax") || msg.includes("An END might be missing")) {
+									ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "error" });
+								}
+								else {
+									ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "warning" });
+								}
+							}
 						}
+					}
 					});
 
-					resolve(ret);
-				} catch (error) {
-					console.error(error);
-					reject(error);
-				}
-			});
+		resolve(ret);
+	} catch (error) {
+		console.error(error);
+		reject(error);
+	}
+});
 	});
 
-	return Promise.all([matlabLint]).then(resultSets => [].concat.apply([], resultSets));
+return Promise.all([matlabLint]).then(resultSets => [].concat.apply([], resultSets));
 }
