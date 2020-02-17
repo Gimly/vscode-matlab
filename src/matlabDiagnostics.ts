@@ -4,7 +4,7 @@ import vscode = require('vscode');
 import path = require('path');
 import cp = require('child_process');
 import iconv = require('iconv-lite');
-import { errorsId } from './errorsId';
+import { ERROR_IDS } from './errorsId';
 
 import { window } from 'vscode';
 
