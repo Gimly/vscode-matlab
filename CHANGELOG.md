@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.5.0]
+## [1.6.0]
 
 - Updates the Matlab syntax to the latest version. Fixes issue with varargin transposed and triple dot coloration.
 - Adds differenciation between linter errors and warnings. Thanks a lot to [Robin Tournemenne](https://github.com/RobinTournemenne) for his awesome work.

@@ -43,13 +43,13 @@ export function check(document: vscode.TextDocument, lintOnSave = true, mlintPat
 					let errorsString = iconv.decode(stderr, fileEncoding);
 
 					var errors = errorsString.split('\n');
-					
+
 					var ret: ICheckResult[] = [];
-					
+
 					errors.forEach(error => {
 						var regex = /L (\d+) \(C (\d+)-?(\d+)?\): (\S+): (.*)/;
 						var match = regex.exec(error);
-						
+
 						if (match != null) {
 							var [_, lineStr, startCol, endCol, idErrorWarn, msg] = match;
 							var line = +lineStr;
@@ -58,7 +58,7 @@ export function check(document: vscode.TextDocument, lintOnSave = true, mlintPat
 								endCol = startCol;
 							}
 
-							if (errorsId.includes(idErrorWarn)) {
+							if (ERROR_IDS.includes(idErrorWarn)) {
 								ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "error" });
 							}
 							else {
