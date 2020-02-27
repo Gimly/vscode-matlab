@@ -68,3 +68,9 @@ Visual Studio Code's default file association for `.m` files is _Objective-C_, i
 ```
 "files.associations": {"*.m": "matlab"}
 ```
+
+### Changing the default file encoding
+MATLAB default file encoding is not utf-8, but Visual Studio Code is using utf-8 as default. The following setting specifies the default encoding for MATLAB files in Visual Studio Code:
+````
+"[matlab]": { "files.encoding": "windows1252" }
+````
