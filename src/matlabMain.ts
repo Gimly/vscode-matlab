@@ -8,6 +8,7 @@ import { check, ICheckResult } from './matlabDiagnostics';
 
 import { commands, window, workspace, InputBoxOptions } from 'vscode';
 import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
+import PeekFileDefinitionProvider from './PeekFileDefinitionProvider';
 
 var canLint = true;
 let diagnosticCollection: vscode.DiagnosticCollection;
@@ -50,6 +51,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Run mlint on any open documents since our onDidOpenTextDocument callback won't be hit for those
 	workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
+
+	context.subscriptions.push(vscode.languages.registerDefinitionProvider(
+    ['matlab'],
+    new PeekFileDefinitionProvider(['.m'])
+  ));
+
 }
 
 function lintDocument(document: vscode.TextDocument, mlintPath: string) {
