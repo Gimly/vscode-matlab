@@ -54,7 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider(
     ['matlab'],
-    new PeekFileDefinitionProvider(['.m'])
+    new PeekFileDefinitionProvider()
   ));
 
 }
