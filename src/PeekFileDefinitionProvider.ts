@@ -4,11 +4,8 @@ import vscode = require('vscode');
 import { isUndefined } from 'util';
 
 export default class PeekFileDefinitionProvider implements vscode.DefinitionProvider {
-  targetFileExtensions: string[] = [];
 
-  constructor(targetFileExtensions: string[] = []) {
-    this.targetFileExtensions = targetFileExtensions;
-  }
+  constructor() {}
 
   getComponentName(position: vscode.Position): String[] {
     const doc = vscode.window.activeTextEditor.document;
