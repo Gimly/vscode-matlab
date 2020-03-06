@@ -16,6 +16,24 @@ export default class PeekFileDefinitionProvider implements vscode.DefinitionProv
     return possibleFileNames;
   }
 
+  getNestedFuncPosition(position: vscode.Position): number[] {
+    const doc = vscode.window.activeTextEditor.document;
+    const selection = doc.getWordRangeAtPosition(position);
+    const selectedText = doc.getText(selection);
+
+    for (let lineNb = 0; lineNb < doc.lineCount; lineNb ++) {
+      const txtLine = doc.lineAt(lineNb);
+      if (!txtLine.isEmptyOrWhitespace) {
+        const content = txtLine.text;
+        const Col = content.indexOf('function ' + selectedText);
+        if (Col != -1) {
+          return [lineNb, Col];
+        }
+      }
+    }
+    return [];
+  }
+
   searchFilePath(fileName: String): Thenable<vscode.Uri[]> {
     return vscode.workspace.findFiles(`**/${fileName}`, '**/node_modules'); // Returns promise
   }
@@ -30,17 +48,24 @@ export default class PeekFileDefinitionProvider implements vscode.DefinitionProv
     const componentNames = this.getComponentName(position);
     const searchPathActions = componentNames.map(this.searchFilePath);
     const searchPromises = Promise.all(searchPathActions); // pass array of promises
-
+    const posInFile = this.getNestedFuncPosition(position);
     return searchPromises.then((paths) => {
       filePaths = [].concat.apply([], paths);
       if (filePaths.length) {
+        console.log(posInFile)
         let allPaths = [];
         filePaths.forEach(filePath => {
           allPaths.push(new vscode.Location(vscode.Uri.file(`${filePath.path}`),new vscode.Position(0,1) ))
         });
         return allPaths;
       } else {
-        return undefined;
+        if (posInFile.length) {
+          let allPaths = [];
+          allPaths.push(new vscode.Location(document.uri,new vscode.Position(posInFile[0],posInFile[1])));
+          return allPaths;
+        } else {
+          return undefined;
+        }
       }
     }, (reason) => {
       return undefined;
