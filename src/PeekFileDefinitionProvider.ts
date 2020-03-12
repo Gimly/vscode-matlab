@@ -26,8 +26,9 @@ export default class PeekFileDefinitionProvider implements vscode.DefinitionProv
       if (!txtLine.isEmptyOrWhitespace) {
         const content = txtLine.text;
         const Colfunc = content.indexOf('function ');
-        const ColName = content.indexOf(selectedText);
-        if (Colfunc != -1 && ColName != -1) {
+        const ColName1 = content.indexOf(selectedText + '(');
+        const ColName2 = content.indexOf(selectedText + ' (');
+        if (Colfunc != -1 && (ColName1 != -1 || ColName2 != -1)) {
           return [lineNb, Colfunc];
         }
       }
