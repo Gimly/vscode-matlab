@@ -1,5 +1,9 @@
 # Change Log
 
+## [2.0.0]
+
+- New functionality thanks to [Robin Tournemenne](https://github.com/RobinTournemenne) which adds the Go to definition functionality.
+
 ## [1.6.0]
 
 - Updates the Matlab syntax to the latest version. Fixes issue with varargin transposed and triple dot coloration.
