@@ -22,6 +22,12 @@
         ["\"", "\""],
         ["'", "'"]
 	],
+	"folding": {
+		"markers": {
+			"start": "^\\s*%%",
+			"end": "^\\s*%%"
+		}
+	},
 	"indentationRules": {
 		"increaseIndentPattern": "^\\s*\\b(function|if|else|elseif|switch|case|otherwise|for|parfor|while|try|catch|unwind_protect|properties|methods|enumeration|events|arguments)\\b",
 		"decreaseIndentPattern": "^\\s*\\b(end\\w*|catch|else|elseif|case|otherwise)\\b"
