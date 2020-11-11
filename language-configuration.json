@@ -1,7 +1,7 @@
 {
 	"comments": {
 		"lineComment": "%",
-		"blockComment": [ "\n%{\n", "\n%}\n" ]
+		"blockComment": [ "%{", "%}" ]
 	},
 	"brackets": [
 		["{", "}"],
