@@ -1,5 +1,10 @@
 # Change Log
 
+## [2.0.1]
+
+- Fix a security issue linked to the scope of the Matlab lint configuration. Those configuration settings are now defined at
+the machine level and cannot be overriden by workspace settings.
+
 ## [2.0.0]
 
 - New functionality thanks to [Robin Tournemenne](https://github.com/RobinTournemenne) which adds the Go to definition functionality.
