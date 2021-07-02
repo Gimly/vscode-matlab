@@ -260,7 +260,7 @@
 						<key>name</key>
 						<string>support.function.builtin.matlab</string>
 						<key>match</key>
-						<string>(?:(?&lt;=[a-zA-Z0-9_]\.)(?:setup|(?&lt;=[a-zA-Z0-9_]\.|[^a-zA-Z0-9._]|^)update)\b</string>
+						<string>(?&lt;=[a-zA-Z0-9_]\.)setup\b|(?&lt;=[a-zA-Z0-9_]\.|[^a-zA-Z0-9._]|^)update\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -292,7 +292,7 @@
 						<key>name</key>
 						<string>support.function.builtin.matlab</string>
 						<key>match</key>
-						<string>(?:(?&lt;=[a-zA-Z0-9_]\.|[^a-zA-Z0-9._]|^)(?:assertSuccess|(?&lt;=[a-zA-Z0-9_]\.)table)\b</string>
+						<string>(?&lt;=[a-zA-Z0-9_]\.|[^a-zA-Z0-9._]|^)assertSuccess\b|(?&lt;=[a-zA-Z0-9_]\.)table\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -1012,7 +1012,7 @@
 						<key>name</key>
 						<string>support.function.external.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=[a-zA-Z0-9_]\.)(?:(char|string)\b</string>
+						<string>(?&lt;=[a-zA-Z0-9_]\.)(?:char|string)\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
