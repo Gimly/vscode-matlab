@@ -11,7 +11,7 @@
 		<key>name</key>
 		<string>Functions (MATLAB)</string>
 		<key>scopeName</key>
-		<string>builtin.matlab.injection</string>
+		<string>builtin.matlab\.injection</string>
 		<key>injectionSelector</key>
 		<string>source.matlab -comment -string -interpolation</string>
 		<key>uuid</key>
@@ -100,7 +100,7 @@
 						<key>name</key>
 						<string>keyword.other.desktop.matlab</string>
 						<key>match</key>
-						<string>(?&lt;!\.)\b(audiodevinfo|audiodevreset|clipboard|commandhistory|commandwindow|copygraphics|debug|demo|diary|doc|docsearch|dos|echodemo|exportapp|fileattrib|filebrowser|getOpenFiles|helpbrowser|helpwin|home|keyboard|license|(?&lt;!import[^\S\n]?)matlab(?!\.)|matlabdrive|memory|mlint|mlintrpt|openvar|perl|playshow|preferences|recycle|rendererinfo|savefig|snapnow|support|system|type|unix|userpath|ver|verLessThan|visdiff|web|winopen|winqueryreg|workspace)\b</string>
+						<string>(?&lt;!\.)\b(audiodevinfo|audiodevreset|clipboard|commandhistory|commandwindow|copygraphics|debug|demo|diary|doc|docsearch|dos|echodemo|exportapp|fileattrib|filebrowser|getOpenFiles|helpbrowser|helpwin|home|keyboard|license|(?&lt;!import[^\S\n]|\.)matlab(?!\.)|matlabdrive|memory|mlint|mlintrpt|openvar|perl|playshow|preferences|recycle|rendererinfo|savefig|snapnow|support|system|type|unix|userpath|ver|verLessThan|visdiff|web|winopen|winqueryreg|workspace)\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -326,7 +326,7 @@
 						<key>name</key>
 						<string>support.constant.builtin.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=[^.]appdesigner\.)customcomponent(?=\.)|(?&lt;=[^.]matlab\.)(?:addons|apputil|codetools|diagram|engine|exception|graphics|io|lang|mixin|mixin|mock|net|perftest|project|settings|tall|test|ui|uitest|unittest|wsdl)(?=\.)|(?&lt;=[^.]matlab.addons\.)toolbox(?=\.)|(?&lt;=[^.]matlab\.graphics\.)(?:animation|axis|chart|chartcontainer|function|illustration|layout|primitive|shape)(?=\.)|(?&lt;=[^.]matlab\.graphics\.axis\.)decorator(?=\.)|(?&lt;=[^.]matlab\.graphics\.chart\.)primitive(?=\.)|(?&lt;=[^.]matlab\.graphics\.chart\.internal\.)stackedplot(?=\.)|(?&lt;=[^.]matlab\.graphics\.chartcontainer\.)mixin(?=\.)|(?&lt;=[^.]matlab.io\.)(?:datastore|xml)(?=\.)|(?&lt;=[^.]matlab.io.xml\.)(?:dom|transform|xpath)(?=\.)|(?&lt;=[^.]matlab.lang\.)correction(?=\.)|(?&lt;=[^.]matlab.mixin\.)(?:system|util)(?=\.)|(?&lt;=[^.]matlab.mock\.)(?:actions|chart|constraints)(?=\.)|(?&lt;=[^.]matlab.NET\.)http(?=\.)|(?&lt;=[^.]matlab.NET\.http\.)(?:field|io)(?=\.)|(?&lt;=[^.]matlab.settings\.)mixin(?=\.)|(?&lt;=[^.]matlab.test\.)behavior(?=\.)|(?&lt;=[^.]matlab.ui\.)componentcontainer(?=\.)|(?&lt;=[^.]matlab.uitest\.)measurement(?=\.)|(?&lt;=[^.]matlab.uitest.measurement\.)chart(?=\.)|(?&lt;=[^.]matlab.unittest\.)(?:constraints|diagnostics|fixtures|measurement|parameters|plugins|qualifications|selectors)(?=\.)|(?&lt;=[^.]matlab.unittest.plugins\.)(?:codecoverage|diagnosticrecord|plugindata|testreport)(?=\.)|(?&lt;=[^.]matlab.wsdl\.)plugins(?=\.)|(?&lt;=[^.]matlabshared\.)supportpkg(?=\.)</string>
+						<string>(?&lt;=[^.]appdesigner\.)customcomponent(?=\.)|(?&lt;=[^.]matlab\.)(?:addons|apputil|codetools|diagram|engine|exception|graphics|io|lang|mixin|mixin|mock|net|perftest|project|settings|tall|test|ui|uitest|unittest|wsdl)(?=\.)|(?&lt;=[^.]matlab\.addons\.)toolbox(?=\.)|(?&lt;=[^.]matlab\.graphics\.)(?:animation|axis|chart|chartcontainer|function|illustration|layout|primitive|shape)(?=\.)|(?&lt;=[^.]matlab\.graphics\.axis\.)decorator(?=\.)|(?&lt;=[^.]matlab\.graphics\.chart\.)primitive(?=\.)|(?&lt;=[^.]matlab\.graphics\.chart\.internal\.)stackedplot(?=\.)|(?&lt;=[^.]matlab\.graphics\.chartcontainer\.)mixin(?=\.)|(?&lt;=[^.]matlab\.io\.)(?:datastore|xml)(?=\.)|(?&lt;=[^.]matlab\.io.xml\.)(?:dom|transform|xpath)(?=\.)|(?&lt;=[^.]matlab\.lang\.)correction(?=\.)|(?&lt;=[^.]matlab\.mixin\.)(?:system|util)(?=\.)|(?&lt;=[^.]matlab\.mock\.)(?:actions|chart|constraints)(?=\.)|(?&lt;=[^.]matlab\.net\.)http(?=\.)|(?&lt;=[^.]matlab\.net\.http\.)(?:field|io)(?=\.)|(?&lt;=[^.]matlab\.settings\.)mixin(?=\.)|(?&lt;=[^.]matlab\.test\.)behavior(?=\.)|(?&lt;=[^.]matlab\.ui\.)componentcontainer(?=\.)|(?&lt;=[^.]matlab\.uitest\.)measurement(?=\.)|(?&lt;=[^.]matlab\.uitest.measurement\.)chart(?=\.)|(?&lt;=[^.]matlab\.unittest\.)(?:constraints|diagnostics|fixtures|measurement|parameters|plugins|qualifications|selectors)(?=\.)|(?&lt;=[^.]matlab\.unittest.plugins\.)(?:codecoverage|diagnosticrecord|plugindata|testreport)(?=\.)|(?&lt;=[^.]matlab\.wsdl\.)plugins(?=\.)|(?&lt;=[^.]matlabshared\.)supportpkg(?=\.)</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -334,7 +334,7 @@
 						<key>name</key>
 						<string>support.function.builtin.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=[^.]matlab.addons\.)disableAddon\b|(?&lt;=[^.]matlab.addons\.)(?:enableAddon|install|installedAddons|isAddonEnabled|uninstall)\b|(?&lt;=[^.]matlab.addons.toolbox\.)installedToolboxes\b|(?&lt;=[^.]matlab.addons.toolbox\.)(?:installToolbox|packageToolbox|toolboxVersion|uninstallToolbox)\b|(?&lt;=[^.]matlab.apputil\.)(?:create|getInstalledAppInfo|install|package|run|uninstall)\b|(?&lt;=[^.]matlab.codetools\.)requiredFilesAndProducts\b|(?&lt;=[^.]matlab.engine\.)(?:connect_matlab|engineName|find_matlab|FutureResult|isEngineShared|shareEngine|start_matlab)\b|(?&lt;=[^.]matlab.mock.InteractionHistory\.)forMock\b|(?&lt;=[^.]matlab.NET\.)(?:base64decode|base64encode)\b|(?&lt;=[^.]matlab.project\.)(?:convertDefinitionFiles|createProject|deleteProject|loadProject|Project|rootProject)\b|(?&lt;=[^.]matlab.settings\.)loadSettingsCompatibilityResults\b|(?&lt;=[^.]matlab.settings\.)(?:mustBeIntegerScalar|mustBeLogicalScalar|mustBeNumericScalar|mustBeStringScalar|reloadFactoryFile)\b|(?&lt;=[^.]matlab.settings.FactoryGroup\.)createToolboxGroup\b|(?&lt;=[^.]matlab.wsdl\.)setWSDLToolPath\b</string>
+						<string>(?&lt;=[^.]matlab\.addons\.)disableAddon\b|(?&lt;=[^.]matlab\.addons\.)(?:enableAddon|install|installedAddons|isAddonEnabled|uninstall)\b|(?&lt;=[^.]matlab\.addons.toolbox\.)installedToolboxes\b|(?&lt;=[^.]matlab\.addons.toolbox\.)(?:installToolbox|packageToolbox|toolboxVersion|uninstallToolbox)\b|(?&lt;=[^.]matlab\.apputil\.)(?:create|getInstalledAppInfo|install|package|run|uninstall)\b|(?&lt;=[^.]matlab\.codetools\.)requiredFilesAndProducts\b|(?&lt;=[^.]matlab\.engine\.)(?:connect_matlab|engineName|find_matlab|FutureResult|isEngineShared|shareEngine|start_matlab)\b|(?&lt;=[^.]matlab\.mock.InteractionHistory\.)forMock\b|(?&lt;=[^.]matlab\.net\.)(?:base64decode|base64encode)\b|(?&lt;=[^.]matlab\.project\.)(?:convertDefinitionFiles|createProject|deleteProject|loadProject|Project|rootProject)\b|(?&lt;=[^.]matlab\.settings\.)loadSettingsCompatibilityResults\b|(?&lt;=[^.]matlab\.settings\.)(?:mustBeIntegerScalar|mustBeLogicalScalar|mustBeNumericScalar|mustBeStringScalar|reloadFactoryFile)\b|(?&lt;=[^.]matlab\.settings.FactoryGroup\.)createToolboxGroup\b|(?&lt;=[^.]matlab\.wsdl\.)setWSDLToolPath\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -342,7 +342,7 @@
 						<key>name</key>
 						<string>support.function.data.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=[^.]matlab.io\.)saveVariablesToScript\b|(?&lt;=[^.]matlab.lang\.)(?:makeUniqueStrings|makeValidName)\b|(?&lt;=[^.]matlab.tall\.)(?:blockMovingWindow|movingWindow|reduce|transform)\b|(?&lt;=[^.]matlab.uitest\.)unlock\b|(?&lt;=[^.]matlab.uitest.TestCase\.)forInteractiveUse\b|(?&lt;=[^.]matlab.unittest\.)(?:fromClass|fromFile|fromFolder|fromMethod|fromName|fromPackage|fromProject|run|selectIf|sortByFixtures)\b</string>
+						<string>(?&lt;=[^.]matlab\.io\.)saveVariablesToScript\b|(?&lt;=[^.]matlab\.lang\.)(?:makeUniqueStrings|makeValidName)\b|(?&lt;=[^.]matlab\.tall\.)(?:blockMovingWindow|movingWindow|reduce|transform)\b|(?&lt;=[^.]matlab\.uitest\.)unlock\b|(?&lt;=[^.]matlab\.uitest.TestCase\.)forInteractiveUse\b|(?&lt;=[^.]matlab\.unittest\.)(?:fromClass|fromFile|fromFolder|fromMethod|fromName|fromPackage|fromProject|run|selectIf|sortByFixtures)\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -350,7 +350,7 @@
 						<key>name</key>
 						<string>support.class.builtin.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=[^.]matlab\.)System\b|(?&lt;=[^.]matlab.diagram\.)ClassViewer\b|(?&lt;=[^.]matlab.exception\.)(?:JavaException|PyException)\b|(?&lt;=[^.]matlab\.graphics\.animation\.)AnimatedLine\b|(?&lt;=[^.]matlab\.graphics\.axis\.)(?:Axes|PolarAxes|GeographicAxes)\b|(?&lt;=[^.]matlab\.graphics\.axis\.decorator\.)(?:CategoricalRuler|DatetimeRuler|DurationRuler|GeographicRuler|NumericRuler)\b|(?&lt;=[^.]matlab\.graphics\.chart\.)(?:ScatterHistogramChart|StackedLineChart|WordCloudChart)\b|(?&lt;=[^.]matlab\.graphics\.chart\.internal\.stackedplot\.)(?:StackedAxesProperties|StackedLinesProperties)\b|(?&lt;=[^.]matlab.graphics.chartcontainer\.)ChartContainer\b|(?&lt;=[^.]matlab.graphics.chartcontainer\.)mixin\.)(?:Colorbar|Legend)\b|(?&lt;=[^.]matlab\.graphics\.chart\.primitive\.)(?:Area|Bar|BarChart|BubbleChart|BubbleCloud|Contour|ErrorBar|GeographicBubbleChart|HeatmapChart|Line|ParallelCoordinatesPlot|Quiver|Scatter|Stair|Stem|Surface)\b|(?&lt;=[^.]matlab\.graphics\.function\.)(?:FunctionLine|ImplicitFunctionLine|ParameterizedFunctionLine|FunctionContour|FunctionSurface|ImplicitFunctionSurface|ParameterizedFunctionSurface)\b|(?&lt;=[^.]matlab\.graphics\.illustration\.)(?:BubbleLegend|ColorBar|Legend)\b|(?&lt;=[^.]matlab\.graphics\.layout\.)TiledChartLayout\b|(?&lt;=[^.]matlab\.graphics\.primitive\.)(?:Group|Image|Light|Line|Path|Polygon|Rectangle|Surface|Text|Transform)\b|(?&lt;=[^.]matlab\.graphics\.shape\.)(?:Arrow|DoubleEndArrow|Ellipse|Line|Rectangle|TextArrow|TextBox)\b|(?&lt;=[^.]matlab.io\.)Datastore\b|(?&lt;=[^.]matlab.io.datastore\.)(?:BlockedFileSet|DsFileReader|DsFileSet|FileSet|FileWritable|FoldersPropertyProvider|HadoopLocationBased|Partitionable|Shuffleable)\b|(?&lt;=[^.]matlab.io.xml.dom\.)(?:Attr|CDATASection|Comment|Document|DocumentFragment|DocumentType|DOMWriter|Element|Entity|EntityResolver|FileWriter|Locator|NamedNodeMap|NodeList|Notation|Parser|ParserConfiguration|ProcessingInstruction|ResourceIdentifier|ResourceIdentifierType|Text|TypeInfo|WriterConfiguration)\b|(?&lt;=[^.]matlab.io.xml.transform\.)(?:ResultFile|ResultString|SourceDocument|SourceFile|SourceString|StylesheetSourceDocument|StylesheetSourceFile|StylesheetSourceString|Transformer)\b|(?&lt;=[^.]matlab.io.xml.xpath\.)(?:CompiledExpression|EvalResultType|Evaluator|PrefixResolver)\b|(?&lt;=[^.]matlab.lang\.)OnOffSwitchState\b|(?&lt;=[^.]matlab.lang.correction\.)(?:AppendArgumentsCorrection|ConvertToFunctionNotationCorrection|ReplaceIdentifierCorrection)\b|(?&lt;=[^.]matlab.mex\.)MexHost\b|(?&lt;=[^.]matlab.mixin\.)(?:Copyable|CustomDisplay|Heterogeneous|SetGet|SetGetExactNames)\b|(?&lt;=[^.]matlab.mixin.util\.)PropertyGroup\b|(?&lt;=[^.]matlab.mock\.)(?:AnyArguments|InteractionHistory|MethodCallBehavior|PropertyBehavior|PropertyGetBehavior|PropertySetBehavior|TestCase)\b|(?&lt;=[^.]matlab.mock.actions\.)(?:AssignOutputs|DoNothing|Invoke|ReturnStoredValue|StoreValue|ThrowException)\b|(?&lt;=[^.]matlab.mock.constraints\.)(?:Occurred|WasAccessed|WasCalled|WasSet)\b|(?&lt;=[^.]matlab.NET\.)(?:QueryParameter|URI)\b|(?&lt;=[^.]matlab.NET\.http\.)(?:AuthInfo|Cookie|CookieInfo|Credentials|HeaderField|HTTPException|HTTPOptions|LogRecord|MediaType|Message|MessageBody|ProgressMonitor|ProtocolVersion|RequestLine|RequestMessage|ResponseMessage|StartLine|StatusLine)\b|(?&lt;=[^.]matlab.NET\.http.field\.)(?:AcceptField|AuthenticateField|AuthenticationInfoField|AuthorizationField|ContentDispositionField|ContentLengthField|ContentLocationField|ContentTypeField|CookieField|DateField|GenericField|GenericParameterizedField|HTTPDateField|IntegerField|LocationField|MediaRangeField|SetCookieField|URIReferenceField)\b|(?&lt;=[^.]matlab.NET\.http.io\.)(?:BinaryConsumer|ContentConsumer|ContentProvider|FileConsumer|FileProvider|FormProvider|GenericConsumer|GenericProvider|ImageConsumer|ImageProvider|JSONConsumer|JSONProvider|MultipartConsumer|MultipartFormProvider|MultipartProvider|StringConsumer|StringProvider)\b|(?&lt;=[^.]matlab.perftest\.)(?:FixedTimeExperiment|FrequentistTimeExperiment|TestCase|TimeExperiment|TimeResult)\b|(?&lt;=[^.]matlab.settings\.)SettingsFileUpgrader\b|(?&lt;=[^.]matlab.system.mixin\.)FiniteSource\b|(?&lt;=[^.]matlab.test.behavior\.)Missing\b|(?&lt;=[^.]matlab\.ui\.)(?:Figure|Root)\b|(?&lt;=[^.]matlab.ui.componentcontainer\.)ComponentContainer\b|(?&lt;=[^.]matlab.uitest\.)TestCase\b|(?&lt;=[^.]matlab.unittest\.)(?:Test|TestCase|TestResult|TestRunner|TestSuite)\b|(?&lt;=[^.]matlab.unittest.constraints\.)(?:AbsoluteTolerance|AnyCellOf|AnyElementOf|BooleanConstraint|CellComparator|Constraint|ContainsSubstring|EndsWithSubstring|Eventually|EveryCellOf|EveryElementOf|HasElementCount|HasField|HasInf|HasLength|HasNaN|HasSize|HasUniqueElements|IsAnything|IsEmpty|IsEqualTo|IsFalse|IsFinite|IsGreaterThan|IsGreaterThanOrEqualTo|IsInstanceOf|IsLessThan|IsLessThanOrEqualTo|IsOfClass|IsReal|IsSameHandleAs|IsSameSetAs|IsScalar|IsSparse|IsSubsetOf|IsSubstringOf|IsSupersetOf|IsTrue|IssuesNoWarnings|IssuesWarnings|LogicalComparator|Matches|NumericComparator|ObjectComparator|PublicPropertyComparator|RelativeTolerance|ReturnsTrue|StartsWithSubstring|StringComparator|StructComparator|TableComparator|Throws|Tolerance)\b|(?&lt;=[^.]matlab.unittest.diagnostics\.)(?:ConstraintDiagnostic|Diagnostic|DiagnosticResult|DisplayDiagnostic|FigureDiagnostic|FileArtifact|FrameworkDiagnostic|FunctionHandleDiagnostic|LoggedDiagnosticEventData|ScreenshotDiagnostic|StringDiagnostic)\b|(?&lt;=[^.]matlab.unittest.fixtures\.)Fixture\b|(?&lt;=[^.]matlab.unittest.measurement\.)(?:DefaultMeasurementResult|MeasurementResult)\b|(?&lt;=[^.]matlab.unittest.measurement.chart\.)ComparisonPlot\b|(?&lt;=[^.]matlab.unittest.parameters\.)(?:ClassSetupParameter|EmptyParameter|MethodSetupParameter|Parameter|TestParameter)\b|(?&lt;=[^.]matlab.unittest.plugins\.)(?:CodeCoveragePlugin|DiagnosticsOutputPlugin|DiagnosticsRecordingPlugin|DiagnosticsValidationPlugin|FailOnWarningsPlugin|LoggingPlugin|OutputStream|Parallelizable|QualifyingPlugin|StopOnFailuresPlugin|TAPPlugin|TestReportPlugin|TestRunProgressPlugin|TestRunnerPlugin|ToFile|ToStandardOutput|ToUniqueFile|XMLPlugin)\b|(?&lt;=[^.]matlab.unittest.qualifications\.)(?:Assertable|AssertionFailedException|Assumable|AssumptionFailedException|ExceptionEventData|FatalAssertable|FatalAssertionFailedException|QualificationEventData|Verifiable)\b|(?&lt;=[^.]matlab.unittest.selector\.)(?:AndSelector|HasBaseFolder|HasName|HasParameter|HasProcedureName|HasSharedTestFixture|HasSuperclass|HasTag|NotSelector|OrSelector)\b|(?&lt;=[^.]matlab.unittest.TestRunner\.)(?:withNoPlugins|withTextOutput)\b|(?&lt;=[^.]matlab.unittest.TestSuite\.)(?:fromClass|fromFile|fromFolder|fromMethod|fromName|fromPackage|fromProject)\b|(?&lt;=[^.]matlab.wsdl\.)createWSDLClient\b</string>
+						<string>(?&lt;=[^.]matlab\.)System\b|(?&lt;=[^.]matlab\.diagram\.)ClassViewer\b|(?&lt;=[^.]matlab\.exception\.)(?:JavaException|PyException)\b|(?&lt;=[^.]matlab\.graphics\.animation\.)AnimatedLine\b|(?&lt;=[^.]matlab\.graphics\.axis\.)(?:Axes|PolarAxes|GeographicAxes)\b|(?&lt;=[^.]matlab\.graphics\.axis\.decorator\.)(?:CategoricalRuler|DatetimeRuler|DurationRuler|GeographicRuler|NumericRuler)\b|(?&lt;=[^.]matlab\.graphics\.chart\.)(?:ScatterHistogramChart|StackedLineChart|WordCloudChart)\b|(?&lt;=[^.]matlab\.graphics\.chart\.internal\.stackedplot\.)(?:StackedAxesProperties|StackedLinesProperties)\b|(?&lt;=[^.]matlab\.graphics.chartcontainer\.)ChartContainer\b|(?&lt;=[^.]matlab\.graphics.chartcontainer\.mixin\.)(?:Colorbar|Legend)\b|(?&lt;=[^.]matlab\.graphics\.chart\.primitive\.)(?:Area|Bar|BarChart|BubbleChart|BubbleCloud|Contour|ErrorBar|GeographicBubbleChart|HeatmapChart|Line|ParallelCoordinatesPlot|Quiver|Scatter|Stair|Stem|Surface)\b|(?&lt;=[^.]matlab\.graphics\.function\.)(?:FunctionLine|ImplicitFunctionLine|ParameterizedFunctionLine|FunctionContour|FunctionSurface|ImplicitFunctionSurface|ParameterizedFunctionSurface)\b|(?&lt;=[^.]matlab\.graphics\.illustration\.)(?:BubbleLegend|ColorBar|Legend)\b|(?&lt;=[^.]matlab\.graphics\.layout\.)TiledChartLayout\b|(?&lt;=[^.]matlab\.graphics\.primitive\.)(?:Group|Image|Light|Line|Path|Polygon|Rectangle|Surface|Text|Transform)\b|(?&lt;=[^.]matlab\.graphics\.shape\.)(?:Arrow|DoubleEndArrow|Ellipse|Line|Rectangle|TextArrow|TextBox)\b|(?&lt;=[^.]matlab\.io\.)Datastore\b|(?&lt;=[^.]matlab\.io.datastore\.)(?:BlockedFileSet|DsFileReader|DsFileSet|FileSet|FileWritable|FoldersPropertyProvider|HadoopLocationBased|Partitionable|Shuffleable)\b|(?&lt;=[^.]matlab\.io.xml.dom\.)(?:Attr|CDATASection|Comment|Document|DocumentFragment|DocumentType|DOMWriter|Element|Entity|EntityResolver|FileWriter|Locator|NamedNodeMap|NodeList|Notation|Parser|ParserConfiguration|ProcessingInstruction|ResourceIdentifier|ResourceIdentifierType|Text|TypeInfo|WriterConfiguration)\b|(?&lt;=[^.]matlab\.io.xml.transform\.)(?:ResultFile|ResultString|SourceDocument|SourceFile|SourceString|StylesheetSourceDocument|StylesheetSourceFile|StylesheetSourceString|Transformer)\b|(?&lt;=[^.]matlab\.io.xml.xpath\.)(?:CompiledExpression|EvalResultType|Evaluator|PrefixResolver)\b|(?&lt;=[^.]matlab\.lang\.)OnOffSwitchState\b|(?&lt;=[^.]matlab\.lang.correction\.)(?:AppendArgumentsCorrection|ConvertToFunctionNotationCorrection|ReplaceIdentifierCorrection)\b|(?&lt;=[^.]matlab\.mex\.)MexHost\b|(?&lt;=[^.]matlab\.mixin\.)(?:Copyable|CustomDisplay|Heterogeneous|SetGet|SetGetExactNames)\b|(?&lt;=[^.]matlab\.mixin.util\.)PropertyGroup\b|(?&lt;=[^.]matlab\.mock\.)(?:AnyArguments|InteractionHistory|MethodCallBehavior|PropertyBehavior|PropertyGetBehavior|PropertySetBehavior|TestCase)\b|(?&lt;=[^.]matlab\.mock.actions\.)(?:AssignOutputs|DoNothing|Invoke|ReturnStoredValue|StoreValue|ThrowException)\b|(?&lt;=[^.]matlab\.mock.constraints\.)(?:Occurred|WasAccessed|WasCalled|WasSet)\b|(?&lt;=[^.]matlab\.net\.)(?:QueryParameter|URI)\b|(?&lt;=[^.]matlab\.net\.http\.)(?:AuthInfo|Cookie|CookieInfo|Credentials|HeaderField|HTTPException|HTTPOptions|LogRecord|MediaType|Message|MessageBody|ProgressMonitor|ProtocolVersion|RequestLine|RequestMessage|ResponseMessage|StartLine|StatusLine)\b|(?&lt;=[^.]matlab\.net\.http.field\.)(?:AcceptField|AuthenticateField|AuthenticationInfoField|AuthorizationField|ContentDispositionField|ContentLengthField|ContentLocationField|ContentTypeField|CookieField|DateField|GenericField|GenericParameterizedField|HTTPDateField|IntegerField|LocationField|MediaRangeField|SetCookieField|URIReferenceField)\b|(?&lt;=[^.]matlab\.net\.http.io\.)(?:BinaryConsumer|ContentConsumer|ContentProvider|FileConsumer|FileProvider|FormProvider|GenericConsumer|GenericProvider|ImageConsumer|ImageProvider|JSONConsumer|JSONProvider|MultipartConsumer|MultipartFormProvider|MultipartProvider|StringConsumer|StringProvider)\b|(?&lt;=[^.]matlab\.perftest\.)(?:FixedTimeExperiment|FrequentistTimeExperiment|TestCase|TimeExperiment|TimeResult)\b|(?&lt;=[^.]matlab\.settings\.)SettingsFileUpgrader\b|(?&lt;=[^.]matlab\.system.mixin\.)FiniteSource\b|(?&lt;=[^.]matlab\.test.behavior\.)Missing\b|(?&lt;=[^.]matlab\.ui\.)(?:Figure|Root)\b|(?&lt;=[^.]matlab\.ui.componentcontainer\.)ComponentContainer\b|(?&lt;=[^.]matlab\.uitest\.)TestCase\b|(?&lt;=[^.]matlab\.unittest\.)(?:Test|TestCase|TestResult|TestRunner|TestSuite)\b|(?&lt;=[^.]matlab\.unittest.constraints\.)(?:AbsoluteTolerance|AnyCellOf|AnyElementOf|BooleanConstraint|CellComparator|Constraint|ContainsSubstring|EndsWithSubstring|Eventually|EveryCellOf|EveryElementOf|HasElementCount|HasField|HasInf|HasLength|HasNaN|HasSize|HasUniqueElements|IsAnything|IsEmpty|IsEqualTo|IsFalse|IsFinite|IsGreaterThan|IsGreaterThanOrEqualTo|IsInstanceOf|IsLessThan|IsLessThanOrEqualTo|IsOfClass|IsReal|IsSameHandleAs|IsSameSetAs|IsScalar|IsSparse|IsSubsetOf|IsSubstringOf|IsSupersetOf|IsTrue|IssuesNoWarnings|IssuesWarnings|LogicalComparator|Matches|NumericComparator|ObjectComparator|PublicPropertyComparator|RelativeTolerance|ReturnsTrue|StartsWithSubstring|StringComparator|StructComparator|TableComparator|Throws|Tolerance)\b|(?&lt;=[^.]matlab\.unittest.diagnostics\.)(?:ConstraintDiagnostic|Diagnostic|DiagnosticResult|DisplayDiagnostic|FigureDiagnostic|FileArtifact|FrameworkDiagnostic|FunctionHandleDiagnostic|LoggedDiagnosticEventData|ScreenshotDiagnostic|StringDiagnostic)\b|(?&lt;=[^.]matlab\.unittest.fixtures\.)Fixture\b|(?&lt;=[^.]matlab\.unittest.measurement\.)(?:DefaultMeasurementResult|MeasurementResult)\b|(?&lt;=[^.]matlab\.unittest.measurement.chart\.)ComparisonPlot\b|(?&lt;=[^.]matlab\.unittest.parameters\.)(?:ClassSetupParameter|EmptyParameter|MethodSetupParameter|Parameter|TestParameter)\b|(?&lt;=[^.]matlab\.unittest.plugins\.)(?:CodeCoveragePlugin|DiagnosticsOutputPlugin|DiagnosticsRecordingPlugin|DiagnosticsValidationPlugin|FailOnWarningsPlugin|LoggingPlugin|OutputStream|Parallelizable|QualifyingPlugin|StopOnFailuresPlugin|TAPPlugin|TestReportPlugin|TestRunProgressPlugin|TestRunnerPlugin|ToFile|ToStandardOutput|ToUniqueFile|XMLPlugin)\b|(?&lt;=[^.]matlab\.unittest.qualifications\.)(?:Assertable|AssertionFailedException|Assumable|AssumptionFailedException|ExceptionEventData|FatalAssertable|FatalAssertionFailedException|QualificationEventData|Verifiable)\b|(?&lt;=[^.]matlab\.unittest.selector\.)(?:AndSelector|HasBaseFolder|HasName|HasParameter|HasProcedureName|HasSharedTestFixture|HasSuperclass|HasTag|NotSelector|OrSelector)\b|(?&lt;=[^.]matlab\.unittest.TestRunner\.)(?:withNoPlugins|withTextOutput)\b|(?&lt;=[^.]matlab\.unittest.TestSuite\.)(?:fromClass|fromFile|fromFolder|fromMethod|fromName|fromPackage|fromProject)\b|(?&lt;=[^.]matlab\.wsdl\.)createWSDLClient\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -358,7 +358,7 @@
 						<key>name</key>
 						<string>support.function.storage.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=matlab.unittest.constraints\.)(?:IsFile|IsFolder)\b</string>
+						<string>(?&lt;=matlab\.unittest.constraints\.)(?:IsFile|IsFolder)\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -366,7 +366,7 @@
 						<key>name</key>
 						<string>support.constant.enum.matlab</string>
 						<key>match</key>
-						<string>(?:(?&lt;=matlab.NET\.)(?:ArrayFormat|AuthenticationScheme)|(?&lt;=matlab.NET\.http\.)(?:Disposition|RequestMethod|MessageType|StatusClass|StatusCode)|(?&lt;=matlab.unittest\.)(?:Scope|Verbosity))\b</string>
+						<string>(?:(?&lt;=matlab\.net\.)(?:ArrayFormat|AuthenticationScheme)|(?&lt;=matlab\.net\.http\.)(?:Disposition|RequestMethod|MessageType|StatusClass|StatusCode)|(?&lt;=matlab\.unittest\.)(?:Scope|Verbosity))\b</string>
 					</dict>
 				</array>
 			</dict>
@@ -377,7 +377,7 @@
 					<!-- #region package_properties -->
 					<dict>
 						<key>comment</key>
-						<string>matlab.diagram.ClassViewer</string>
+						<string>matlab\.diagram.ClassViewer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -385,7 +385,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.exception.JavaException</string>
+						<string>matlab\.exception.JavaException</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -393,7 +393,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.exception.PyException</string>
+						<string>matlab\.exception.PyException</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -401,7 +401,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.animation.AnimatedLine</string>
+						<string>matlab\.graphics.animation.AnimatedLine</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -409,7 +409,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.Axes</string>
+						<string>matlab\.graphics.axis.Axes</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -417,7 +417,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.GeographicAxes</string>
+						<string>matlab\.graphics.axis.GeographicAxes</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -425,7 +425,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.PolarAxes</string>
+						<string>matlab\.graphics.axis.PolarAxes</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -433,7 +433,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.decorator.CategoricalRuler</string>
+						<string>matlab\.graphics.axis.decorator.CategoricalRuler</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -441,7 +441,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.decorator.DatetimeRuler</string>
+						<string>matlab\.graphics.axis.decorator.DatetimeRuler</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -449,7 +449,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.decorator.DurationRuler</string>
+						<string>matlab\.graphics.axis.decorator.DurationRuler</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -457,7 +457,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.decorator.GeographicRuler</string>
+						<string>matlab\.graphics.axis.decorator.GeographicRuler</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -465,7 +465,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.axis.decorator.NumericRuler</string>
+						<string>matlab\.graphics.axis.decorator.NumericRuler</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -473,7 +473,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.ScatterHistogramChart</string>
+						<string>matlab\.graphics.chart.ScatterHistogramChart</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -481,7 +481,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.StackedLineChart</string>
+						<string>matlab\.graphics.chart.StackedLineChart</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -489,7 +489,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.WordCloudChart</string>
+						<string>matlab\.graphics.chart.WordCloudChart</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -497,7 +497,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Area</string>
+						<string>matlab\.graphics.chart.primitive.Area</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -505,7 +505,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Bar</string>
+						<string>matlab\.graphics.chart.primitive.Bar</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -513,7 +513,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.BarChart</string>
+						<string>matlab\.graphics.chart.primitive.BarChart</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -521,7 +521,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.BubbleChart</string>
+						<string>matlab\.graphics.chart.primitive.BubbleChart</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -529,7 +529,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.BubbleCloud</string>
+						<string>matlab\.graphics.chart.primitive.BubbleCloud</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -537,7 +537,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Contour</string>
+						<string>matlab\.graphics.chart.primitive.Contour</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -545,7 +545,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.ErrorBar</string>
+						<string>matlab\.graphics.chart.primitive.ErrorBar</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -553,7 +553,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.GeographicBubbleChart</string>
+						<string>matlab\.graphics.chart.primitive.GeographicBubbleChart</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -561,7 +561,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.HeatmapChart</string>
+						<string>matlab\.graphics.chart.primitive.HeatmapChart</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -569,7 +569,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Line</string>
+						<string>matlab\.graphics.chart.primitive.Line</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -577,7 +577,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.ParallelCoordinatesPlot</string>
+						<string>matlab\.graphics.chart.primitive.ParallelCoordinatesPlot</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -585,7 +585,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Quiver</string>
+						<string>matlab\.graphics.chart.primitive.Quiver</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -593,7 +593,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Scatter</string>
+						<string>matlab\.graphics.chart.primitive.Scatter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -601,7 +601,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.internal.stackedplot.StackedAxesProperties</string>
+						<string>matlab\.graphics.chart.internal.stackedplot.StackedAxesProperties</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -609,7 +609,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.internal.stackedplot.StackedLinesProperties</string>
+						<string>matlab\.graphics.chart.internal.stackedplot.StackedLinesProperties</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -617,7 +617,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Stair</string>
+						<string>matlab\.graphics.chart.primitive.Stair</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -625,7 +625,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Stem</string>
+						<string>matlab\.graphics.chart.primitive.Stem</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -633,7 +633,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chart.primitive.Surface</string>
+						<string>matlab\.graphics.chart.primitive.Surface</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -641,7 +641,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chartcontainer.ChartContainer</string>
+						<string>matlab\.graphics.chartcontainer.ChartContainer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -649,7 +649,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chartcontainer.mixin.Colorbar</string>
+						<string>matlab\.graphics.chartcontainer.mixin.Colorbar</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -657,7 +657,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.chartcontainer.mixin.Legend</string>
+						<string>matlab\.graphics.chartcontainer.mixin.Legend</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -665,7 +665,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.function.FunctionLine</string>
+						<string>matlab\.graphics.function.FunctionLine</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -673,7 +673,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.function.ImplicitFunctionLine</string>
+						<string>matlab\.graphics.function.ImplicitFunctionLine</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -681,7 +681,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.function.ParameterizedFunctionLine</string>
+						<string>matlab\.graphics.function.ParameterizedFunctionLine</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -689,7 +689,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.function.FunctionContour</string>
+						<string>matlab\.graphics.function.FunctionContour</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -697,7 +697,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.function.FunctionSurface</string>
+						<string>matlab\.graphics.function.FunctionSurface</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -705,7 +705,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.function.ImplicitFunctionSurface</string>
+						<string>matlab\.graphics.function.ImplicitFunctionSurface</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -713,7 +713,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.function.ParameterizedFunctionSurface</string>
+						<string>matlab\.graphics.function.ParameterizedFunctionSurface</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -721,7 +721,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.illustration.BubbleLegend</string>
+						<string>matlab\.graphics.illustration.BubbleLegend</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -729,7 +729,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.illustration.ColorBar</string>
+						<string>matlab\.graphics.illustration.ColorBar</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -737,7 +737,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.illustration.Legend</string>
+						<string>matlab\.graphics.illustration.Legend</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -745,7 +745,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.layout.TiledChartLayout</string>
+						<string>matlab\.graphics.layout.TiledChartLayout</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -753,7 +753,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Group</string>
+						<string>matlab\.graphics.primitive.Group</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -761,7 +761,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Image</string>
+						<string>matlab\.graphics.primitive.Image</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -769,7 +769,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Light</string>
+						<string>matlab\.graphics.primitive.Light</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -777,7 +777,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Line</string>
+						<string>matlab\.graphics.primitive.Line</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -785,7 +785,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Path</string>
+						<string>matlab\.graphics.primitive.Path</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -793,7 +793,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Polygon</string>
+						<string>matlab\.graphics.primitive.Polygon</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -801,7 +801,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Rectangle</string>
+						<string>matlab\.graphics.primitive.Rectangle</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -809,7 +809,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Surface</string>
+						<string>matlab\.graphics.primitive.Surface</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -817,7 +817,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Text</string>
+						<string>matlab\.graphics.primitive.Text</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -825,7 +825,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.primitive.Transform</string>
+						<string>matlab\.graphics.primitive.Transform</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -833,7 +833,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.shape.Arrow</string>
+						<string>matlab\.graphics.shape.Arrow</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -841,7 +841,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.shape.DoubleEndArrow</string>
+						<string>matlab\.graphics.shape.DoubleEndArrow</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -849,7 +849,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.shape.Ellipse</string>
+						<string>matlab\.graphics.shape.Ellipse</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -857,7 +857,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.shape.Line</string>
+						<string>matlab\.graphics.shape.Line</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -865,7 +865,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.shape.Rectangle</string>
+						<string>matlab\.graphics.shape.Rectangle</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -873,7 +873,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.shape.TextArrow</string>
+						<string>matlab\.graphics.shape.TextArrow</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -881,7 +881,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.graphics.shape.TextBox</string>
+						<string>matlab\.graphics.shape.TextBox</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -889,7 +889,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.BackgroundDispatchable</string>
+						<string>matlab\.io.datastore.BackgroundDispatchable</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -897,7 +897,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.BackgroundDispatchable</string>
+						<string>matlab\.io.datastore.BackgroundDispatchable</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -905,7 +905,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.BlockedFileSet</string>
+						<string>matlab\.io.datastore.BlockedFileSet</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -913,7 +913,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.DsFileReader</string>
+						<string>matlab\.io.datastore.DsFileReader</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -921,7 +921,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.DsFileSet</string>
+						<string>matlab\.io.datastore.DsFileSet</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -929,7 +929,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.FileSet</string>
+						<string>matlab\.io.datastore.FileSet</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -937,7 +937,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.FoldersPropertyProvider</string>
+						<string>matlab\.io.datastore.FoldersPropertyProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -945,7 +945,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.HadoopFileBased</string>
+						<string>matlab\.io.datastore.HadoopFileBased</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -953,7 +953,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.MiniBatchable</string>
+						<string>matlab\.io.datastore.MiniBatchable</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -961,7 +961,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.Partitionable</string>
+						<string>matlab\.io.datastore.Partitionable</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -969,7 +969,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.sdidatastore</string>
+						<string>matlab\.io.datastore.sdidatastore</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -977,7 +977,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.datastore.SimulationDatastore</string>
+						<string>matlab\.io.datastore.SimulationDatastore</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -985,7 +985,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Attr</string>
+						<string>matlab\.io.xml.dom.Attr</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -993,7 +993,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.CDataSection</string>
+						<string>matlab\.io.xml.dom.CDataSection</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1001,7 +1001,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Comment</string>
+						<string>matlab\.io.xml.dom.Comment</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1009,7 +1009,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Document</string>
+						<string>matlab\.io.xml.dom.Document</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1017,7 +1017,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.DocumentFragment</string>
+						<string>matlab\.io.xml.dom.DocumentFragment</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1025,7 +1025,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.DocumentType</string>
+						<string>matlab\.io.xml.dom.DocumentType</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1033,7 +1033,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.DocumentWriter</string>
+						<string>matlab\.io.xml.dom.DocumentWriter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1041,7 +1041,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.DOMWriter</string>
+						<string>matlab\.io.xml.dom.DOMWriter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1049,7 +1049,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Element</string>
+						<string>matlab\.io.xml.dom.Element</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1057,7 +1057,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Entity</string>
+						<string>matlab\.io.xml.dom.Entity</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1065,7 +1065,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.FileWriter</string>
+						<string>matlab\.io.xml.dom.FileWriter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1073,7 +1073,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Locator</string>
+						<string>matlab\.io.xml.dom.Locator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1081,7 +1081,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.NamedNodeMap</string>
+						<string>matlab\.io.xml.dom.NamedNodeMap</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1089,7 +1089,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.NodeList</string>
+						<string>matlab\.io.xml.dom.NodeList</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1097,7 +1097,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Notation</string>
+						<string>matlab\.io.xml.dom.Notation</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1105,7 +1105,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Parser</string>
+						<string>matlab\.io.xml.dom.Parser</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1113,7 +1113,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.ParserConfiguration</string>
+						<string>matlab\.io.xml.dom.ParserConfiguration</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1121,7 +1121,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.ProcessingInstruction</string>
+						<string>matlab\.io.xml.dom.ProcessingInstruction</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1129,7 +1129,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.ResourceIdentifier</string>
+						<string>matlab\.io.xml.dom.ResourceIdentifier</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1137,7 +1137,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.ResourceIdentifierType</string>
+						<string>matlab\.io.xml.dom.ResourceIdentifierType</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1145,7 +1145,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.Text</string>
+						<string>matlab\.io.xml.dom.Text</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1153,7 +1153,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.TypeInfo</string>
+						<string>matlab\.io.xml.dom.TypeInfo</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1161,7 +1161,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.dom.WriterConfiguration</string>
+						<string>matlab\.io.xml.dom.WriterConfiguration</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1169,7 +1169,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.ResultDocument</string>
+						<string>matlab\.io.xml.transform.ResultDocument</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1177,7 +1177,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.ResultFile</string>
+						<string>matlab\.io.xml.transform.ResultFile</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1185,7 +1185,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.ResultString</string>
+						<string>matlab\.io.xml.transform.ResultString</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1193,7 +1193,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.SourceDocument</string>
+						<string>matlab\.io.xml.transform.SourceDocument</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1201,7 +1201,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.SourceFile</string>
+						<string>matlab\.io.xml.transform.SourceFile</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1209,7 +1209,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.SourceString</string>
+						<string>matlab\.io.xml.transform.SourceString</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1217,7 +1217,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.StylesheetSourceDocument</string>
+						<string>matlab\.io.xml.transform.StylesheetSourceDocument</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1225,7 +1225,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.StylesheetSourceFile</string>
+						<string>matlab\.io.xml.transform.StylesheetSourceFile</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1233,7 +1233,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.StylesheetSourceString</string>
+						<string>matlab\.io.xml.transform.StylesheetSourceString</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1241,7 +1241,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.transform.Transformer</string>
+						<string>matlab\.io.xml.transform.Transformer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1249,7 +1249,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.xpath.CompiledExpression</string>
+						<string>matlab\.io.xml.xpath.CompiledExpression</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1257,7 +1257,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.xpath.EvalResultType</string>
+						<string>matlab\.io.xml.xpath.EvalResultType</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1265,7 +1265,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.io.xml.xpath.Evaluator</string>
+						<string>matlab\.io.xml.xpath.Evaluator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1273,7 +1273,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mex.MexHost</string>
+						<string>matlab\.mex.MexHost</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1281,7 +1281,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mixin.util.PropertyGroup</string>
+						<string>matlab\.mixin.util.PropertyGroup</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1289,7 +1289,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.actions.AssignOutputs</string>
+						<string>matlab\.mock.actions.AssignOutputs</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1297,7 +1297,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.InteractionHistory</string>
+						<string>matlab\.mock.InteractionHistory</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1305,7 +1305,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.actions.Invoke</string>
+						<string>matlab\.mock.actions.Invoke</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1313,7 +1313,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.actions.AssignOutputs</string>
+						<string>matlab\.mock.actions.AssignOutputs</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1321,7 +1321,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.constraints.Occurred</string>
+						<string>matlab\.mock.constraints.Occurred</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1329,7 +1329,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.constraints.WasAccessed</string>
+						<string>matlab\.mock.constraints.WasAccessed</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1337,7 +1337,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.constraints.WasCalled</string>
+						<string>matlab\.mock.constraints.WasCalled</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1345,7 +1345,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.mock.constraints.WasSet</string>
+						<string>matlab\.mock.constraints.WasSet</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1353,7 +1353,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.URI</string>
+						<string>matlab\.net.URI</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1361,7 +1361,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.Cookie</string>
+						<string>matlab\.net.http.Cookie</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1369,7 +1369,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.CookieInfo</string>
+						<string>matlab\.net.http.CookieInfo</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1377,7 +1377,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.Credentials</string>
+						<string>matlab\.net.http.Credentials</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1385,7 +1385,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.HeaderField</string>
+						<string>matlab\.net.http.HeaderField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1393,7 +1393,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.HTTPException</string>
+						<string>matlab\.net.http.HTTPException</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1401,7 +1401,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.HTTPOptions</string>
+						<string>matlab\.net.http.HTTPOptions</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1409,7 +1409,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.LogRecord</string>
+						<string>matlab\.net.http.LogRecord</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1417,7 +1417,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.AuthInfo</string>
+						<string>matlab\.net.http.AuthInfo</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1425,7 +1425,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.MediaType</string>
+						<string>matlab\.net.http.MediaType</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1433,7 +1433,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.Message</string>
+						<string>matlab\.net.http.Message</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1441,7 +1441,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.MessageBody</string>
+						<string>matlab\.net.http.MessageBody</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1449,7 +1449,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.ProgressMonitor</string>
+						<string>matlab\.net.http.ProgressMonitor</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1457,7 +1457,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.ProtocolVersion</string>
+						<string>matlab\.net.http.ProtocolVersion</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1465,7 +1465,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.RequestLine</string>
+						<string>matlab\.net.http.RequestLine</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1473,7 +1473,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.RequestMessage</string>
+						<string>matlab\.net.http.RequestMessage</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1481,7 +1481,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.ResponseMessage</string>
+						<string>matlab\.net.http.ResponseMessage</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1489,7 +1489,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.StatusClass</string>
+						<string>matlab\.net.http.StatusClass</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1497,7 +1497,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.StatusLine</string>
+						<string>matlab\.net.http.StatusLine</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1505,7 +1505,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.AcceptField</string>
+						<string>matlab\.net.http.field.AcceptField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1513,7 +1513,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.AuthenticateField</string>
+						<string>matlab\.net.http.field.AuthenticateField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1521,7 +1521,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.AuthenticationInfoField</string>
+						<string>matlab\.net.http.field.AuthenticationInfoField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1529,7 +1529,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.AuthorizationField</string>
+						<string>matlab\.net.http.field.AuthorizationField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1537,7 +1537,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.ContentDispositionField</string>
+						<string>matlab\.net.http.field.ContentDispositionField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1545,7 +1545,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.ContentLengthField</string>
+						<string>matlab\.net.http.field.ContentLengthField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1553,7 +1553,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.ContentLocationField</string>
+						<string>matlab\.net.http.field.ContentLocationField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1561,7 +1561,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.ContentTypeField</string>
+						<string>matlab\.net.http.field.ContentTypeField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1569,7 +1569,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.CookieField</string>
+						<string>matlab\.net.http.field.CookieField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1577,7 +1577,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.DateField</string>
+						<string>matlab\.net.http.field.DateField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1585,7 +1585,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.GenericField</string>
+						<string>matlab\.net.http.field.GenericField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1593,7 +1593,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.GenericParameterizedField</string>
+						<string>matlab\.net.http.field.GenericParameterizedField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1601,7 +1601,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.HTTPDateField</string>
+						<string>matlab\.net.http.field.HTTPDateField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1609,7 +1609,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.IntegerField</string>
+						<string>matlab\.net.http.field.IntegerField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1617,7 +1617,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.LocationField</string>
+						<string>matlab\.net.http.field.LocationField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1625,7 +1625,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.MediaRangeField</string>
+						<string>matlab\.net.http.field.MediaRangeField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1633,7 +1633,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.SetCookieField</string>
+						<string>matlab\.net.http.field.SetCookieField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1641,7 +1641,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.field.URIReferenceField</string>
+						<string>matlab\.net.http.field.URIReferenceField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1649,7 +1649,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.BinaryConsumer</string>
+						<string>matlab\.net.http.io.BinaryConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1657,7 +1657,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.ContentConsumer</string>
+						<string>matlab\.net.http.io.ContentConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1665,7 +1665,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.ContentProvider</string>
+						<string>matlab\.net.http.io.ContentProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1673,7 +1673,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.FileConsumer</string>
+						<string>matlab\.net.http.io.FileConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1681,7 +1681,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.FileProvider</string>
+						<string>matlab\.net.http.io.FileProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1689,7 +1689,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.FormProvider</string>
+						<string>matlab\.net.http.io.FormProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1697,7 +1697,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.GenericConsumer</string>
+						<string>matlab\.net.http.io.GenericConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1705,7 +1705,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.GenericProvider</string>
+						<string>matlab\.net.http.io.GenericProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1713,7 +1713,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.ImageConsumer</string>
+						<string>matlab\.net.http.io.ImageConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1721,7 +1721,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.ImageProvider</string>
+						<string>matlab\.net.http.io.ImageProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1729,7 +1729,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.JSONConsumer</string>
+						<string>matlab\.net.http.io.JSONConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1737,7 +1737,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.JSONProvider</string>
+						<string>matlab\.net.http.io.JSONProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1745,7 +1745,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.MultipartConsumer</string>
+						<string>matlab\.net.http.io.MultipartConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1753,7 +1753,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.MultipartFormProvider</string>
+						<string>matlab\.net.http.io.MultipartFormProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1761,7 +1761,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.MultipartProvider</string>
+						<string>matlab\.net.http.io.MultipartProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1769,7 +1769,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.StringProvider</string>
+						<string>matlab\.net.http.io.StringProvider</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1777,7 +1777,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.io.StringConsumer</string>
+						<string>matlab\.net.http.io.StringConsumer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1785,7 +1785,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.perftest.FixedTimeExperiment</string>
+						<string>matlab\.perftest.FixedTimeExperiment</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1793,7 +1793,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.perftest.TimeResult</string>
+						<string>matlab\.perftest.TimeResult</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1801,7 +1801,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.settings.SettingsFileUpgrader</string>
+						<string>matlab\.settings.SettingsFileUpgrader</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1809,7 +1809,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.test.behavior.Missing</string>
+						<string>matlab\.test.behavior.Missing</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1817,7 +1817,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.ui.Figure</string>
+						<string>matlab\.ui.Figure</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1825,7 +1825,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.ui.Root</string>
+						<string>matlab\.ui.Root</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1833,7 +1833,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.ui.componentcontainer.ComponentContainer</string>
+						<string>matlab\.ui.componentcontainer.ComponentContainer</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1841,7 +1841,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.Test</string>
+						<string>matlab\.unittest.Test</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1849,7 +1849,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.FunctionTestCase</string>
+						<string>matlab\.unittest.FunctionTestCase</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1857,7 +1857,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.TestCase</string>
+						<string>matlab\.unittest.TestCase</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1865,7 +1865,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.TestResult</string>
+						<string>matlab\.unittest.TestResult</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1873,7 +1873,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IssuesNoWarnings</string>
+						<string>matlab\.unittest.constraints.IssuesNoWarnings</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1881,7 +1881,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.AnyCellOf</string>
+						<string>matlab\.unittest.constraints.AnyCellOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1889,7 +1889,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.ContainsSubstring</string>
+						<string>matlab\.unittest.constraints.ContainsSubstring</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1897,7 +1897,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.EndsWithSubstring</string>
+						<string>matlab\.unittest.constraints.EndsWithSubstring</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1905,7 +1905,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.Eventually</string>
+						<string>matlab\.unittest.constraints.Eventually</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1913,7 +1913,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.HasLength</string>
+						<string>matlab\.unittest.constraints.HasLength</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1921,7 +1921,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsAnything</string>
+						<string>matlab\.unittest.constraints.IsAnything</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1929,7 +1929,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsEqualTo</string>
+						<string>matlab\.unittest.constraints.IsEqualTo</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1937,7 +1937,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsSubstringOf</string>
+						<string>matlab\.unittest.constraints.IsSubstringOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1945,7 +1945,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IssuesNoWarnings</string>
+						<string>matlab\.unittest.constraints.IssuesNoWarnings</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1953,7 +1953,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IssuesWarnings</string>
+						<string>matlab\.unittest.constraints.IssuesWarnings</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1961,7 +1961,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.Matches</string>
+						<string>matlab\.unittest.constraints.Matches</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1969,7 +1969,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.StartsWithSubstring</string>
+						<string>matlab\.unittest.constraints.StartsWithSubstring</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1977,7 +1977,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.StringComparator</string>
+						<string>matlab\.unittest.constraints.StringComparator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1985,7 +1985,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.StructComparator</string>
+						<string>matlab\.unittest.constraints.StructComparator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -1993,7 +1993,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.Throws</string>
+						<string>matlab\.unittest.constraints.Throws</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2001,7 +2001,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.ConstraintDiagnostic</string>
+						<string>matlab\.unittest.diagnostics.ConstraintDiagnostic</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2009,7 +2009,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.Diagnostic</string>
+						<string>matlab\.unittest.diagnostics.Diagnostic</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2017,7 +2017,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.DiagnosticResult</string>
+						<string>matlab\.unittest.diagnostics.DiagnosticResult</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2025,7 +2025,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.DisplayDiagnostic</string>
+						<string>matlab\.unittest.diagnostics.DisplayDiagnostic</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2033,7 +2033,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.FigureDiagnostic</string>
+						<string>matlab\.unittest.diagnostics.FigureDiagnostic</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2041,7 +2041,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.FileArtifact</string>
+						<string>matlab\.unittest.diagnostics.FileArtifact</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2049,7 +2049,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.LoggedDiagnosticEventData</string>
+						<string>matlab\.unittest.diagnostics.LoggedDiagnosticEventData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2057,7 +2057,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.ScreenshotDiagnostic</string>
+						<string>matlab\.unittest.diagnostics.ScreenshotDiagnostic</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2065,7 +2065,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.fixtures.Fixture</string>
+						<string>matlab\.unittest.fixtures.Fixture</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2073,7 +2073,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.fixtures.SuppressedWarningsFixture</string>
+						<string>matlab\.unittest.fixtures.SuppressedWarningsFixture</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2081,7 +2081,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.measurement.DefaultMeasurementResult</string>
+						<string>matlab\.unittest.measurement.DefaultMeasurementResult</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2089,7 +2089,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.measurement.MeasurementResult</string>
+						<string>matlab\.unittest.measurement.MeasurementResult</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2097,7 +2097,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.measurement.chart.ComparisonPlot</string>
+						<string>matlab\.unittest.measurement.chart.ComparisonPlot</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2105,7 +2105,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.parameters.ClassSetupParameter</string>
+						<string>matlab\.unittest.parameters.ClassSetupParameter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2113,7 +2113,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.parameters.EmptyParameter</string>
+						<string>matlab\.unittest.parameters.EmptyParameter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2121,7 +2121,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.parameters.MethodSetupParameter</string>
+						<string>matlab\.unittest.parameters.MethodSetupParameter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2129,7 +2129,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.parameters.Parameter</string>
+						<string>matlab\.unittest.parameters.Parameter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2137,7 +2137,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.parameters.TestParameter</string>
+						<string>matlab\.unittest.parameters.TestParameter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2145,7 +2145,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.DiagnosticsOutputPlugin</string>
+						<string>matlab\.unittest.plugins.DiagnosticsOutputPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2153,7 +2153,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.DiagnosticsRecordingPlugin</string>
+						<string>matlab\.unittest.plugins.DiagnosticsRecordingPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2161,7 +2161,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.FailOnWarningsPlugin</string>
+						<string>matlab\.unittest.plugins.FailOnWarningsPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2169,7 +2169,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.IncludeAssumptionFailures</string>
+						<string>matlab\.unittest.plugins.IncludeAssumptionFailures</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2177,7 +2177,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.LoggingPlugin</string>
+						<string>matlab\.unittest.plugins.LoggingPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2185,7 +2185,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.TestReportPlugin</string>
+						<string>matlab\.unittest.plugins.TestReportPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2193,7 +2193,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.testreport.DOCXTestReportPlugin</string>
+						<string>matlab\.unittest.plugins.testreport.DOCXTestReportPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2201,7 +2201,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.testreport.HTMLTestReportPlugin</string>
+						<string>matlab\.unittest.plugins.testreport.HTMLTestReportPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2209,7 +2209,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.testreport.PDFTestReportPlugin</string>
+						<string>matlab\.unittest.plugins.testreport.PDFTestReportPlugin</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2217,7 +2217,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.qualifications.AssumptionFailedException</string>
+						<string>matlab\.unittest.qualifications.AssumptionFailedException</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2225,7 +2225,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.qualifications.ExceptionEventData</string>
+						<string>matlab\.unittest.qualifications.ExceptionEventData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2233,7 +2233,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.qualifications.QualificationEventData</string>
+						<string>matlab\.unittest.qualifications.QualificationEventData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2241,7 +2241,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.qualifications.FatalAssertionFailedException</string>
+						<string>matlab\.unittest.qualifications.FatalAssertionFailedException</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2249,7 +2249,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.AndSelector</string>
+						<string>matlab\.unittest.selectors.AndSelector</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2257,7 +2257,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.HasParameter</string>
+						<string>matlab\.unittest.selectors.HasParameter</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2265,7 +2265,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.OrSelector</string>
+						<string>matlab\.unittest.selectors.OrSelector</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2273,7 +2273,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.diagnosticrecord.DiagnosticRecord</string>
+						<string>matlab\.unittest.plugins.diagnosticrecord.DiagnosticRecord</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2281,7 +2281,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.diagnosticrecord.ExceptionDiagnosticRecord</string>
+						<string>matlab\.unittest.plugins.diagnosticrecord.ExceptionDiagnosticRecord</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2289,7 +2289,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.diagnosticrecord.LoggedDiagnosticRecord</string>
+						<string>matlab\.unittest.plugins.diagnosticrecord.LoggedDiagnosticRecord</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2297,7 +2297,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.diagnosticrecord.QualificationDiagnosticRecord</string>
+						<string>matlab\.unittest.plugins.diagnosticrecord.QualificationDiagnosticRecord</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2305,7 +2305,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.FinalizedResultPluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.FinalizedResultPluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2313,7 +2313,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.FinalizedSuitePluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.FinalizedSuitePluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2321,7 +2321,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.ImplicitFixturePluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.ImplicitFixturePluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2329,7 +2329,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.RunPluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.RunPluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2337,7 +2337,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.SharedTestFixturePluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.SharedTestFixturePluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2345,7 +2345,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.TestContentCreationPluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.TestContentCreationPluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2353,7 +2353,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.TestSuiteRunPluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.TestSuiteRunPluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2361,7 +2361,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.AbsoluteTolerance</string>
+						<string>matlab\.unittest.constraints.AbsoluteTolerance</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2369,7 +2369,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.AnyElementOf</string>
+						<string>matlab\.unittest.constraints.AnyElementOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2377,7 +2377,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.CellComparator</string>
+						<string>matlab\.unittest.constraints.CellComparator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2385,7 +2385,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.EveryCellOf</string>
+						<string>matlab\.unittest.constraints.EveryCellOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2393,7 +2393,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.EveryElementOf</string>
+						<string>matlab\.unittest.constraints.EveryElementOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2401,7 +2401,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.HasElementCount</string>
+						<string>matlab\.unittest.constraints.HasElementCount</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2409,7 +2409,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.HasField</string>
+						<string>matlab\.unittest.constraints.HasField</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2417,7 +2417,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.HasSize</string>
+						<string>matlab\.unittest.constraints.HasSize</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2425,7 +2425,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsGreaterThan</string>
+						<string>matlab\.unittest.constraints.IsGreaterThan</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2433,7 +2433,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsGreaterThanOrEqualTo</string>
+						<string>matlab\.unittest.constraints.IsGreaterThanOrEqualTo</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2441,7 +2441,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsInstanceOf</string>
+						<string>matlab\.unittest.constraints.IsInstanceOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2449,7 +2449,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsLessThan</string>
+						<string>matlab\.unittest.constraints.IsLessThan</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2457,7 +2457,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsLessThanOrEqualTo</string>
+						<string>matlab\.unittest.constraints.IsLessThanOrEqualTo</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2465,7 +2465,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsOfClass</string>
+						<string>matlab\.unittest.constraints.IsOfClass</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2473,7 +2473,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsSameSetAs</string>
+						<string>matlab\.unittest.constraints.IsSameSetAs</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2481,7 +2481,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsSubsetOf</string>
+						<string>matlab\.unittest.constraints.IsSubsetOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2489,7 +2489,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.IsSupersetOf</string>
+						<string>matlab\.unittest.constraints.IsSupersetOf</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2497,7 +2497,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.LogicalComparator</string>
+						<string>matlab\.unittest.constraints.LogicalComparator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2505,7 +2505,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.NumericComparator</string>
+						<string>matlab\.unittest.constraints.NumericComparator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2513,7 +2513,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.ObjectComparator</string>
+						<string>matlab\.unittest.constraints.ObjectComparator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2521,7 +2521,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.RelativeTolerance</string>
+						<string>matlab\.unittest.constraints.RelativeTolerance</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2529,7 +2529,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.constraints.TableComparator</string>
+						<string>matlab\.unittest.constraints.TableComparator</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2537,7 +2537,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.diagnostics.FunctionHandleDiagnostic</string>
+						<string>matlab\.unittest.diagnostics.FunctionHandleDiagnostic</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2545,7 +2545,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.ToFile</string>
+						<string>matlab\.unittest.plugins.ToFile</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2553,7 +2553,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.ToUniqueFile</string>
+						<string>matlab\.unittest.plugins.ToUniqueFile</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2561,7 +2561,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.qualifications.AssertionFailedException</string>
+						<string>matlab\.unittest.qualifications.AssertionFailedException</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2569,7 +2569,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.HasBaseFolder</string>
+						<string>matlab\.unittest.selectors.HasBaseFolder</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2577,7 +2577,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.HasName</string>
+						<string>matlab\.unittest.selectors.HasName</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2585,7 +2585,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.HasProcedureName</string>
+						<string>matlab\.unittest.selectors.HasProcedureName</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2593,7 +2593,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.HasSharedTextFixture</string>
+						<string>matlab\.unittest.selectors.HasSharedTextFixture</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2601,7 +2601,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.HasTag</string>
+						<string>matlab\.unittest.selectors.HasTag</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2609,7 +2609,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.selectors.NotSelector</string>
+						<string>matlab\.unittest.selectors.NotSelector</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2617,7 +2617,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.codecoverage.CoberturaFormat</string>
+						<string>matlab\.unittest.plugins.codecoverage.CoberturaFormat</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2625,7 +2625,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.codecoverage.CoverageReport</string>
+						<string>matlab\.unittest.plugins.codecoverage.CoverageReport</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2633,7 +2633,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.plugins.plugindata.PluginData</string>
+						<string>matlab\.unittest.plugins.plugindata.PluginData</string>
 						<key>name</key>
 						<string>support.variable.property.matlab</string>
 						<key>match</key>
@@ -2649,7 +2649,7 @@
 					<!-- #region package_enum_members -->
 					<dict>
 						<key>comment</key>
-						<string>matlab.lang.OnOffSwitchState</string>
+						<string>matlab\.lang.OnOffSwitchState</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2657,7 +2657,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.ArrayFormat</string>
+						<string>matlab\.net.ArrayFormat</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2665,7 +2665,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.Disposition</string>
+						<string>matlab\.net.http.Disposition</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2673,7 +2673,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.MessageType</string>
+						<string>matlab\.net.http.MessageType</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2681,7 +2681,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.StatusCode</string>
+						<string>matlab\.net.http.StatusCode</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2689,7 +2689,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.Scope</string>
+						<string>matlab\.unittest.Scope</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2697,7 +2697,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.unittest.Verbosity</string>
+						<string>matlab\.unittest.Verbosity</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2705,7 +2705,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.URI</string>
+						<string>matlab\.net.URI</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2713,7 +2713,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.AuthenticationScheme</string>
+						<string>matlab\.net.http.AuthenticationScheme</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2721,7 +2721,7 @@
 					</dict>
 					<dict>
 						<key>comment</key>
-						<string>matlab.net.http.RequestMethod</string>
+						<string>matlab\.net.http.RequestMethod</string>
 						<key>name</key>
 						<string>support.variable.enummember.matlab</string>
 						<key>match</key>
@@ -2740,7 +2740,7 @@
 						<key>name</key>
 						<string>support.constant.builtin.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=\.)matlab(?=\.)|(?&lt;=\.matlab\.)(?:codeanalyzer|colors|commandwindow)(?=\.)|(?&lt;=\.matlab\.)(?:fonts|general)(?=\.)|(?&lt;=\.matlab.general\.)matfile(?=\.)|(?&lt;=\.matlab\.)keyboard(?=\.)|(?&lt;=\.matlab.keyboard\.)suggestions(?=\.)|(?&lt;=\.matlab\.)editor(?=\.)|(?&lt;=\.matlab.editor\.)displaysettings(?=\.)|(?&lt;=\.matlab.editor.displaysettings\.)linelimit(?=\.)|(?&lt;=\.matlab.editor\.)tab(?=\.)|(?&lt;=\.matlab.editor\.)language(?=\.)|(?&lt;=\.matlab.editor.language\.)matlab(?=\.)|(?&lt;=\.matlab.editor.language.matlab\.)comments(?=\.)|(?&lt;=\.matlab.editor\.)(?:autocoding|autoformat|backup|codefolding|export)(?=\.)|(?&lt;=\.matlab.editor.export\.)(?:latex|pagesetup|pdf)(?=\.)|(?&lt;=\.matlab.editor.export.pagesetup\.)pdf(?=\.)|(?&lt;=\.matlab.editor.export.pagesetup\.)(docx|latex)(?=\.)|(?&lt;=\.matlab\.)appdesigner(?=\.)|(?&lt;=\.matlab.appdesigner\.)(?:compbrowser|designview|history)(?=\.)</string>
+						<string>(?&lt;=\.)matlab(?=\.)|(?&lt;=\.matlab\.)(?:codeanalyzer|colors|commandwindow)(?=\.)|(?&lt;=\.matlab\.)(?:fonts|general)(?=\.)|(?&lt;=\.matlab\.general\.)matfile(?=\.)|(?&lt;=\.matlab\.)keyboard(?=\.)|(?&lt;=\.matlab\.keyboard\.)suggestions(?=\.)|(?&lt;=\.matlab\.)editor(?=\.)|(?&lt;=\.matlab\.editor\.)displaysettings(?=\.)|(?&lt;=\.matlab\.editor.displaysettings\.)linelimit(?=\.)|(?&lt;=\.matlab\.editor\.)tab(?=\.)|(?&lt;=\.matlab\.editor\.)language(?=\.)|(?&lt;=\.matlab\.editor.language\.)matlab(?=\.)|(?&lt;=\.matlab\.editor.language.matlab\.)comments(?=\.)|(?&lt;=\.matlab\.editor\.)(?:autocoding|autoformat|backup|codefolding|export)(?=\.)|(?&lt;=\.matlab\.editor.export\.)(?:latex|pagesetup|pdf)(?=\.)|(?&lt;=\.matlab\.editor.export.pagesetup\.)pdf(?=\.)|(?&lt;=\.matlab\.editor.export.pagesetup\.)(docx|latex)(?=\.)|(?&lt;=\.matlab\.)appdesigner(?=\.)|(?&lt;=\.matlab\.appdesigner\.)(?:compbrowser|designview|history)(?=\.)</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -2748,7 +2748,7 @@
 						<key>name</key>
 						<string>support.constant.property.matlab</string>
 						<key>match</key>
-						<string>(?&lt;=\.matlab.codeanalyzer\.)(?:ActiveConfigurationFile|EnableIntegratedMessages|UnderlineOption)(?=\.)|(?&lt;=\.matlab.colors\.)(?:CommentColor|KeywordColor|StringColor|SyntaxErrorColor|SystemCommandColor|UnterminatedStringColor|ValidationSectionColor)(?=\.)|(?&lt;=\.matlab.colors.commandwindow\.)(?:ErrorColor|HyperlinkColor|WarningColor)(?=\.)|(?&lt;=\.matlab.colors.programmingtools\.)(?:AutofixHighlightColor|AutomaticallyHighlightVariables|CodeAnalyzerWarningColor|HighlightAutofixes|ShowVariablesWithSharedScope|VariablesWithSharedScopeColor|VariableHighlightColor)(?=\.)|(?&lt;=\.matlab.commandwindow\.)(?:DisplayLineSpacing|NumericFormat|ShowCompletionsAutomatically|UseEightyColumnDisplayWidth)(?=\.)|(?&lt;=\.matlab.fonts.codefont\.)(?:Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.normal\.)(?:Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.normal\.)(?:Color|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.heading1\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.heading2\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.heading3\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.code\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab.fonts.editor.codefont\.)Size(?=\.)|(?&lt;=\.matlab.general.matfile\.)(?:EnableCompression|SaveFormat)(?=\.)|(?&lt;=\.matlab.keyboard.suggestions\.)ShowAutomatically(?=\.)|(?&lt;=\.matlab.keyboard.delimeter\.)(?:ShowMatchesOnArrowKey|ShowMatchesWhenTyping)(?=\.)|(?&lt;=\.matlab.editor\.)(?:AddLineTerminationOnSave|AllowFigureAnimation|OnlyStepInToUserFunctions|OpenFileAtBreakpoint|OtherEditor|RecentFileListSize|ReloadFilesOnChange|ReopenFilesOnRestart|SaveFilesOnClickAway|UseMATLABEditor)(?=\.)|(?&lt;=\.matlab.editor.displaysettings\.)(?:DataTipsInEditMode|HighlightCurrentLine|HighlightCurrentLineColor|ShowLineNumbers|ShowOpenAsLiveScriptBanner|ShowWelcomeToLiveEditorBanner)(?=\.)|(?&lt;=\.matlab.editor.displaysettings.linelimit\.)(?:LineColor|LineColumn|LineWidth|ShowLine)|(?&lt;=\.matlab.editor.tab\.)(?:EmacsStyle|IndentSize|InsertSpaces|TabSize)(?=\.)|(?&lt;=\.matlab.editor.language.matlab\.)(?:EnableSyntaxHighlighting|EnableVariableAndFunctionRenaming|FunctionIndentingFormat|SmartIndentWhileTyping)(?=\.)|(?&lt;=\.matlab.editor.language.matlab.comments\.)(?:FromCommentStart|MaxWidth|WrapAutomatically)(?=\.)|(?&lt;=\.matlab.editor.codefolding\.)(?:EnableCodeFolding|FoldArgumentsBlocks|FoldBlockComments|FoldClassCode|FoldClassEnumerationBlocks|FoldClassEventBlocks|FoldClassMethodBlocks|FoldClassPropertiesBlocks|FoldComments|FoldForAndParforBlocks|FoldFunctionCode|FoldIfElseBlocks|FoldSections|FoldSpmdBlocks|FoldSwitchCaseBlocks|FoldTryCatchBlocks|FoldWhileBlocks|InitiallyFoldArgumentsBlocks|InitiallyFoldBlockComments|InitiallyFoldClassCode|InitiallyFoldClassEnumerationBlocks|InitiallyFoldClassEventBlocks|InitiallyFoldClassMethodBlocks|InitiallyFoldClassPropertiesBlocks|InitiallyFoldComments|InitiallyFoldForAndParforBlocks|InitiallyFoldFunctionCode|InitiallyFoldIfElseBlocks|InitiallyFoldSections|InitiallyFoldSpmdBlocks|InitiallyFoldSwitchCaseBlocks|InitiallyFoldTryCatchBlocks|InitiallyFoldWhileBlocks)(?=\.)|(?&lt;=\.matlab.editor.backup\.)(?:EnableFileBackup|DeleteOnClose|FileExtensionToAppend|FileExtensionToReplace|Frequency|ReplaceExtension|SaveIntoSourceFolder|SaveToFolder|SaveUntiltled)(?=\.)|(?&lt;=\.matlab.editor.autoformat\.)(?:AngleBracketsForHyperlink|AsteriskForItalicAndBold|AutomaticBulletedList|AutomaticNumberedList|BacktickAndBarForMonospace|DollarSignForLatex|EnableAutoFormatting|HashtagForTitle|HashtagsForHeading|LabelURLToHyperlink|SectionBreak|SectionBreakAndHeading|TrademarkCopyrightSymbol|UnderscoreForItalicAndBold|URLToHyperlink)(?=\.)|(?&lt;=\.matlab.editor.autocoding\.)(?:EnableAutoCoding|Parentheses|CurlyBraces|SquareBrackets|SingleQuotes|DoubleQuotes|Comments|CharacterVectors|Strings|SplitParentheses|ControlFlows|Definitions)(?=\.)|(?&lt;=\.matlab.editor.export\.)(?:FigureFormat|FigureResolution)(?=\.)|(?&lt;=\.matlab.editor.export.pagesetup\.)(?:Margins|Orientation|PaperSize)(?=\.)|(?&lt;=\.matlab.editor.export.pdf\.)(?:FigureFormat|FigureResolution)(?=\.)|(?&lt;=\.matlab.editor.export.pagesetup.pdf\.)(?:Margins|Orientation|PaperSize)(?=\.)|(?&lt;=\.matlab.editor.export.latex\.)(?:FigureFormat|FigureResolution)(?=\.)|(?&lt;=\.matlab.editor.export.pagesetup.latex\.)(?:PaperSize|Orientation|Margins|PaperSize|Orientation|Margins)(?=\.)</string>
+						<string>(?&lt;=\.matlab\.codeanalyzer\.)(?:ActiveConfigurationFile|EnableIntegratedMessages|UnderlineOption)(?=\.)|(?&lt;=\.matlab\.colors\.)(?:CommentColor|KeywordColor|StringColor|SyntaxErrorColor|SystemCommandColor|UnterminatedStringColor|ValidationSectionColor)(?=\.)|(?&lt;=\.matlab\.colors.commandwindow\.)(?:ErrorColor|HyperlinkColor|WarningColor)(?=\.)|(?&lt;=\.matlab\.colors.programmingtools\.)(?:AutofixHighlightColor|AutomaticallyHighlightVariables|CodeAnalyzerWarningColor|HighlightAutofixes|ShowVariablesWithSharedScope|VariablesWithSharedScopeColor|VariableHighlightColor)(?=\.)|(?&lt;=\.matlab\.commandwindow\.)(?:DisplayLineSpacing|NumericFormat|ShowCompletionsAutomatically|UseEightyColumnDisplayWidth)(?=\.)|(?&lt;=\.matlab\.fonts.codefont\.)(?:Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.normal\.)(?:Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.normal\.)(?:Color|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.heading1\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.heading2\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.heading3\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.title\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.code\.)(?:Color|Name|Size|Style)(?=\.)|(?&lt;=\.matlab\.fonts.editor.codefont\.)Size(?=\.)|(?&lt;=\.matlab\.general.matfile\.)(?:EnableCompression|SaveFormat)(?=\.)|(?&lt;=\.matlab\.keyboard.suggestions\.)ShowAutomatically(?=\.)|(?&lt;=\.matlab\.keyboard.delimeter\.)(?:ShowMatchesOnArrowKey|ShowMatchesWhenTyping)(?=\.)|(?&lt;=\.matlab\.editor\.)(?:AddLineTerminationOnSave|AllowFigureAnimation|OnlyStepInToUserFunctions|OpenFileAtBreakpoint|OtherEditor|RecentFileListSize|ReloadFilesOnChange|ReopenFilesOnRestart|SaveFilesOnClickAway|UseMATLABEditor)(?=\.)|(?&lt;=\.matlab\.editor.displaysettings\.)(?:DataTipsInEditMode|HighlightCurrentLine|HighlightCurrentLineColor|ShowLineNumbers|ShowOpenAsLiveScriptBanner|ShowWelcomeToLiveEditorBanner)(?=\.)|(?&lt;=\.matlab\.editor.displaysettings.linelimit\.)(?:LineColor|LineColumn|LineWidth|ShowLine)|(?&lt;=\.matlab\.editor.tab\.)(?:EmacsStyle|IndentSize|InsertSpaces|TabSize)(?=\.)|(?&lt;=\.matlab\.editor.language.matlab\.)(?:EnableSyntaxHighlighting|EnableVariableAndFunctionRenaming|FunctionIndentingFormat|SmartIndentWhileTyping)(?=\.)|(?&lt;=\.matlab\.editor.language.matlab\.comments\.)(?:FromCommentStart|MaxWidth|WrapAutomatically)(?=\.)|(?&lt;=\.matlab\.editor.codefolding\.)(?:EnableCodeFolding|FoldArgumentsBlocks|FoldBlockComments|FoldClassCode|FoldClassEnumerationBlocks|FoldClassEventBlocks|FoldClassMethodBlocks|FoldClassPropertiesBlocks|FoldComments|FoldForAndParforBlocks|FoldFunctionCode|FoldIfElseBlocks|FoldSections|FoldSpmdBlocks|FoldSwitchCaseBlocks|FoldTryCatchBlocks|FoldWhileBlocks|InitiallyFoldArgumentsBlocks|InitiallyFoldBlockComments|InitiallyFoldClassCode|InitiallyFoldClassEnumerationBlocks|InitiallyFoldClassEventBlocks|InitiallyFoldClassMethodBlocks|InitiallyFoldClassPropertiesBlocks|InitiallyFoldComments|InitiallyFoldForAndParforBlocks|InitiallyFoldFunctionCode|InitiallyFoldIfElseBlocks|InitiallyFoldSections|InitiallyFoldSpmdBlocks|InitiallyFoldSwitchCaseBlocks|InitiallyFoldTryCatchBlocks|InitiallyFoldWhileBlocks)(?=\.)|(?&lt;=\.matlab\.editor.backup\.)(?:EnableFileBackup|DeleteOnClose|FileExtensionToAppend|FileExtensionToReplace|Frequency|ReplaceExtension|SaveIntoSourceFolder|SaveToFolder|SaveUntiltled)(?=\.)|(?&lt;=\.matlab\.editor.autoformat\.)(?:AngleBracketsForHyperlink|AsteriskForItalicAndBold|AutomaticBulletedList|AutomaticNumberedList|BacktickAndBarForMonospace|DollarSignForLatex|EnableAutoFormatting|HashtagForTitle|HashtagsForHeading|LabelURLToHyperlink|SectionBreak|SectionBreakAndHeading|TrademarkCopyrightSymbol|UnderscoreForItalicAndBold|URLToHyperlink)(?=\.)|(?&lt;=\.matlab\.editor.autocoding\.)(?:EnableAutoCoding|Parentheses|CurlyBraces|SquareBrackets|SingleQuotes|DoubleQuotes|Comments|CharacterVectors|Strings|SplitParentheses|ControlFlows|Definitions)(?=\.)|(?&lt;=\.matlab\.editor.export\.)(?:FigureFormat|FigureResolution)(?=\.)|(?&lt;=\.matlab\.editor.export.pagesetup\.)(?:Margins|Orientation|PaperSize)(?=\.)|(?&lt;=\.matlab\.editor.export.pdf\.)(?:FigureFormat|FigureResolution)(?=\.)|(?&lt;=\.matlab\.editor.export.pagesetup.pdf\.)(?:Margins|Orientation|PaperSize)(?=\.)|(?&lt;=\.matlab\.editor.export.latex\.)(?:FigureFormat|FigureResolution)(?=\.)|(?&lt;=\.matlab\.editor.export.pagesetup.latex\.)(?:PaperSize|Orientation|Margins|PaperSize|Orientation|Margins)(?=\.)</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -2946,7 +2946,7 @@
 						<key>name</key>
 						<string>support.function.toolbox.financial.matlab</string>
 						<key>match</key>
-						<string>(?&lt;!\.)\b(abs2active|accrfrac|acrubond|acrudisc|active2abs|addInstrument|adline|adosc|agencyoas|agencyprice|amortize|annurate|annuterm|arith2geom|ascii2fts|Asian|asianbycrr|asianbyeqp|asianbyhhm|asianbyitt|asianbykv|asianbylevy|asianbyls|asianbystt|asianbytw|asiansensbyhhm|asiansensbykv|asiansensbylevy|asiansensbyls|asiansensbytw|assetbybls|AssetMonteCarlo|assetsensbybls|AssetTree|Bachelier|bar|bar3|bar3h|barh|Barrier|barrierbybls|barrierbycrr|barrierbyeqp|barrierbyfd|barrierbyitt|barrierbyls|barrierbystt|barriersensbybls|barriersensbyfd|barriersensbyls|basketbyju|basketbyls|basketsensbyju|basketsensbyls|basketstockspec|Bates|bdtprice|bdtsens|bdttimespec|bdttree|bdtvolspec|beytbill|Binary|binprice|BjerksundStensland|bkcall|bkcaplet|bkfloorlet|bkprice|bkput|bksens|bktimespec|bktree|bkvolspec|Black|BlackKarasinski|BlackScholes|blackvolbyrebonato|blackvolbysabr|blkimpv|blkprice|blsdelta|blsgamma|blsimpv|blslambda|blsprice|blsrho|blstheta|blsvega|bndconvp|bndconvy|bnddurp|bnddury|bndfutimprepo|bndfutprice|bndprice|bndspread|bndyield|bolling|bollinger|bondbybdt|bondbybk|bondbycir|bondbyhjm|bondbyhw|bondbyzero|boxcox|busdate|busdays|bushpath|bushshape|candle|Cap|capbybdt|capbybk|capbyblk|capbycir|capbyhjm|capbyhw|capbylg2f|capbynormal|capvolstrip|cashbybls|cashflows|cashsensbybls|cbondbycrr|cbondbyeqp|cbondbyitt|cbondbystt|cbprice|cdai|cdprice|CDS|CDSBlack|CDSOption|cdsoptprice|cdyield|cfamounts|cfbybdt|cfbybk|cfbycir|cfbyhjm|cfbyhw|cfbyzero|cfconv|cfdates|cfdur|cfport|cftimes|chaikosc|chaikvolat|chartfts|chfield|chooserbybls|cirprice|cirsens|cirtimespec|cirtree|cirvolspec|classfin|cmosched|cmoschedcf|cmoseqcf|compoundbycrr|compoundbyeqp|compoundbyitt|compoundbystt|convert2sur|ConvertibleBond|convertto|convfactor|ConzeViswanathan|corr2cov|cov2corr|cpncount|cpndaten|cpndatenq|cpndatep|cpndatepq|cpndaysn|cpndaysp|cpnpersz|createholidays|Credit|crrprice|crrsens|crrtimespec|crrtree|cumsum|cur2frac|cur2str|cvtree|date2time|dateaxis|datedisp|datefind|datemnth|datewrkdy|day|days360|days360e|days360isda|days360psa|days365|daysact|daysadd|daysdif|dblbarrierbybls|dblbarrierbyfd|dblbarriersensbybls|dblbarriersensbyfd|dbltouchbybls|dbltouchsensbybls|dec2thirtytwo|defprobcurve|defprobstrip|depfixdb|depgendb|Deposit|deprdv|depsoyd|depstln|derivget|derivset|diff|disc2rate|disc2zero|Discount|discountfactors|discrate|DoubleBarrier|DoubleTouch|Dupire|ecmlsrmle|ecmlsrobj|ecmmvnrfish|ecmmvnrmle|ecmmvnrobj|ecmmvnrstd|ecmnfish|ecmnhess|ecmninit|ecmnmle|ecmnobj|ecmnstd|effrr|elpm|emaxdrawdown|end(?=s*()|eqpprice|eqpsens|eqptimespec|eqptree|ewstats|exp|extfield|fbusdate|fetch|FFT|fieldnames|fillts|filter|fininstrument|FiniteDifference|finmodel|finportfolio|finpricer|fints|fitNelsonSiegel|fitSvensson|FixedBond|FixedBondOption|fixedbybdt|fixedbybk|fixedbycir|fixedbyhjm|fixedbyhw|fixedbyzero|FloatBond|FloatBondOption|floatbybdt|floatbybk|floatbycir|floatbyhjm|floatbyhw|floatbyzero|Floor|floorbybdt|floorbybk|floorbyblk|floorbycir|floorbyhjm|floorbyhw|floorbylg2f|floorbynormal|floorvolstrip|forwardrates|fpctkd|FRA|frac2cur|freqnum|freqstr|frontcon|frontier|fts2ascii|fts2mat|ftsbound|ftsgui|ftsinfo|ftstool|ftsuniq|fvdisc|fvfix|fvvar|fwd2zero|gapbybls|gapsensbybls|geom2arith|getfield|getnameidx|GoldmanSosinGatto|hazardrates|hedgeopt|hedgeslf|Heston|hhigh|highlow|hist|hjmprice|hjmsens|hjmtimespec|hjmtree|hjmvolspec|holdings2weights|holidays|horzcat|hour|HullWhite|HullWhite1F|hwcalbycap|hwcalbyfloor|hwprice|hwsens|hwtimespec|hwtree|hwvolspec|IkedaKunitomo|impvbybaw|impvbybjs|impvbyblk|impvbybls|impvbyrgw|indexvalues|Inflation|InflationBond|inflationbuild|inflationCashflows|inflationcurve|inforatio|instadd|instaddfield|instasian|instbarrier|instbond|instcap|instcbond|instcf|instcompound|instdelete|instdisp|instfields|instfind|instfixed|instfloat|instfloor|instget|instgetcell|instlength|instlookback|instoptbnd|instoptembnd|instoptemfloat|instoptfloat|instoptstock|instrangefloat|instselect|instsetfield|instswap|instswaption|insttypes|intenvget|intenvprice|intenvsens|intenvset|irbootstrap|IRBootstrapOptions|IRDataCurve|IRFitOptions|IRFunctionCurve|irr|IRTree|isafin|isbusday|iscompatible|isequal|isfield|issorted|ittprice|ittsens|itttimespec|itttree|KemnaVorst|Kirk|lagts|lbusdate|leadts|length|Levy|liborduration|liborfloat2fixed|LiborMarketModel|liborprice|LinearGaussian2F|llow|log|log10|log2|Lookback|lookbackbycrr|lookbackbycvgsg|lookbackbyeqp|lookbackbyitt|lookbackbyls|lookbackbystt|lookbacksensbycvgsg|lookbacksensbyls|lpm|lrtimespec|lrtree|lweekdate|m2xdate|macd|max|maxassetbystulz|maxassetsensbystulz|maxdrawdown|mbscfamounts|mbsconvp|mbsconvy|mbsdurp|mbsdury|mbsnoprepay|mbsoas2price|mbsoas2yield|mbspassthrough|mbsprice|mbsprice2oas|mbsprice2speed|mbswal|mbsyield|mbsyield2oas|mbsyield2speed|mean|medprice|merge|Merton|min|minassetbystulz|minassetsensbystulz|minus|minute|mirr|mkbush|mktree|mktrintree|mmktbybdt|mmktbyhjm|month|months|movavg|mrdivide|mtimes|mvnrfish|mvnrmle|mvnrobj|mvnrstd|negvolidx|nomrr|Normal|normalvolbysabr|now|NumericalIntegration|numerix|numerixCrossAsset|nweekdate|oasbybdt|oasbybk|oasbycir|oasbyhjm|oasbyhw|onbalvol|opprofit|optbndbybdt|optbndbybk|optbndbycir|optbndbyhjm|optbndbyhw|optByBatesFD|optByBatesFFT|optByBatesNI|optByHestonFD|optByHestonFFT|optByHestonNI|optByLocalVolFD|optByMertonFD|optByMertonFFT|optByMertonNI|optembndbybdt|optembndbybk|optembndbycir|optembndbyhjm|optembndbyhw|optemfloatbybdt|optemfloatbybk|optemfloatbycir|optemfloatbyhjm|optemfloatbyhw|optfloatbybdt|optfloatbybk|optfloatbycir|optfloatbyhjm|optfloatbyhw|OptionEmbeddedFixedBond|OptionEmbeddedFloatBond|optpricebysim|optSensByBatesFD|optSensByBatesFFT|optSensByBatesNI|optSensByHestonFD|optSensByHestonFFT|optSensByHestonNI|optSensByLocalVolFD|optSensByMertonFD|optSensByMertonFFT|optSensByMertonNI|optsensbysabr|optstockbybaw|optstockbybjs|optstockbyblk|optstockbybls|optstockbycrr|optstockbyeqp|optstockbyfd|optstockbyitt|optstockbylr|optstockbyls|optstockbyrgw|optstockbystt|optstocksensbybaw|optstocksensbybjs|optstocksensbyblk|optstocksensbybls|optstocksensbyfd|optstocksensbylr|optstocksensbyls|optstocksensbyrgw|parametercurve|parswaprate|payadv|payodd|payper|payuni|pcalims|pcgcomp|pcglims|pcpval|peravg|periodicreturns|plot|plus|pointfig|portalloc|portalpha|portcons|portopt|portrand|portsim|portstats|portvrisk|posvolidx|power|prbyzero|prcroc|prdisc|price|pricePortfolio|prmat|prtbill|psaspeed2default|psaspeed2rate|pvfix|pvtrend|pvvar|pyld2zero|rangefloatbybdt|rangefloatbybk|rangefloatbycir|rangefloatbyhjm|rangefloatbyhw|rate2disc|ratecurve|ratetimes|rdivide|removeInstrument|ReplicatingVarianceSwap|resamplets|ret2tick|rmfield|RollGeskeWhaley|rsindex|SABR|second|selectreturn|setCallExercisePolicy|setExercisePolicy|setfield|setPricer|setPutExercisePolicy|sharpe|simTermStructs|size|smoothts|sortfts|spctkd|Spread|spreadbybjs|spreadbyfd|spreadbykirk|spreadbyls|spreadsensbybjs|spreadsensbyfd|spreadsensbykirk|spreadsensbyls|std|stepcpncfamounts|stepcpnprice|stepcpnyield|stochosc|stockoptspec|stockspec|sttprice|sttsens|stttimespec|stttree|subsasgn|subsref|supersharebybls|supersharesensbybls|survprobs|Swap|swapbybdt|swapbybk|swapbycir|swapbyhjm|swapbyhw|swapbyzero|Swaption|swaptionbybdt|swaptionbybk|swaptionbyblk|swaptionbycir|swaptionbyhjm|swaptionbyhw|swaptionbylg2f|swaptionbynormal|targetreturn|taxedrr|tbilldisc2yield|tbillprice|tbillrepo|tbillval01|tbillyield|tbillyield2disc|tbl2bond|tfutbyprice|tfutbyyield|tfutimprepo|tfutpricebyrepo|tfutyieldbyrepo|thirdwednesday|thirtytwo2dec|tick2ret|time2date|times|toannual|todaily|today|todecimal|tomonthly|toquarterly|toquoted|tosemi|totalreturnprice|Touch|touchbybls|touchsensbybls|toweekly|tr2bonds|treepath|treeshape|treeviewer|trintreepath|trintreeshape|tsaccel|tsmom|tsmovavg|TurnbullWakeman|typprice|ugarch|ugarchllf|ugarchpred|ugarchsim|uicalendar|uminus|uplus|Vanilla|VannaVolga|VarianceSwap|vertcat|volatilities|volroc|wclose|weights2holdings|willad|willpctr|wrkdydif|x2mdate|xirr|year|yeardays|yearfrac|YearYearInflationSwap|ylddisc|yldmat|yldtbill|zbtprice|zbtyield|zero2disc|zero2fwd|zero2pyld|ZeroCouponInflationSwap|zeroprice|zerorates|zeroyield)\b</string>
+						<string>(?&lt;!\.)\b(abs2active|accrfrac|acrubond|acrudisc|active2abs|addInstrument|adline|adosc|agencyoas|agencyprice|amortize|annurate|annuterm|arith2geom|ascii2fts|Asian|asianbycrr|asianbyeqp|asianbyhhm|asianbyitt|asianbykv|asianbylevy|asianbyls|asianbystt|asianbytw|asiansensbyhhm|asiansensbykv|asiansensbylevy|asiansensbyls|asiansensbytw|assetbybls|AssetMonteCarlo|assetsensbybls|AssetTree|Bachelier|bar|bar3|bar3h|barh|Barrier|barrierbybls|barrierbycrr|barrierbyeqp|barrierbyfd|barrierbyitt|barrierbyls|barrierbystt|barriersensbybls|barriersensbyfd|barriersensbyls|basketbyju|basketbyls|basketsensbyju|basketsensbyls|basketstockspec|Bates|bdtprice|bdtsens|bdttimespec|bdttree|bdtvolspec|beytbill|Binary|binprice|BjerksundStensland|bkcall|bkcaplet|bkfloorlet|bkprice|bkput|bksens|bktimespec|bktree|bkvolspec|Black|BlackKarasinski|BlackScholes|blackvolbyrebonato|blackvolbysabr|blkimpv|blkprice|blsdelta|blsgamma|blsimpv|blslambda|blsprice|blsrho|blstheta|blsvega|bndconvp|bndconvy|bnddurp|bnddury|bndfutimprepo|bndfutprice|bndprice|bndspread|bndyield|bolling|bollinger|bondbybdt|bondbybk|bondbycir|bondbyhjm|bondbyhw|bondbyzero|boxcox|busdate|busdays|bushpath|bushshape|candle|Cap|capbybdt|capbybk|capbyblk|capbycir|capbyhjm|capbyhw|capbylg2f|capbynormal|capvolstrip|cashbybls|cashflows|cashsensbybls|cbondbycrr|cbondbyeqp|cbondbyitt|cbondbystt|cbprice|cdai|cdprice|CDS|CDSBlack|CDSOption|cdsoptprice|cdyield|cfamounts|cfbybdt|cfbybk|cfbycir|cfbyhjm|cfbyhw|cfbyzero|cfconv|cfdates|cfdur|cfport|cftimes|chaikosc|chaikvolat|chartfts|chfield|chooserbybls|cirprice|cirsens|cirtimespec|cirtree|cirvolspec|classfin|cmosched|cmoschedcf|cmoseqcf|compoundbycrr|compoundbyeqp|compoundbyitt|compoundbystt|convert2sur|ConvertibleBond|convertto|convfactor|ConzeViswanathan|corr2cov|cov2corr|cpncount|cpndaten|cpndatenq|cpndatep|cpndatepq|cpndaysn|cpndaysp|cpnpersz|createholidays|Credit|crrprice|crrsens|crrtimespec|crrtree|cumsum|cur2frac|cur2str|cvtree|date2time|dateaxis|datedisp|datefind|datemnth|datewrkdy|day|days360|days360e|days360isda|days360psa|days365|daysact|daysadd|daysdif|dblbarrierbybls|dblbarrierbyfd|dblbarriersensbybls|dblbarriersensbyfd|dbltouchbybls|dbltouchsensbybls|dec2thirtytwo|defprobcurve|defprobstrip|depfixdb|depgendb|Deposit|deprdv|depsoyd|depstln|derivget|derivset|diff|disc2rate|disc2zero|Discount|discountfactors|discrate|DoubleBarrier|DoubleTouch|Dupire|ecmlsrmle|ecmlsrobj|ecmmvnrfish|ecmmvnrmle|ecmmvnrobj|ecmmvnrstd|ecmnfish|ecmnhess|ecmninit|ecmnmle|ecmnobj|ecmnstd|effrr|elpm|emaxdrawdown|end(?=\s*\()|eqpprice|eqpsens|eqptimespec|eqptree|ewstats|exp|extfield|fbusdate|fetch|FFT|fieldnames|fillts|filter|fininstrument|FiniteDifference|finmodel|finportfolio|finpricer|fints|fitNelsonSiegel|fitSvensson|FixedBond|FixedBondOption|fixedbybdt|fixedbybk|fixedbycir|fixedbyhjm|fixedbyhw|fixedbyzero|FloatBond|FloatBondOption|floatbybdt|floatbybk|floatbycir|floatbyhjm|floatbyhw|floatbyzero|Floor|floorbybdt|floorbybk|floorbyblk|floorbycir|floorbyhjm|floorbyhw|floorbylg2f|floorbynormal|floorvolstrip|forwardrates|fpctkd|FRA|frac2cur|freqnum|freqstr|frontcon|frontier|fts2ascii|fts2mat|ftsbound|ftsgui|ftsinfo|ftstool|ftsuniq|fvdisc|fvfix|fvvar|fwd2zero|gapbybls|gapsensbybls|geom2arith|getfield|getnameidx|GoldmanSosinGatto|hazardrates|hedgeopt|hedgeslf|Heston|hhigh|highlow|hist|hjmprice|hjmsens|hjmtimespec|hjmtree|hjmvolspec|holdings2weights|holidays|horzcat|hour|HullWhite|HullWhite1F|hwcalbycap|hwcalbyfloor|hwprice|hwsens|hwtimespec|hwtree|hwvolspec|IkedaKunitomo|impvbybaw|impvbybjs|impvbyblk|impvbybls|impvbyrgw|indexvalues|Inflation|InflationBond|inflationbuild|inflationCashflows|inflationcurve|inforatio|instadd|instaddfield|instasian|instbarrier|instbond|instcap|instcbond|instcf|instcompound|instdelete|instdisp|instfields|instfind|instfixed|instfloat|instfloor|instget|instgetcell|instlength|instlookback|instoptbnd|instoptembnd|instoptemfloat|instoptfloat|instoptstock|instrangefloat|instselect|instsetfield|instswap|instswaption|insttypes|intenvget|intenvprice|intenvsens|intenvset|irbootstrap|IRBootstrapOptions|IRDataCurve|IRFitOptions|IRFunctionCurve|irr|IRTree|isafin|isbusday|iscompatible|isequal|isfield|issorted|ittprice|ittsens|itttimespec|itttree|KemnaVorst|Kirk|lagts|lbusdate|leadts|length|Levy|liborduration|liborfloat2fixed|LiborMarketModel|liborprice|LinearGaussian2F|llow|log|log10|log2|Lookback|lookbackbycrr|lookbackbycvgsg|lookbackbyeqp|lookbackbyitt|lookbackbyls|lookbackbystt|lookbacksensbycvgsg|lookbacksensbyls|lpm|lrtimespec|lrtree|lweekdate|m2xdate|macd|max|maxassetbystulz|maxassetsensbystulz|maxdrawdown|mbscfamounts|mbsconvp|mbsconvy|mbsdurp|mbsdury|mbsnoprepay|mbsoas2price|mbsoas2yield|mbspassthrough|mbsprice|mbsprice2oas|mbsprice2speed|mbswal|mbsyield|mbsyield2oas|mbsyield2speed|mean|medprice|merge|Merton|min|minassetbystulz|minassetsensbystulz|minus|minute|mirr|mkbush|mktree|mktrintree|mmktbybdt|mmktbyhjm|month|months|movavg|mrdivide|mtimes|mvnrfish|mvnrmle|mvnrobj|mvnrstd|negvolidx|nomrr|Normal|normalvolbysabr|now|NumericalIntegration|numerix|numerixCrossAsset|nweekdate|oasbybdt|oasbybk|oasbycir|oasbyhjm|oasbyhw|onbalvol|opprofit|optbndbybdt|optbndbybk|optbndbycir|optbndbyhjm|optbndbyhw|optByBatesFD|optByBatesFFT|optByBatesNI|optByHestonFD|optByHestonFFT|optByHestonNI|optByLocalVolFD|optByMertonFD|optByMertonFFT|optByMertonNI|optembndbybdt|optembndbybk|optembndbycir|optembndbyhjm|optembndbyhw|optemfloatbybdt|optemfloatbybk|optemfloatbycir|optemfloatbyhjm|optemfloatbyhw|optfloatbybdt|optfloatbybk|optfloatbycir|optfloatbyhjm|optfloatbyhw|OptionEmbeddedFixedBond|OptionEmbeddedFloatBond|optpricebysim|optSensByBatesFD|optSensByBatesFFT|optSensByBatesNI|optSensByHestonFD|optSensByHestonFFT|optSensByHestonNI|optSensByLocalVolFD|optSensByMertonFD|optSensByMertonFFT|optSensByMertonNI|optsensbysabr|optstockbybaw|optstockbybjs|optstockbyblk|optstockbybls|optstockbycrr|optstockbyeqp|optstockbyfd|optstockbyitt|optstockbylr|optstockbyls|optstockbyrgw|optstockbystt|optstocksensbybaw|optstocksensbybjs|optstocksensbyblk|optstocksensbybls|optstocksensbyfd|optstocksensbylr|optstocksensbyls|optstocksensbyrgw|parametercurve|parswaprate|payadv|payodd|payper|payuni|pcalims|pcgcomp|pcglims|pcpval|peravg|periodicreturns|plot|plus|pointfig|portalloc|portalpha|portcons|portopt|portrand|portsim|portstats|portvrisk|posvolidx|power|prbyzero|prcroc|prdisc|price|pricePortfolio|prmat|prtbill|psaspeed2default|psaspeed2rate|pvfix|pvtrend|pvvar|pyld2zero|rangefloatbybdt|rangefloatbybk|rangefloatbycir|rangefloatbyhjm|rangefloatbyhw|rate2disc|ratecurve|ratetimes|rdivide|removeInstrument|ReplicatingVarianceSwap|resamplets|ret2tick|rmfield|RollGeskeWhaley|rsindex|SABR|second|selectreturn|setCallExercisePolicy|setExercisePolicy|setfield|setPricer|setPutExercisePolicy|sharpe|simTermStructs|size|smoothts|sortfts|spctkd|Spread|spreadbybjs|spreadbyfd|spreadbykirk|spreadbyls|spreadsensbybjs|spreadsensbyfd|spreadsensbykirk|spreadsensbyls|std|stepcpncfamounts|stepcpnprice|stepcpnyield|stochosc|stockoptspec|stockspec|sttprice|sttsens|stttimespec|stttree|subsasgn|subsref|supersharebybls|supersharesensbybls|survprobs|Swap|swapbybdt|swapbybk|swapbycir|swapbyhjm|swapbyhw|swapbyzero|Swaption|swaptionbybdt|swaptionbybk|swaptionbyblk|swaptionbycir|swaptionbyhjm|swaptionbyhw|swaptionbylg2f|swaptionbynormal|targetreturn|taxedrr|tbilldisc2yield|tbillprice|tbillrepo|tbillval01|tbillyield|tbillyield2disc|tbl2bond|tfutbyprice|tfutbyyield|tfutimprepo|tfutpricebyrepo|tfutyieldbyrepo|thirdwednesday|thirtytwo2dec|tick2ret|time2date|times|toannual|todaily|today|todecimal|tomonthly|toquarterly|toquoted|tosemi|totalreturnprice|Touch|touchbybls|touchsensbybls|toweekly|tr2bonds|treepath|treeshape|treeviewer|trintreepath|trintreeshape|tsaccel|tsmom|tsmovavg|TurnbullWakeman|typprice|ugarch|ugarchllf|ugarchpred|ugarchsim|uicalendar|uminus|uplus|Vanilla|VannaVolga|VarianceSwap|vertcat|volatilities|volroc|wclose|weights2holdings|willad|willpctr|wrkdydif|x2mdate|xirr|year|yeardays|yearfrac|YearYearInflationSwap|ylddisc|yldmat|yldtbill|zbtprice|zbtyield|zero2disc|zero2fwd|zero2pyld|ZeroCouponInflationSwap|zeroprice|zerorates|zeroyield)\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>
@@ -2954,7 +2954,7 @@
 						<key>name</key>
 						<string>support.function.toolbox.fixed-point.matlab</string>
 						<key>match</key>
-						<string>(?&lt;!\.)\b(abs|accumneg|accumpos|add|all|and|any|area|assignmentquantizer|atan2|bar|barh|bin|bin2num|bitand|bitandreduce|bitcmp|bitconcat|bitget|bitor|bitorreduce|bitreplicate|bitrol|bitror|bitset|bitshift|bitsliceget|bitsll|bitsra|bitsrl|bitxor|bitxorreduce|buffer|buildInstrumentedMex|cast|cast64BitFiToInt|cast64BitIntToFi|castFiToInt|castFiToMATLAB|castIntToFi|ceil|ceilDiv|clabel|clearInstrumentationResults|coderTypeEditor|colon|comet|comet3|compass|complex|coneplot|conj|contour|contour3|contourc|contourf|conv|convergent|convertToSingle|copyobj|cordicabs|cordicacos|cordicangle|cordicasin|cordicatan2|cordiccart2pol|cordiccexp|cordiccos|cordicpol2cart|cordicrotate|cordicsin|cordicsincos|cordicsqrt|cordictanh|cos|ctranspose|CustomFloat|dec|denormalmax|denormalmin|diag|disp|divide|double|end(?=s*()|eps|eq|errmean|errorbar|errpdf|errvar|etreeplot|exponentbias|exponentlength|exponentmax|exponentmin|eye|feather|fi|fiaccel|filter|fimath|fipref|fix|fixDiv|flintmax|flipdim|fliplr|flipud|floor|floorDiv|fma|for|fplot|fractionlength|fxpopt|fxpOptimizationOptions|fxptdlg|ge|get|getlsb|getmsb|globalfimath|gplot|gt|half|hankel|hex|hex2num|hist|histc|horzcat|imag|innerprodintbits|int|int16|int32|int64|int8|intmax|intmin|ipermute|isboolean|iscolumn|isdouble|isempty|isequal|isequivalent|isfi|isfimath|isfimathlocal|isfinite|isfipref|isfixed|isfloat|isinf|isnan|isnumeric|isnumerictype|isobject|ispropequal|isquantizer|isreal|isrow|isscalar|isscaleddouble|isscaledtype|isscalingbinarypoint|isscalingslopebias|isscalingunspecified|issigned|issingle|isslopebiasscaled|isvector|le|length|line|logical|loglog|logreport|lowerbound|lsb|lt|LUTCompressionResult|mat2str|max|maxlog|mean|median|mesh|meshc|meshz|min|minlog|minus|mod|modByConstant|mpower|mpy|mrdivide|mtimes|ndims|ne|nearest|nearestDiv|nextpow2|nnz|noperations|normalizedReciprocal|not|noverflows|num2bin|num2hex|num2int|num2str|numberofelements|numel|numerictype|NumericTypeScope|nunderflows|oct|ones|OptimizationResult|OptimizationSolution|or|patch|pcolor|permute|plot|plot3|plotmatrix|plotyy|plus|polar|pow10|pow2|power|qr|quantize|quantize method|quantizenumeric|quantizer|quiver|quiver3|randquant|range|rdivide|real|realmax|realmin|reinterpretcast|removefimath|removeglobalfimathpref|repmat|rescale|reset|resetglobalfimath|resetlog|reshape|rgbplot|ribbon|round|rsqrt|savefipref|scatter|scatter3|sdec|semilogx|semilogy|set|setfimath|sfi|shiftdata|shiftdim|showInstrumentationResults|sign|sin|single|size|slice|sort|spy|sqrt|squeeze|stairs|stem|stem3|storedInteger|storedIntegerToDouble|streamribbon|streamslice|streamtube|stripscaling|sub|subsasgn|subsref|sum|surf|surfc|surfl|surfnorm|text|times|toeplitz|tostring|transpose|treeplot|tril|trimesh|triplot|trisurf|triu|ufi|uint16|uint32|uint64|uint8|uminus|unitquantize|unitquantizer|unshiftdata|uplus|upperbound|vertcat|voronoi|voronoin|waterfall|wordlength|xlim|ylim|zeros|zlim)\b|(?&lt;=[^.]coder\.)(?:allowpcode|approximation|config|const|extrinsic|ignoreConst|inline|load|mexconfig|newtype|nullcopy|resize|screener|target|typeof|unroll|varsize)\b|(?&lt;=[^.]DataTypeWorkflow\.)findDecoupledSubsystems\b|(?&lt;=[^.]fixed\.)(?:aggregateType|backwardSubstitute|extractNumericType|forwardSubstitute|qlessQR|qlessQRMatrixSolve|qlessQRUpdate|qrAB|qrMatrixSolve)\b|(?&lt;=[^.]FunctionApproximation\.)compressLookupTables\b</string>
+						<string>(?&lt;!\.)\b(abs|accumneg|accumpos|add|all|and|any|area|assignmentquantizer|atan2|bar|barh|bin|bin2num|bitand|bitandreduce|bitcmp|bitconcat|bitget|bitor|bitorreduce|bitreplicate|bitrol|bitror|bitset|bitshift|bitsliceget|bitsll|bitsra|bitsrl|bitxor|bitxorreduce|buffer|buildInstrumentedMex|cast|cast64BitFiToInt|cast64BitIntToFi|castFiToInt|castFiToMATLAB|castIntToFi|ceil|ceilDiv|clabel|clearInstrumentationResults|coderTypeEditor|colon|comet|comet3|compass|complex|coneplot|conj|contour|contour3|contourc|contourf|conv|convergent|convertToSingle|copyobj|cordicabs|cordicacos|cordicangle|cordicasin|cordicatan2|cordiccart2pol|cordiccexp|cordiccos|cordicpol2cart|cordicrotate|cordicsin|cordicsincos|cordicsqrt|cordictanh|cos|ctranspose|CustomFloat|dec|denormalmax|denormalmin|diag|disp|divide|double|end(?=\s*\()|eps|eq|errmean|errorbar|errpdf|errvar|etreeplot|exponentbias|exponentlength|exponentmax|exponentmin|eye|feather|fi|fiaccel|filter|fimath|fipref|fix|fixDiv|flintmax|flipdim|fliplr|flipud|floor|floorDiv|fma|for|fplot|fractionlength|fxpopt|fxpOptimizationOptions|fxptdlg|ge|get|getlsb|getmsb|globalfimath|gplot|gt|half|hankel|hex|hex2num|hist|histc|horzcat|imag|innerprodintbits|int|int16|int32|int64|int8|intmax|intmin|ipermute|isboolean|iscolumn|isdouble|isempty|isequal|isequivalent|isfi|isfimath|isfimathlocal|isfinite|isfipref|isfixed|isfloat|isinf|isnan|isnumeric|isnumerictype|isobject|ispropequal|isquantizer|isreal|isrow|isscalar|isscaleddouble|isscaledtype|isscalingbinarypoint|isscalingslopebias|isscalingunspecified|issigned|issingle|isslopebiasscaled|isvector|le|length|line|logical|loglog|logreport|lowerbound|lsb|lt|LUTCompressionResult|mat2str|max|maxlog|mean|median|mesh|meshc|meshz|min|minlog|minus|mod|modByConstant|mpower|mpy|mrdivide|mtimes|ndims|ne|nearest|nearestDiv|nextpow2|nnz|noperations|normalizedReciprocal|not|noverflows|num2bin|num2hex|num2int|num2str|numberofelements|numel|numerictype|NumericTypeScope|nunderflows|oct|ones|OptimizationResult|OptimizationSolution|or|patch|pcolor|permute|plot|plot3|plotmatrix|plotyy|plus|polar|pow10|pow2|power|qr|quantize|quantize method|quantizenumeric|quantizer|quiver|quiver3|randquant|range|rdivide|real|realmax|realmin|reinterpretcast|removefimath|removeglobalfimathpref|repmat|rescale|reset|resetglobalfimath|resetlog|reshape|rgbplot|ribbon|round|rsqrt|savefipref|scatter|scatter3|sdec|semilogx|semilogy|set|setfimath|sfi|shiftdata|shiftdim|showInstrumentationResults|sign|sin|single|size|slice|sort|spy|sqrt|squeeze|stairs|stem|stem3|storedInteger|storedIntegerToDouble|streamribbon|streamslice|streamtube|stripscaling|sub|subsasgn|subsref|sum|surf|surfc|surfl|surfnorm|text|times|toeplitz|tostring|transpose|treeplot|tril|trimesh|triplot|trisurf|triu|ufi|uint16|uint32|uint64|uint8|uminus|unitquantize|unitquantizer|unshiftdata|uplus|upperbound|vertcat|voronoi|voronoin|waterfall|wordlength|xlim|ylim|zeros|zlim)\b|(?&lt;=[^.]coder\.)(?:allowpcode|approximation|config|const|extrinsic|ignoreConst|inline|load|mexconfig|newtype|nullcopy|resize|screener|target|typeof|unroll|varsize)\b|(?&lt;=[^.]DataTypeWorkflow\.)findDecoupledSubsystems\b|(?&lt;=[^.]fixed\.)(?:aggregateType|backwardSubstitute|extractNumericType|forwardSubstitute|qlessQR|qlessQRMatrixSolve|qlessQRUpdate|qrAB|qrMatrixSolve)\b|(?&lt;=[^.]FunctionApproximation\.)compressLookupTables\b</string>
 					</dict>
 					<dict>
 						<key>comment</key>

@@ -32,7 +32,7 @@
 				<key>name</key>
 				<string>keyword.operator.word.matlab</string>
 				<key>match</key>
-				<string>(?&lt;!\.)\b(mustBeA|mustBeFile|mustBeFinite|mustBeFloat|mustBeFolder|mustBeGreaterThan|mustBeGreaterThanOrEqual|mustBeInRange|mustBeInteger|mustBeLessThan|mustBeLessThanOrEqual|mustBeMember|mustBeNegative|mustBeNonNan|mustBeNonempty|mustBeNonmissing|mustBeNonnegative|mustBeNonpositive|mustBeNonsparse|mustBeNonzero|mustBeNonzeroLengthText|mustBeNumeric|mustBeNumericOrLogical|mustBePositive|mustBeReal|mustBeScalarOrEmpty|mustBeText|mustBeTextScalar|mustBeUnderlyingType|mustBeValidVariableName|mustBeVector)(?=\s*[(,])</string>
+				<string>(?&lt;!\.)\b(mustBeA|mustBeFile|mustBeFinite|mustBeFloat|mustBeFolder|mustBeGreaterThan|mustBeGreaterThanOrEqual|mustBeInRange|mustBeInteger|mustBeLessThan|mustBeLessThanOrEqual|mustBeMember|mustBeNegative|mustBeNonNan|mustBeNonempty|mustBeNonmissing|mustBeNonnegative|mustBeNonpositive|mustBeNonsparse|mustBeNonzero|mustBeNonzeroLengthText|mustBeNumeric|mustBeNumericOrLogical|mustBePositive|mustBeReal|mustBeScalarOrEmpty|mustBeText|mustBeTextScalar|mustBeUnderlyingType|mustBeValidVariableName|mustBeVector)(?=\s*[(,}])</string>
 			</dict>
 		</dict>
 	</dict>
