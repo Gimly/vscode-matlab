@@ -48,8 +48,29 @@
         "injectTo": [
           "source.matlab"
         ],
-        "scopeName": "matlab-functions.injection",
-        "path": "./syntaxes/matlab-functions.tmLanguage"
+        "scopeName": "builtin.matlab.injection",
+        "path": "./syntaxes/builtin.matlab.injection.tmLanguage"
+      },
+      {
+        "injectTo": [
+          "source.matlab"
+        ],
+        "scopeName": "overload.matlab.injection",
+        "path": "./syntaxes/overload.matlab.injection.tmLanguage"
+      },
+      {
+        "injectTo": [
+          "source.matlab"
+        ],
+        "scopeName": "package.matlab.injection",
+        "path": "./syntaxes/package.matlab.injection.tmLanguage"
+      },
+      {
+        "injectTo": [
+          "source.matlab"
+        ],
+        "scopeName": "validation.matlab.injection",
+        "path": "./syntaxes/validation.matlab.injection.tmLanguage"
       }
     ],
     "snippets": [
