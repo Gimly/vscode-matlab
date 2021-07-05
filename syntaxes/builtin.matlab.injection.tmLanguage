@@ -11,7 +11,7 @@
 		<key>name</key>
 		<string>Functions (MATLAB)</string>
 		<key>scopeName</key>
-		<string>builtin.matlab\.injection</string>
+		<string>builtin.matlab.injection</string>
 		<key>injectionSelector</key>
 		<string>source.matlab -comment -string -interpolation</string>
 		<key>uuid</key>
