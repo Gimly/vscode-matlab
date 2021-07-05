@@ -32,10 +32,6 @@
 			</dict>
 			<dict>
 				<key>include</key>
-				<string>#other_constants</string>
-			</dict>
-			<dict>
-				<key>include</key>
 				<string>#variables</string>
 			</dict>
 			<dict>
@@ -65,15 +61,6 @@
 		</array>
 		<key>repository</key>
 		<dict>
-			<key>other_constants</key>
-			<dict>
-				<key>comment</key>
-				<string>MATLAB constants</string>
-				<key>match</key>
-				<string>(?&lt;!\.)\b(eps|false|Inf|inf|intmax|intmin|namelengthmax|NaN|nan|NaT|nat|on|off|realmax|realmin|true|pi|NaT)\b</string>
-				<key>name</key>
-				<string>constant.language.matlab</string>
-			</dict>
 			<key>keywords</key>
 			<dict>
 				<key>patterns</key>
