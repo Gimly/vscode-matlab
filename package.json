@@ -4,7 +4,7 @@
   "description": "MATLAB support for Visual Studio Code",
   "version": "2.1.0",
   "publisher": "Gimly81",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.16.0"
   },
@@ -69,6 +69,13 @@
         "injectTo": [
           "source.matlab"
         ],
+        "scopeName": "readwrite.matlab.injection",
+        "path": "./syntaxes/readwrite.matlab.injection.tmLanguage"
+      },
+      {
+        "injectTo": [
+          "source.matlab"
+        ],
         "scopeName": "validation.matlab.injection",
         "path": "./syntaxes/validation.matlab.injection.tmLanguage"
       }
@@ -126,7 +133,7 @@
     "@types/node": "^7.0.43",
     "@types/vscode": "^1.57.0",
     "mocha": "^3.5.0",
-    "typescript": "^2.5.2",
+    "typescript": "^4.3.5",
     "vscode-test": "^1.5.2"
   },
   "dependencies": {
