@@ -77,7 +77,7 @@
 						<key>comment</key>
 						<string>Storage function overloading</string>
 						<key>name</key>
-						<string>support.function.storage.matlab</string>
+						<string>support.function.io.matlab</string>
 						<key>match</key>
 						<string>\G(?:loadobj|saveobj)\b</string>
 					</dict>

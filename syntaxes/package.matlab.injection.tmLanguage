@@ -1466,7 +1466,7 @@
 						<key>comment</key>
 						<string>matlab.io.xml.dom.DocumentWriter</string>
 						<key>name</key>
-						<string>support.function.storage.matlab</string>
+						<string>support.function.io.matlab</string>
 						<key>match</key>
 						<string>(?&lt;=[a-zA-Z0-9_]\.|[^a-zA-Z0-9._]|^)(?:getNewLine|setNewLine|write|writeToFile|writeToString)\b</string>
 					</dict>
@@ -1474,7 +1474,7 @@
 						<key>comment</key>
 						<string>matlab.io.xml.dom.DOMWriter</string>
 						<key>name</key>
-						<string>support.function.storage.matlab</string>
+						<string>support.function.io.matlab</string>
 						<key>match</key>
 						<string>(?&lt;=[a-zA-Z0-9_]\.|[^a-zA-Z0-9._]|^)(?:getNewLine|setNewLine|write|writeToFile|writeToString)\b</string>
 					</dict>
@@ -1482,7 +1482,7 @@
 						<key>comment</key>
 						<string>matlab.io.xml.dom.FileWriter</string>
 						<key>name</key>
-						<string>support.function.storage.matlab</string>
+						<string>support.function.io.matlab</string>
 						<key>match</key>
 						<string>(?&lt;=[a-zA-Z0-9_]\.|[^a-zA-Z0-9._]|^)(?:close|flush|write)\b</string>
 					</dict>

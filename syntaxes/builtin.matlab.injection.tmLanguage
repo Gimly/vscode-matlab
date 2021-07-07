@@ -187,7 +187,7 @@
 						<key>comment</key>
 						<string>File I/O</string>
 						<key>name</key>
-						<string>support.function.storage.matlab</string>
+						<string>support.function.io.matlab</string>
 						<key>match</key>
 						<string>(?&lt;!\.)\b(?:addframe|ascii|aufinfo|auread|auwrite|avifile|aviinfo|aviread|beep|binary|cdfinfo|cdfread|cdfwrite|daqread|dlmread|dlmwrite|exifread|fclose|feof|ferror|fgetl|fgets|filehandle|filemarker|fileparts|filesep|fitsinfo|fitsread|fprintf|fread|frewind|fscanf|fseek|ftell|ftp|fullfile|fwrite|gunzip|gzip|hdf|hdf5|hdf5read|hdfinfo|hdfread|hdftool|imfinfo|importdata|imread|imwrite|lin2mu|load|memmapfile|mget|mmfileinfo|movie2avi|mput|mu2lin|multibandread|multibandwrite|open|rename|save|sendmail|sound|soundsc|tar|tempdir|tempname|textread|textscan|uiimport|untar|unzip|wavfinfo|wavplay|wavread|wavrecord|wavwrite|wk1finfo|wk1read|wk1write|xmlread|xmlwrite|xslt|zip)\b</string>
 					</dict>
@@ -343,7 +343,7 @@
 						<key>comment</key>
 						<string>Namespaced storage functions</string>
 						<key>name</key>
-						<string>support.function.storage.matlab</string>
+						<string>support.function.io.matlab</string>
 						<key>match</key>
 						<string>(?&lt;=matlab\.unittest.constraints\.)(?:IsFile|IsFolder)\b</string>
 					</dict>
