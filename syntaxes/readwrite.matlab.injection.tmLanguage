@@ -18,45 +18,45 @@
 		<string>057DFD42-9A62-4AA3-822C-A00A6609EC9E</string>
 		<key>patterns</key>
 		<array>
-            <dict>
-                <key>include</key>
-                <string>#readwrite_operations</string>
-            </dict>
+			<dict>
+				<key>include</key>
+				<string>#readwrite_operations</string>
+			</dict>
 		</array>
 		<key>repository</key>
 		<dict>
-            <key>readwrite_operations</key>
-            <dict>
-                <key>patterns</key>
-                <array>
-                    <dict>
-                        <key>include</key>
-                        <string>#property</string>
-                    </dict>
-                    <dict>
-                        <key>include</key>
-                        <string>#readwrite_variable</string>
-                    </dict>
-                </array>
-            </dict>
-            <key>property</key>
-            <dict>
-                <key>comment</key>
-                <string>Class property or enumeration member access</string>
-                <key>name</key>
-                <string>variable.other.property.matlab</string>
-                <key>match</key>
-                <string>(?&lt;=\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|(?:\(|\{|\.\())</string>
-            </dict>
-            <key>readwrite_variable</key>
-            <dict>
-                <key>comment</key>
-                <string>Top-level workspace variable highlighting</string>
-                <key>name</key>
-                <string>variable.other.readwrite.matlab</string>
-                <key>match</key>
-                <string>(?&lt;![a-zA-Z0-9_]|\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|\(|\{|\.\()</string>
-            </dict>
+			<key>readwrite_operations</key>
+			<dict>
+				<key>patterns</key>
+				<array>
+					<dict>
+						<key>include</key>
+						<string>#property</string>
+					</dict>
+					<dict>
+						<key>include</key>
+						<string>#readwrite_variable</string>
+					</dict>
+				</array>
+			</dict>
+			<key>property</key>
+			<dict>
+				<key>comment</key>
+				<string>Class property or enumeration member access</string>
+				<key>name</key>
+				<string>variable.other.property.matlab</string>
+				<key>match</key>
+				<string>(?&lt;=\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|(?:\(|\{|\.\())</string>
+			</dict>
+			<key>readwrite_variable</key>
+			<dict>
+				<key>comment</key>
+				<string>Top-level workspace variable highlighting</string>
+				<key>name</key>
+				<string>variable.other.readwrite.matlab</string>
+				<key>match</key>
+				<string>(?&lt;![a-zA-Z0-9_]|\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|\(|\{|\.\()</string>
+			</dict>
 		</dict>
 	</dict>
 </plist>
