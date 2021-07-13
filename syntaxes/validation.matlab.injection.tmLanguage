@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>fileTypes</key>
+		<array>
+			<string>m</string>
+		</array>
+		<key>keyEquivalent</key>
+		<string>^~M</string>
+		<key>name</key>
+		<string>Argument validation functions (MATLAB)</string>
+		<key>scopeName</key>
+		<string>validation.matlab.injection</string>
+		<key>injectionSelector</key>
+		<string>source.matlab meta.class.matlab meta.arguments.matlab meta.block.validation.matlab</string>
+		<key>uuid</key>
+		<string>6C8870EF-521E-4C7C-B19E-B20FDC9A5E84</string>
+		<key>patterns</key>
+		<array>
+			<dict>
+				<key>include</key>
+				<string>#argument_validation</string>
+			</dict>
+		</array>
+		<key>repository</key>
+		<dict>
+			<key>argument_validation</key>
+			<dict>
+				<key>comment</key>
+				<string>Argument validation functions</string>
+				<key>name</key>
+				<string>keyword.operator.word.matlab</string>
+				<key>match</key>
+				<string>(?&lt;!\.)\b(mustBeA|mustBeFile|mustBeFinite|mustBeFloat|mustBeFolder|mustBeGreaterThan|mustBeGreaterThanOrEqual|mustBeInRange|mustBeInteger|mustBeLessThan|mustBeLessThanOrEqual|mustBeMember|mustBeNegative|mustBeNonNan|mustBeNonempty|mustBeNonmissing|mustBeNonnegative|mustBeNonpositive|mustBeNonsparse|mustBeNonzero|mustBeNonzeroLengthText|mustBeNumeric|mustBeNumericOrLogical|mustBePositive|mustBeReal|mustBeScalarOrEmpty|mustBeText|mustBeTextScalar|mustBeUnderlyingType|mustBeValidVariableName|mustBeVector)(?=\s*[(,}])</string>
+			</dict>
+		</dict>
+	</dict>
+</plist>

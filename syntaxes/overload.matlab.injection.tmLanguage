@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>fileTypes</key>
+		<array>
+			<string>m</string>
+		</array>
+		<key>keyEquivalent</key>
+		<string>^~M</string>
+		<key>name</key>
+		<string>Overload method definition (MATLAB)</string>
+		<key>scopeName</key>
+		<string>overload.matlab.injection</string>
+		<key>injectionSelector</key>
+		<string>source.matlab meta.class.matlab meta.methods.matlab meta.function.definition.matlab</string>
+		<key>uuid</key>
+		<string>FDE5FBC3-BA16-4FF8-9225-8B27B29F5BCF</string>
+		<key>patterns</key>
+		<array>
+			<dict>
+				<key>include</key>
+				<string>#overload_definition</string>
+			</dict>
+		</array>
+		<key>repository</key>
+		<dict>
+			<key>overload_definition</key>
+			<dict>
+				<key>comment</key>
+				<string>Overload entities (operators or type conversion)</string>
+				<key>match</key>
+				<string>(?&lt;!\.)[a-zA-Z][a-zA-Z0-9_]*(?=\s*\()</string>
+				<key>patterns</key>
+				<array>
+					<dict>
+						<key>comment</key>
+						<string>Arithmetic operator overloading</string>
+						<key>name</key>
+						<string>keyword.operator.arithmetic.matlab</string>
+						<key>match</key>
+						<string>\G(?:plus|minus|uminus|uplus|times|mtimes|rdivide|ldivide|mrdivide|mldivide|power|mpower)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>Logical operator overloading</string>
+						<key>name</key>
+						<string>keyword.operator.logical.matlab</string>
+						<key>match</key>
+						<string>\G(?:and|eq|ge|gt|le|lt|ne|not|or)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>Operator overloading</string>
+						<key>name</key>
+						<string>keyword.operator.word.matlab</string>
+						<key>match</key>
+						<string>\G(?:end|isa|isappdata|isbanded|isbetween|iscalendarduration|iscategorical|iscategory|iscell|iscellstr|ischar|iscolumn|iscom|isdatetime|isdiag|isdst|isduration|isempty|isenum|isequal|isequaln|isevent|isfield|isfile|isfinite|isfloat|isfolder|ishandle|ishermitian|ishold|isinf|isinteger|isinterface|isjava|iskeyword|isletter|islogical|ismac|ismatrix|ismember|ismethod|ismissing|isnan|isnat|isnumeric|isobject|isordinal|ispc|isprime|isprop|isprotected|isreal|isregular|isrow|isscalar|issorted|issortedrows|isspace|issparse|isstring|isStringScalar|isstrprop|isstruct|isstudent|issymmetric|istable|istall|istimetable|istril|istriu|isundefined|isunix|isvarname|isvector|isweekend|numArgumentsFromSubscript|numel|size|subsasgn|subsindex|subsref)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>Graphics function overloading</string>
+						<key>name</key>
+						<string>support.function.graphics.matlab</string>
+						<key>match</key>
+						<string>\G(?:preview|setup|subtitle|title|update|view|xlabel|xlim|xticklabels|xticks|ylabel|ylim|yticklabels|yticks|zlabel|zlim|zticklabels|zticks)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>Mathematics function overloading</string>
+						<key>name</key>
+						<string>support.function.mathematics.matlab</string>
+						<key>match</key>
+						<string>\G(?:colon|ctranspose|horzcat|permute|repmat|reshape|subsref|subsasgn|subsindex|transpose|vertcat)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>Storage function overloading</string>
+						<key>name</key>
+						<string>support.function.io.matlab</string>
+						<key>match</key>
+						<string>\G(?:loadobj|saveobj)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>Type conversion overloading</string>
+						<key>name</key>
+						<string>storage.type.matlab</string>
+						<key>match</key>
+						<string>\G(?:char|disp|double|empty)\b</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</dict>
+</plist>

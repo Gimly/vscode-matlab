@@ -53,9 +53,9 @@ export function activate(context: vscode.ExtensionContext) {
 	workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
 
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider(
-    ['matlab'],
-    new PeekFileDefinitionProvider()
-  ));
+		['matlab'],
+		new PeekFileDefinitionProvider()
+	));
 
 }
 
