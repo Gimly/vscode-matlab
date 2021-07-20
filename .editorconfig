@@ -1,8 +1,16 @@
+# Top-most EditorConfig file
 root = true
 
+# Tab indentation
 [*]
 charset = utf-8
 end_of_line = crlf
 indent_style = tab
 insert_final_newline = true
 tab_width = 4
+
+# The indent size used in the `package.json` file cannot be changed
+# https://github.com/npm/npm/pull/3180#issuecomment-16336516
+[{*.yml,*.yaml,package.json}]
+indent_style = space
+indent_size = 2
