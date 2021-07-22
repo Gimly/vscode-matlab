@@ -998,6 +998,31 @@
 				<key>patterns</key>
 				<array>
 					<!-- #region package_external_functions -->
+
+					<dict>
+						<key>comment</key>
+						<string>matlab.io.hdf4.sd</string>
+						<key>name</key>
+						<string>support.function.external.matlab</string>
+						<key>match</key>
+						<string>(?&lt;=[^\w]sd\.)(?:attrInfo|close|create|dimInfo|endAccess|fileInfo|findAttr|getCal|getChunkInfo|getCompInfo|getDataStrs|getDimID|getDimScale|getDimStrs|getFilename|getFillValue|getFillValue|getInfo|getRange|idToRef|idType|isCoordVar|isRecord|nameToIndex|nameToIndices|readAttr|readChunk|readData|refToIndex|select|setAttr|setCal|setChunk|setCompress|setDataStrs|setDimName|setDimScale|setDimStrs|setExternalFile|setFillMode|setFillValue|setNBitDataSet|setRange|start|writeChunk|writeData)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>matlab.io.hdfeos.gd</string>
+						<key>name</key>
+						<string>support.function.external.matlab</string>
+						<key>match</key>
+						<string>(?&lt;=[^\w]gd\.)(?:attrInfo|close|create|dimInfo|endAccess|fileInfo|findAttr|getCal|getChunkInfo|getCompInfo|getDataStrs|getDimID|getDimScale|getDimStrs|getFilename|getFillValue|getFillValue|getInfo|getRange|idToRef|idType|isCoordVar|isRecord|nameToIndex|nameToIndices|readAttr|readChunk|readData|refToIndex|select|setAttr|setCal|setChunk|setCompress|setDataStrs|setDimName|setDimScale|setDimStrs|setExternalFile|setFillMode|setFillValue|setNBitDataSet|setRange|start|writeChunk|writeData)\b</string>
+					</dict>
+					<dict>
+						<key>comment</key>
+						<string>matlab.io.hdfeos.sw</string>
+						<key>name</key>
+						<string>support.function.external.matlab</string>
+						<key>match</key>
+						<string>(?&lt;=[^\w]sw\.)(?:attach|close|compInfo|create|defBoxRegion|defComp|defDataField|defDim|defDimMap|defGeoField|defTimePeriod|defVrtRegion|detach|dimInfo|extractPeriod|extractRegion|fieldInfo|geoMapInfo|getFillValue|idxMapInfo|inqAttrs|inqDataFields|inqDims|inqGeoFields|inqIdxMaps|inqMaps|inqSwath|mapInfo|nEntries|open|periodInfo|readAttr|readField|regionInfo|setFillValue|writeAttr|writeField)\b</string>
+					</dict>
 					<dict>
 						<key>comment</key>
 						<string>matlab.mex.MexHost</string>
