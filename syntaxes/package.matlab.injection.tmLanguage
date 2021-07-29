@@ -13,7 +13,7 @@
 		<key>scopeName</key>
 		<string>package.matlab.injection</string>
 		<key>injectionSelector</key>
-		<string>source.matlab -comment -string -interpolation -assignment</string>
+		<string>source.matlab -comment -string -interpolation -assignment -source.shell</string>
 		<key>uuid</key>
 		<string>449661EB-D2A8-40B8-8B58-93669F69F4B7</string>
 		<key>patterns</key>
