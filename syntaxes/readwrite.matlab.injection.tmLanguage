@@ -15,7 +15,7 @@
 		<key>injectionSelector</key>
 		<string>source.matlab -comment -support -string -interpolation -entity.name -source.shell</string>
 		<key>uuid</key>
-		<string>057DFD42-9A62-4AA3-822C-A00A6609EC9E</string>
+		<string>0C9C0597-80CF-47AF-B742-DD4260FEC77E</string>
 		<key>patterns</key>
 		<array>
 			<dict>
@@ -27,17 +27,29 @@
 		<dict>
 			<key>readwrite_operations</key>
 			<dict>
-				<key>patterns</key>
-				<array>
+				<key>match</key>
+				<string>(?&lt;![a-zA-Z0-9_]|\.)[a-zA-Z][a-zA-Z0-9_]*(?:\.[a-zA-Z][a-zA-Z0-9_]*)*(?![a-zA-Z0-9_]|(?:\(|\{|\.\())</string>
+				<key>captures</key>
+				<dict>
+					<key>0</key>
 					<dict>
-						<key>include</key>
-						<string>#property</string>
+						<key>patterns</key>
+						<array>
+							<dict>
+								<key>include</key>
+								<string>#property</string>
+							</dict>
+							<dict>
+								<key>include</key>
+								<string>#readwrite_variable</string>
+							</dict>
+							<dict>
+								<key>include</key>
+								<string>#property_access</string>
+							</dict>
+						</array>
 					</dict>
-					<dict>
-						<key>include</key>
-						<string>#readwrite_variable</string>
-					</dict>
-				</array>
+				</dict>
 			</dict>
 			<key>property</key>
 			<dict>
@@ -46,7 +58,7 @@
 				<key>name</key>
 				<string>variable.other.property.matlab</string>
 				<key>match</key>
-				<string>(?&lt;=\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|(?:["']|\(|\{|\.\())</string>
+				<string>(?&lt;=\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|(?:\(|\{|\.\())</string>
 			</dict>
 			<key>readwrite_variable</key>
 			<dict>
@@ -55,7 +67,16 @@
 				<key>name</key>
 				<string>variable.other.readwrite.matlab</string>
 				<key>match</key>
-				<string>(?&lt;![a-zA-Z0-9_]|\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|(?:["']|\(|\{|\.\())</string>
+				<string>(?&lt;![a-zA-Z0-9_]|\.)[a-zA-Z][a-zA-Z0-9_]*(?![a-zA-Z0-9_]|(?:\(|\{|\.\())</string>
+			</dict>
+			<key>property_access</key>
+			<dict>
+				<key>comment</key>
+				<string>Struct/class property dot index</string>
+				<key>name</key>
+				<string>punctuation.accessor.dot.matlab</string>
+				<key>match</key>
+				<string>\.</string>
 			</dict>
 		</dict>
 	</dict>
