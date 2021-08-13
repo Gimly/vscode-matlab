@@ -1,11 +1,13 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es6",
+		"module": "esnext",
+		"target": "es2019",
 		"outDir": "out",
-		"lib": ["es6", "es2016", "dom"],
+		"moduleResolution": "node",
+		"lib": ["es7", "es2019", "dom"],
 		"sourceMap": true,
-		"rootDir": "."
+		"rootDir": ".",
+		"resolveJsonModule": true
 	},
 	"exclude": ["node_modules", ".vscode-test"]
 }

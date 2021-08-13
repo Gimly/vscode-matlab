@@ -1,31 +1,105 @@
 'use strict';
 
-import vscode = require('vscode');
+import * as vscode from 'vscode';
+import { TableOfContentsProvider, TocEntry } from './tableOfContentsProvider';
+import { MatlabEngine, SkinnyTextDocument } from './matlabEngine';
+
+interface MatlabSymbol {
+	readonly level: number;
+	readonly parent: MatlabSymbol | undefined;
+	readonly children: vscode.DocumentSymbol[];
+}
 
 export class MatlabDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 
-    public provideDocumentSymbols(
-        document: vscode.TextDocument,
-        token: vscode.CancellationToken): vscode.SymbolInformation[] {
+	constructor(
+		private engine: MatlabEngine
+	) { }
 
-        const _functionPattern = /^\s*function /;
+	public async provideDocumentSymbolInformation(document: SkinnyTextDocument): Promise<vscode.SymbolInformation[]> {
+		const toc = await new TableOfContentsProvider(document, this.engine).getToc();
+		return toc.map(entry => this.toSymbolInformation(entry));
+	}
 
-        const result: vscode.SymbolInformation[] = [];
+	public async provideDocumentSymbols(document: SkinnyTextDocument): Promise<vscode.DocumentSymbol[]> {
+		const toc = await new TableOfContentsProvider(document, this.engine).getToc();
+		const root: MatlabSymbol = {
+			level: -Infinity,
+			children: [],
+			parent: undefined
+		};
+		this.buildTree(root, toc);
+		return root.children;
+	}
 
-        for (let line = 0; line < document.lineCount; line++) {
-            const { text } = document.lineAt(line);
+	private buildTree(parent: MatlabSymbol, entries: TocEntry[]) {
+		if (!entries.length) {
+			return;
+		}
 
-            if (!text.startsWith("%") && _functionPattern.test(text)) {
-                result.push(
-                    new vscode.SymbolInformation(
-                        text.trim(),
-                        vscode.SymbolKind.Function,
-                        '',
-                        new vscode.Location(document.uri, new vscode.Range(line, 0, line, text.length - 1))
-                    ));
-            }
-        }
+		const entry = entries[0];
+		const symbol = this.toDocumentSymbol(entry);
+		symbol.children = [];
 
-        return result;
-    }
+		while (parent && entry.level <= parent.level) {
+			parent = parent.parent!;
+		}
+		parent.children.push(symbol);
+		this.buildTree(
+			{
+				level: entry.level,
+				children: symbol.children,
+				parent
+			},
+			entries.slice(1)
+		);
+	}
+
+
+	private toSymbolInformation(entry: TocEntry): vscode.SymbolInformation {
+		return new vscode.SymbolInformation(
+			this.getSymbolName(entry),
+			entry.type,
+			'',
+			entry.location
+		);
+	}
+
+	private toDocumentSymbol(entry: TocEntry) {
+		return new vscode.DocumentSymbol(
+			this.getSymbolName(entry),
+			entry.token,
+			entry.type,
+			entry.location.range,
+			entry.location.range
+		);
+	}
+
+	private getSymbolName(entry: TocEntry): string {
+		switch (entry.type) {
+			case vscode.SymbolKind.String:
+				return `%% ${entry.text}`;
+				break;
+			case vscode.SymbolKind.Function:
+				return `${entry.text}()`;
+				break;
+			default:
+				return entry.text;
+				break;
+		}
+	}
+
+	public getEntryText(symbol: vscode.SymbolInformation): string {
+		switch (symbol.kind) {
+			case vscode.SymbolKind.String:
+				return symbol.name.substring(3);
+				break;
+			case vscode.SymbolKind.Function:
+				return symbol.name.substring(0, symbol.name.length - 2);
+				break;
+			default:
+				return symbol.name;
+				break;
+		}
+	}
 }

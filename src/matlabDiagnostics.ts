@@ -1,10 +1,10 @@
 'use strict';
 
-import vscode = require('vscode');
-import path = require('path');
-import cp = require('child_process');
-import iconv = require('iconv-lite');
-import { ERROR_IDS } from './errorsId';
+import * as vscode from 'vscode';
+import * as path from 'path';
+import * as cp from 'child_process';
+import * as iconv from 'iconv-lite';
+import { ERROR_IDS } from './mlintErrors';
 
 import { window } from 'vscode';
 
