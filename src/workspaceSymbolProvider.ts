@@ -111,7 +111,7 @@ class VSCodeWorkspaceMatlabDocumentProvider extends Disposable implements Worksp
 	}
 }
 
-export default class MatlabWorkspaceSymbolProvider extends Disposable implements vscode.WorkspaceSymbolProvider {
+export class MatlabWorkspaceSymbolProvider extends Disposable implements vscode.WorkspaceSymbolProvider {
 	private _symbolCache = new Map<string, Lazy<Thenable<vscode.SymbolInformation[]>>>();
 	private _symbolCachePopulated: boolean = false;
 

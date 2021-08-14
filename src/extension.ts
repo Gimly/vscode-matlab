@@ -6,11 +6,12 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 import { commands, window, workspace, InputBoxOptions } from 'vscode';
-import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
 import { MatlabEngine } from './matlabEngine';
+import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
+import { MatlabFoldingProvider } from './foldingProvider';
 import PeekDefinitionProvider from './peekDefinitionProvider';
+import { MatlabWorkspaceSymbolProvider } from './workspaceSymbolProvider';
 import { check, ICheckResult } from './matlabDiagnostics';
-;
 let diagnosticCollection: vscode.DiagnosticCollection;
 
 // this method is called when your extension is activated
@@ -21,9 +22,15 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const selector: vscode.DocumentSelector = { language: 'matlab', scheme: 'file' };
 	const engine: MatlabEngine = new MatlabEngine();
-	const symbolProvider = new MatlabDocumentSymbolProvider(engine);
+	const documentSymbolProvider = new MatlabDocumentSymbolProvider(engine);
+	const foldingProver = new MatlabFoldingProvider(engine);
+	const workspaceSymbolProvider = new MatlabWorkspaceSymbolProvider(documentSymbolProvider);
+	const peekFileDefinitionProvider = new PeekDefinitionProvider(documentSymbolProvider);
 
-	context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(selector, symbolProvider));
+	context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(selector, documentSymbolProvider));
+  context.subscriptions.push(vscode.languages.registerFoldingRangeProvider(selector, foldingProver));
+  context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(workspaceSymbolProvider));
+	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], peekFileDefinitionProvider));
 
 	var matlabConfig = workspace.getConfiguration('matlab');
 
@@ -51,9 +58,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Run mlint on any open documents since our onDidOpenTextDocument callback won't be hit for those
 	workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
-
-	const peekFileDefinitionProvider = new PeekDefinitionProvider(symbolProvider);
-	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], peekFileDefinitionProvider));
 
 }
 

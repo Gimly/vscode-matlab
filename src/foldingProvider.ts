@@ -12,7 +12,7 @@ export type MatlabFoldingToken = {
 	line: number
 };
 
-export default class MatlabFoldingProvider implements vscode.FoldingRangeProvider {
+export class MatlabFoldingProvider implements vscode.FoldingRangeProvider {
 
 	constructor(
 		private _engine: MatlabEngine

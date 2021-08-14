@@ -5,6 +5,7 @@
   "version": "2.1.0",
   "publisher": "Gimly81",
   "license": "MIT",
+  "type": "module",
   "engines": {
     "vscode": "^1.16.0"
   },
