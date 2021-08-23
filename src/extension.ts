@@ -6,7 +6,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 import { commands, window, workspace, InputBoxOptions } from 'vscode';
-import { MatlabEngine } from './matlabEngine';
+import { TextmateEngine } from './textmateEngine';
 import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
 import { MatlabFoldingProvider } from './foldingProvider';
 import PeekDefinitionProvider from './peekDefinitionProvider';
@@ -18,18 +18,18 @@ let diagnosticCollection: vscode.DiagnosticCollection;
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	console.log("Activating extension Matlab");
+	console.log('Activating extension Matlab');
 
 	const selector: vscode.DocumentSelector = { language: 'matlab', scheme: 'file' };
-	const engine: MatlabEngine = new MatlabEngine();
+	const engine: TextmateEngine = new TextmateEngine();
 	const documentSymbolProvider = new MatlabDocumentSymbolProvider(engine);
 	const foldingProver = new MatlabFoldingProvider(engine);
 	const workspaceSymbolProvider = new MatlabWorkspaceSymbolProvider(documentSymbolProvider);
 	const peekFileDefinitionProvider = new PeekDefinitionProvider(documentSymbolProvider);
 
 	context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(selector, documentSymbolProvider));
-  context.subscriptions.push(vscode.languages.registerFoldingRangeProvider(selector, foldingProver));
-  context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(workspaceSymbolProvider));
+	context.subscriptions.push(vscode.languages.registerFoldingRangeProvider(selector, foldingProver));
+	context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(workspaceSymbolProvider));
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], peekFileDefinitionProvider));
 
 	var matlabConfig = workspace.getConfiguration('matlab');
@@ -39,14 +39,14 @@ export function activate(context: vscode.ExtensionContext) {
 	}
 
 	if (!matlabConfig.has('mlintpath') || matlabConfig['mlintpath'] == null) {
-		window.showErrorMessage("Could not find path to the mlint executable in the configuration file.")
+		window.showErrorMessage('Could not find path to the mlint executable in the configuration file.')
 		return;
 	}
 
 	var mlintPath = matlabConfig['mlintpath'];
 
 	if (!fs.existsSync(mlintPath)) {
-		window.showErrorMessage("Cannot find mlint at the given path, please check your configuration file.")
+		window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
 		return;
 	}
 
@@ -65,13 +65,13 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
 
 	function mapSeverityToVSCodeSeverity(sev: string) {
 		switch (sev) {
-			case "error": return vscode.DiagnosticSeverity.Error;
-			case "warning": return vscode.DiagnosticSeverity.Warning;
+			case 'error': return vscode.DiagnosticSeverity.Error;
+			case 'warning': return vscode.DiagnosticSeverity.Warning;
 			default: return vscode.DiagnosticSeverity.Error;
 		}
 	}
 
-	if (document.languageId != "matlab" || document.uri.scheme != "file") {
+	if (document.languageId != 'matlab' || document.uri.scheme != 'file') {
 		return;
 	}
 

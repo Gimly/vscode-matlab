@@ -2,7 +2,7 @@
 
 import * as vscode from 'vscode';
 import { TableOfContentsProvider, TocEntry } from './tableOfContentsProvider';
-import { MatlabEngine, SkinnyTextDocument } from './matlabEngine';
+import { TextmateEngine, SkinnyTextDocument } from './textmateEngine';
 
 interface MatlabSymbol {
 	readonly level: number;
@@ -13,7 +13,7 @@ interface MatlabSymbol {
 export class MatlabDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 
 	constructor(
-		private engine: MatlabEngine
+		private engine: TextmateEngine
 	) { }
 
 	public async provideDocumentSymbolInformation(document: SkinnyTextDocument): Promise<vscode.SymbolInformation[]> {
@@ -58,7 +58,7 @@ export class MatlabDocumentSymbolProvider implements vscode.DocumentSymbolProvid
 
 	private toSymbolInformation(entry: TocEntry): vscode.SymbolInformation {
 		return new vscode.SymbolInformation(
-			this.getSymbolName(entry),
+			entry.text,
 			entry.type,
 			'',
 			entry.location
@@ -67,7 +67,7 @@ export class MatlabDocumentSymbolProvider implements vscode.DocumentSymbolProvid
 
 	private toDocumentSymbol(entry: TocEntry) {
 		return new vscode.DocumentSymbol(
-			this.getSymbolName(entry),
+			entry.text,
 			entry.token,
 			entry.type,
 			entry.location.range,
@@ -75,27 +75,10 @@ export class MatlabDocumentSymbolProvider implements vscode.DocumentSymbolProvid
 		);
 	}
 
-	private getSymbolName(entry: TocEntry): string {
-		switch (entry.type) {
-			case vscode.SymbolKind.String:
-				return `%% ${entry.text}`;
-				break;
-			case vscode.SymbolKind.Function:
-				return `${entry.text}()`;
-				break;
-			default:
-				return entry.text;
-				break;
-		}
-	}
-
 	public getEntryText(symbol: vscode.SymbolInformation): string {
 		switch (symbol.kind) {
 			case vscode.SymbolKind.String:
 				return symbol.name.substring(3);
-				break;
-			case vscode.SymbolKind.Function:
-				return symbol.name.substring(0, symbol.name.length - 2);
 				break;
 			default:
 				return symbol.name;

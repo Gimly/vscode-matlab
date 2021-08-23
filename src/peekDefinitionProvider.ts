@@ -1,7 +1,7 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import { MatlabEngine } from './matlabEngine';
+import { TextmateEngine } from './textmateEngine';
 import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
 import { TableOfContentsProvider } from './tableOfContentsProvider';
 

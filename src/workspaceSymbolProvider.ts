@@ -5,7 +5,7 @@ import { Disposable } from './util/dispose';
 import { isMatlabFile } from './util/file';
 import { Lazy, lazy } from './util/lazy';
 import { MatlabDocumentSymbolProvider } from './documentSymbolProvider';
-import { SkinnyTextDocument, SkinnyTextLine } from './matlabEngine';
+import { SkinnyTextDocument, SkinnyTextLine } from './textmateEngine';
 
 export interface WorkspaceMatlabDocumentProvider {
 	getAllMatlabDocuments(): Thenable<Iterable<SkinnyTextDocument>>;
@@ -54,8 +54,8 @@ class VSCodeWorkspaceMatlabDocumentProvider extends Disposable implements Worksp
 			uri: resource,
 			version: 0,
 			lineCount: lineCount,
-			lineAt: (index) => {
-				return lines[index];
+			lineAt: (i) => {
+				return lines[i];
 			},
 			getText: () => {
 				return text;
@@ -133,7 +133,7 @@ export class MatlabWorkspaceSymbolProvider extends Disposable implements vscode.
 		}
 
 		const allSymbolsSets = await Promise.all(Array.from(this._symbolCache.values(), x => x.value));
-		const allSymbols = allSymbolsSets.flat();
+		const allSymbols = [].concat(...allSymbolsSets);
 		return allSymbols.filter(symbolInformation => symbolInformation.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
 	}
 

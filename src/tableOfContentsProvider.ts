@@ -1,7 +1,7 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import { SkinnyTextDocument, MatlabEngine, matlabTokenSymbolKind, matlabTokenBlockScope, IMatlabToken, MatlabTextmateToken, matlabTokens } from './matlabEngine';
+import { SkinnyTextDocument, TextmateEngine, matlabTokenSymbolKind, IMatlabToken, matlabTokens, matlabTokenBlockScope } from './textmateEngine';
 
 export interface TocEntry {
 	readonly level: number;
@@ -17,7 +17,7 @@ export class TableOfContentsProvider {
 
 	public constructor(
 		private _document: SkinnyTextDocument,
-		private _engine: MatlabEngine
+		private _engine: TextmateEngine
 	) { }
 
 	public async getToc(): Promise<TocEntry[]> {
@@ -38,25 +38,29 @@ export class TableOfContentsProvider {
 
 	private async buildToc(document: SkinnyTextDocument): Promise<TocEntry[]> {
 		const toc: TocEntry[] = [];
-		const tokens = this._engine.tokenizeDocument(document);
+		const tokens = await this._engine.tokenizeDocument(document);
+
+		for (const token of tokens.filter(this.isSymbolToken)) {
+      if (token.type === 'entity.name.function.matlab') {
+        console.log(token);
+      }
+    }
 
 		for (const entry of tokens.filter(this.isSymbolToken)) {
-			const lineNumber = entry.lineNumber;
+			const lineNumber = entry.line;
 			const line = document.lineAt(lineNumber);
 
-			if (matlabTokenSymbolKind[entry.type]) {
-				toc.push({
-					level: entry.scope,
-					line: lineNumber,
-					location: new vscode.Location(
-						document.uri,
-						new vscode.Range(lineNumber, 0, lineNumber, line.text.length)
-					),
-					text: this.getText(entry),
-					token: entry.type,
-					type: matlabTokenSymbolKind[entry.type]
-				});
-			}
+      toc.push({
+        level: entry.level,
+        line: lineNumber,
+        location: new vscode.Location(
+          document.uri,
+          new vscode.Range(lineNumber, 0, lineNumber, line.text.length)
+        ),
+        text: this.getText(entry),
+        token: entry.type,
+        type: matlabTokenSymbolKind[entry.type]
+      });
 		}
 
 		// Get full range of section
@@ -82,16 +86,22 @@ export class TableOfContentsProvider {
 	}
 
 	private isSymbolToken(token: IMatlabToken): boolean {
-		return token.scopes.some(matlabTokenSymbolKind.hasOwnProperty.bind(matlabTokenSymbolKind));
+		return (
+      matlabTokenSymbolKind[token.type]
+      && (
+        !token.type.startsWith('entity')
+        || / meta\.([\w-]+)\.declaration\.matlab entity\.name\.\1/.test(token.scopes.join(' '))
+        || / meta\.assignment\.definition\.([\w-]+)\.matlab entity\.name\.\1/.test(token.scopes.join(' '))
+        || / meta\.assignment\.definition\.([\w-]+)\.matlab entity\.name\.\1/.test(token.scopes.join(' '))
+        || / comment\.line\.[\w-]+\.matlab entity\.name\.section.matlab$/.test(token.scopes.join(' '))
+      )
+    );
 	}
 
 	private getText(entry: IMatlabToken): string {
 		switch (matlabTokenSymbolKind[entry.type]) {
 			case vscode.SymbolKind.String:
 				return `%% ${entry.text}`;
-				break;
-			case vscode.SymbolKind.Function:
-				return `${entry.text}()`;
 				break;
 			default:
 				return entry.text;

@@ -2,12 +2,11 @@
   "name": "matlab",
   "displayName": "Matlab",
   "description": "MATLAB support for Visual Studio Code",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "publisher": "Gimly81",
   "license": "MIT",
-  "type": "module",
   "engines": {
-    "vscode": "^1.16.0"
+    "vscode": "^1.57.1"
   },
   "categories": [
     "Programming Languages",
@@ -129,12 +128,13 @@
     "compile": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "typescript": "^4.3.5",
-    "vscode-test": "^1.5.2",
     "@types/node": "^7.0.43",
-    "@types/vscode": "^1.57.1"
+    "@types/vscode": "^1.57.1",
+    "typescript": "^4.3.5",
+    "vscode-test": "^1.5.2"
   },
   "dependencies": {
+    "escape-string-regexp": "^5.0.0",
     "iconv-lite": "^0.4.19",
     "vscode-oniguruma": "^1.5.1",
     "vscode-test": "^1.5.2",
