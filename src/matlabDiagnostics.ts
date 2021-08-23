@@ -16,7 +16,7 @@ export interface ICheckResult {
   severity: string
 }
 
-export function check(document: vscode.TextDocument, lintOnSave = true, mlintPath = ""): Promise<ICheckResult[]> {
+export function check(document: vscode.TextDocument, lintOnSave = true, mlintPath = ''): Promise<ICheckResult[]> {
   var matlabLint = !lintOnSave ? Promise.resolve([]) : new Promise((resolve, reject) => {
     var filename = document.uri.fsPath;
 
@@ -59,10 +59,10 @@ export function check(document: vscode.TextDocument, lintOnSave = true, mlintPat
               }
 
               if (ERROR_IDS.includes(idErrorWarn)) {
-                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "error" });
+                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: 'error' });
               }
               else {
-                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "warning" });
+                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: 'warning' });
               }
             }
           });
