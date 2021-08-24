@@ -59,7 +59,9 @@ export class MatlabFoldingProvider implements vscode.FoldingRangeProvider {
 		const toc = await tocProvider.getToc();
 		const sections = toc.filter(isSectionHeader);
 		return sections.map((section, i) => {
-			let endLine = sections[i + 1] ? sections[i + 1].line : document.lineCount;
+			let endLine = sections.hasOwnProperty(i + 1)
+        ? sections[i + 1].line - 1
+        : document.lineCount - 1;
 			while (document.lineAt(endLine).isEmptyOrWhitespace && endLine >= section.line + 1) {
 				endLine--;
 			}
@@ -69,20 +71,20 @@ export class MatlabFoldingProvider implements vscode.FoldingRangeProvider {
 
 	private async getBlockFoldingRanges(document: vscode.TextDocument): Promise<vscode.FoldingRange[]> {
 		const tokens = await this._engine.tokenizeDocument(document);
-		return tokens.filter(isFoldingBlock.bind(tokens)).map((listItem, i, foldingTokens) => {
-      const start = listItem.line;
-      let end: number = i + 1;
-      for (let j = i + 2; j < foldingTokens.length; j++) {
-        if (foldingTokens[j - 1].level === listItem.level) {
-          end = foldingTokens[j].line;
-          break;
+    const ranges: vscode.FoldingRange[] = [];
+    for (let index = 0; index < tokens.length; index++) {
+      const token = tokens[index];
+      if (token.level > tokens[index - 1].level) {
+        for (let subindex = index; subindex < tokens.length; subindex++) {
+          const subtoken = tokens[subindex];
+          if (subtoken.level < token.level) {
+            const range = new vscode.FoldingRange(token.line, tokens[subindex - 1].line, this.getFoldingRangeKind(token));
+            ranges.push(range);
+          }
         }
-        if (j === foldingTokens.length - 1) {
-          end = document.lineCount - 1;
-        }
-      };
-      return new vscode.FoldingRange(start, end, this.getFoldingRangeKind(listItem));
-		});
+      }
+    }
+    return ranges;
 	}
 
 	private getFoldingRangeKind(listItem: IMatlabToken): vscode.FoldingRangeKind | undefined {
@@ -102,10 +104,6 @@ function isRegionMarker(token: IMatlabToken): boolean {
 	);
 }
 
-function isSectionHeader(token: TocEntry, i: number) {
-  return token.type === vscode.SymbolKind.String;
-}
-
-function isFoldingBlock(this: TocEntry[], token: TocEntry, i: number) {
-  return token.level !== (this[i - 1] || this[i + 1]).level;
+function isSectionHeader(entry: TocEntry, i: number) {
+  return entry.type === vscode.SymbolKind.String;
 }

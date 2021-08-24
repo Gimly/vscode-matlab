@@ -86,6 +86,8 @@ export const matlabTokenBlockScope: IMatlabTokenScopeMap = {
   'keyword.control.end.for.matlab': -1,
   'keyword.control.if.matlab': 1,
   'keyword.control.end.if.matlab': -1,
+  'keyword.control.else.matlab': -1,
+  'keyword.control.elseif.matlab': -1,
   'keyword.control.repeat.parallel.matlab': 1,
   'keyword.control.end.repeat.parallel.matlab': -1,
   'keyword.control.switch.matlab': 1,
@@ -113,6 +115,8 @@ export const matlabTokenBlockScope: IMatlabTokenScopeMap = {
 export const matlabTokens: Record<string, MatlabTextmateToken> = {
   accessorDot: 'punctuation.accessor.dot.matlab',
   commentBlock: 'punctuation.definition.comment.begin.matlab',
+  elseifKeyword: 'keyword.control.elseif.matlab',
+  elseKeyword: 'keyword.control.else.matlab',
   inlineComment: 'comment.line.percentage.matlab',
   continuation: 'punctuation.separator.continuation.line.matlab',
   function: 'entity.name.function.matlab',
@@ -171,41 +175,46 @@ export class TextmateEngine {
       }
 
       for (const token of lineTokens.tokens) {
-        this._state.declaration = / meta\.\w+\.declaration\.matlab /.test(token.scopes.join(' '));
+        this._state.declaration =
+          matlabTokenBlockScope[token.type] === 1
+          || token.type === matlabTokens.elseifKeyword
+          || token.type === matlabTokens.elseKeyword
+          || this._state.declaration;
 
         if (this._state.declaration) {
           if (token.type === matlabTokens.continuaton) {
             this._state.continuation = true;
           }
 
-          if (!this._state.context) {
-            this._state.context = true;
-            this._state.stack--;
-          }
-
           if (!this._state.continuation && lineNumber > this._state.line) {
-            this._state.context = false;
             this._state.declaration = false;
             this._state.stack++;
           }
         }
 
-        if (matlabTokenBlockScope.hasOwnProperty(token.type)) {
+        if (matlabTokenBlockScope.hasOwnProperty(token.type) && !this._state.declaration) {
           this._state.stack += matlabTokenBlockScope[token.type];
         }
 
         token.level = this._state.stack;
         tokens.push(token);
 
-        if (!this._state.line || lineNumber > this._state.line) {
-          this._state.line = lineNumber;
-        }
+        this._state.line = lineNumber;
         this._state.rule = lineTokens.ruleStack;
       }
     }
 
     return tokens;
   }
+}
+
+function chunks(arr, chunkSize) {
+  const res = [];
+  for (let i = 0; i < arr.length; i += chunkSize) {
+      const chunk = arr.slice(i, i + chunkSize);
+      res.push(chunk);
+  }
+  return res;
 }
 
 async function getGrammar(scopeName: string): Promise<IGrammar> {

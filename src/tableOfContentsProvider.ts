@@ -40,12 +40,6 @@ export class TableOfContentsProvider {
 		const toc: TocEntry[] = [];
 		const tokens = await this._engine.tokenizeDocument(document);
 
-		for (const token of tokens.filter(this.isSymbolToken)) {
-      if (token.type === 'entity.name.function.matlab') {
-        console.log(token);
-      }
-    }
-
 		for (const entry of tokens.filter(this.isSymbolToken)) {
 			const lineNumber = entry.line;
 			const line = document.lineAt(lineNumber);
@@ -90,10 +84,9 @@ export class TableOfContentsProvider {
       matlabTokenSymbolKind[token.type]
       && (
         !token.type.startsWith('entity')
-        || / meta\.([\w-]+)\.declaration\.matlab entity\.name\.\1/.test(token.scopes.join(' '))
-        || / meta\.assignment\.definition\.([\w-]+)\.matlab entity\.name\.\1/.test(token.scopes.join(' '))
-        || / meta\.assignment\.definition\.([\w-]+)\.matlab entity\.name\.\1/.test(token.scopes.join(' '))
-        || / comment\.line\.[\w-]+\.matlab entity\.name\.section.matlab$/.test(token.scopes.join(' '))
+        || / meta\.([\w-]+)\.declaration\.matlab entity\.name(\.type)?\.\1/.test(token.scopes.join(' '))
+        || / meta\.assignment\.definition\.([\w-]+)\.matlab entity\.name(\.type)?\.\1/.test(token.scopes.join(' '))
+        || token.scopes.join(' ').endsWith(' comment.line.double-percentage.matlab entity.name.section.matlab')
       )
     );
 	}
