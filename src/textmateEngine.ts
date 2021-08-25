@@ -119,7 +119,6 @@ export const matlabTokens: Record<string, MatlabTextmateToken> = {
   elseKeyword: 'keyword.control.else.matlab',
   inlineComment: 'comment.line.percentage.matlab',
   continuation: 'punctuation.separator.continuation.line.matlab',
-  function: 'entity.name.function.matlab',
   multipleAssignment: 'meta.assignment.variable.group.matlab'
 };
 
@@ -138,13 +137,21 @@ export class TextmateEngine {
     stack: 0
   };
 
+  private _cache: Record<string, IMatlabToken[] | undefined> = {};
+
   public getGrammar = getGrammar;
 
   public async tokenizeDocument(document: SkinnyTextDocument): Promise<IMatlabToken[]> {
+    const text = document.getText();
+
     matlabGrammar = matlabGrammar || await getGrammar('source.matlab');
     const tokens: IMatlabToken[] = [];
 
     for (let lineNumber = 0; lineNumber < document.lineCount; lineNumber++) {
+      if (this._cache[text]) {
+        return this._cache[text];
+      }
+
       let line: SkinnyTextLine = document.lineAt(lineNumber);
       const lineTokens = matlabGrammar.tokenizeLine(line.text, this._state.rule) as IMatlabTokenizeLineResult;
 
@@ -204,17 +211,9 @@ export class TextmateEngine {
       }
     }
 
+    this._cache[text] = tokens;
     return tokens;
   }
-}
-
-function chunks(arr, chunkSize) {
-  const res = [];
-  for (let i = 0; i < arr.length; i += chunkSize) {
-      const chunk = arr.slice(i, i + chunkSize);
-      res.push(chunk);
-  }
-  return res;
 }
 
 async function getGrammar(scopeName: string): Promise<IGrammar> {

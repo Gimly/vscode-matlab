@@ -72,7 +72,7 @@ export class MatlabFoldingProvider implements vscode.FoldingRangeProvider {
 	private async getBlockFoldingRanges(document: vscode.TextDocument): Promise<vscode.FoldingRange[]> {
 		const tokens = await this._engine.tokenizeDocument(document);
     const ranges: vscode.FoldingRange[] = [];
-    for (let index = 0; index < tokens.length; index++) {
+    for (let index = 1; index < tokens.length; index++) {
       const token = tokens[index];
       if (token.level > tokens[index - 1].level) {
         for (let subindex = index; subindex < tokens.length; subindex++) {
