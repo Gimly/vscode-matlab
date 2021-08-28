@@ -28,18 +28,18 @@ export async function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(workspaceSymbolProvider));
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], peekFileDefinitionProvider));
 
-	var matlabConfig = workspace.getConfiguration('matlab');
+  var matlabConfig = workspace.getConfiguration('matlab');
 
-	if (!matlabConfig['lintOnSave']) {
-		return;
-	}
+  if (!matlabConfig['lintOnSave']) {
+    return;
+  }
 
 	if (!matlabConfig.has('mlintpath') || matlabConfig['mlintpath'] == null) {
 		window.showErrorMessage('Could not find path to the mlint executable in the configuration file.')
 		return;
 	}
 
-	var mlintPath = matlabConfig['mlintpath'];
+  var mlintPath = matlabConfig['mlintpath'];
 
 	if (!fs.existsSync(mlintPath)) {
 		window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
@@ -49,11 +49,11 @@ export async function activate(context: vscode.ExtensionContext) {
 	diagnosticCollection = vscode.languages.createDiagnosticCollection('matlab');
 	context.subscriptions.push(diagnosticCollection);
 
-	context.subscriptions.push(workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
-	context.subscriptions.push(workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
+  context.subscriptions.push(workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
+  context.subscriptions.push(workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
 
-	// Run mlint on any open documents since our onDidOpenTextDocument callback won't be hit for those
-	workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
+  // Run mlint on any open documents since our onDidOpenTextDocument callback won't be hit for those
+  workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
 
 }
 
@@ -71,40 +71,40 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
 		return;
 	}
 
-	let matlabConfig = vscode.workspace.getConfiguration('matlab');
+  let matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-	check(document, matlabConfig['lintOnSave'], mlintPath).then(errors => {
-		diagnosticCollection.delete(document.uri);
+  check(document, matlabConfig['lintOnSave'], mlintPath).then(errors => {
+    diagnosticCollection.delete(document.uri);
 
-		let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
+    let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
 
-		errors.forEach(error => {
-			let targetUri = vscode.Uri.file(error.file);
+    errors.forEach(error => {
+      let targetUri = vscode.Uri.file(error.file);
 
-			var line = error.line - 1;
-			if (line < 0) line = 0;
+      var line = error.line - 1;
+      if (line < 0) line = 0;
 
-			var startColumn = error.column[0] - 1;
-			if (startColumn < 0) startColumn = 0;
+      var startColumn = error.column[0] - 1;
+      if (startColumn < 0) startColumn = 0;
 
-			var endColumn = error.column[1];
+      var endColumn = error.column[1];
 
-			let range = new vscode.Range(line, startColumn, line, endColumn);
-			let diagnostic = new vscode.Diagnostic(range, error.msg, mapSeverityToVSCodeSeverity(error.severity));
+      let range = new vscode.Range(line, startColumn, line, endColumn);
+      let diagnostic = new vscode.Diagnostic(range, error.msg, mapSeverityToVSCodeSeverity(error.severity));
 
-			let diagnostics = diagnosticMap.get(targetUri);
-			if (!diagnostics) {
-				diagnostics = [];
-			}
+      let diagnostics = diagnosticMap.get(targetUri);
+      if (!diagnostics) {
+        diagnostics = [];
+      }
 
-			diagnostics.push(diagnostic);
-			diagnosticMap.set(targetUri, diagnostics);
-		});
+      diagnostics.push(diagnostic);
+      diagnosticMap.set(targetUri, diagnostics);
+    });
 
-		let entries: [vscode.Uri, vscode.Diagnostic[]][] = [];
-		diagnosticMap.forEach((diags, uri) => {
-			entries.push([uri, diags]);
-		});
+    let entries: [vscode.Uri, vscode.Diagnostic[]][] = [];
+    diagnosticMap.forEach((diags, uri) => {
+      entries.push([uri, diags]);
+    });
 
 		diagnosticCollection.set(entries);
 	}).catch(err => {
