@@ -6,7 +6,7 @@
   "publisher": "Gimly81",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.57.1"
+    "vscode": "^1.51.1"
   },
   "categories": [
     "Programming Languages",
