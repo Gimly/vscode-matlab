@@ -138,6 +138,7 @@
     "iconv-lite": "^0.4.19",
     "vscode-oniguruma": "^1.5.1",
     "vscode-test": "^1.5.2",
-    "vscode-textmate": "^5.4.0"
+    "vscode-textmate": "^5.4.0",
+    "vscode-textmate-languageservice": "^0.1.0"
   }
 }
