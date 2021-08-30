@@ -69,13 +69,6 @@
         "injectTo": [
           "source.matlab"
         ],
-        "scopeName": "readwrite.matlab.injection",
-        "path": "./syntaxes/readwrite.matlab.injection.tmLanguage"
-      },
-      {
-        "injectTo": [
-          "source.matlab"
-        ],
         "scopeName": "validation.matlab.injection",
         "path": "./syntaxes/validation.matlab.injection.tmLanguage"
       }
