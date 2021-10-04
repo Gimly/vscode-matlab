@@ -118,12 +118,14 @@
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./"
+    "compile": "tsc -watch -p ./",
+    "deploy": "vsce publish --yarn"
   },
   "devDependencies": {
     "@types/node": "^7.0.43",
     "@types/vscode": "^1.57.1",
     "typescript": "^4.3.5",
+    "vsce": "^1.100.1",
     "vscode-test": "^1.5.2"
   },
   "dependencies": {
