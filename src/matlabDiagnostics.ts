@@ -1,10 +1,10 @@
 'use strict';
 
-import vscode = require('vscode');
-import path = require('path');
-import cp = require('child_process');
-import iconv = require('iconv-lite');
-import { ERROR_IDS } from './errorsId';
+import * as vscode from 'vscode';
+import * as path from 'path';
+import * as cp from 'child_process';
+import * as iconv from 'iconv-lite';
+import { ERROR_IDS } from './mlintErrors';
 
 import { window } from 'vscode';
 
@@ -16,7 +16,7 @@ export interface ICheckResult {
   severity: string
 }
 
-export function check(document: vscode.TextDocument, lintOnSave = true, mlintPath = ""): Promise<ICheckResult[]> {
+export function check(document: vscode.TextDocument, lintOnSave = true, mlintPath = ''): Promise<ICheckResult[]> {
   var matlabLint = !lintOnSave ? Promise.resolve([]) : new Promise((resolve, reject) => {
     var filename = document.uri.fsPath;
 
@@ -59,10 +59,10 @@ export function check(document: vscode.TextDocument, lintOnSave = true, mlintPat
               }
 
               if (ERROR_IDS.includes(idErrorWarn)) {
-                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "error" });
+                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: 'error' });
               }
               else {
-                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: "warning" });
+                ret.push({ file: filename, line, column: [+startCol, +endCol], msg, severity: 'warning' });
               }
             }
           });

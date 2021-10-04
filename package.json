@@ -2,11 +2,11 @@
   "name": "matlab",
   "displayName": "Matlab",
   "description": "MATLAB support for Visual Studio Code",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "publisher": "Gimly81",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.16.0"
+    "vscode": "^1.51.1"
   },
   "categories": [
     "Programming Languages",
@@ -21,7 +21,7 @@
   "activationEvents": [
     "onLanguage:matlab"
   ],
-  "main": "./out/src/matlabMain",
+  "main": "./out/src/extension",
   "icon": "images/icon.png",
   "bugs": "https://github.com/Gimly/matlab-vscode/issues",
   "contributes": {
@@ -64,13 +64,6 @@
         ],
         "scopeName": "package.matlab.injection",
         "path": "./syntaxes/package.matlab.injection.tmLanguage"
-      },
-      {
-        "injectTo": [
-          "source.matlab"
-        ],
-        "scopeName": "readwrite.matlab.injection",
-        "path": "./syntaxes/readwrite.matlab.injection.tmLanguage"
       },
       {
         "injectTo": [
@@ -125,18 +118,20 @@
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install"
+    "compile": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.42",
     "@types/node": "^7.0.43",
-    "@types/vscode": "^1.57.0",
-    "mocha": "^3.5.0",
+    "@types/vscode": "^1.57.1",
     "typescript": "^4.3.5",
     "vscode-test": "^1.5.2"
   },
   "dependencies": {
-    "iconv-lite": "^0.4.19"
+    "escape-string-regexp": "^5.0.0",
+    "iconv-lite": "^0.4.19",
+    "vscode-oniguruma": "^1.5.1",
+    "vscode-test": "^1.5.2",
+    "vscode-textmate": "^5.4.0",
+    "vscode-textmate-languageservice": "^0.1.0"
   }
 }
