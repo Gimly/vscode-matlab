@@ -1,5 +1,16 @@
 # Change Log
 
+## [2.1.0]
+
+- Add injection grammars for packages, validation and overloads
+- Add dynamic language providers
+    - Table of Contents / outline provider
+    - Document symbol provider for all entity symbols
+    - Folding provider
+    - Peek definition provider for all entity symbols
+    - Workspace symbol provider
+Thanks a lot to [SNDST00M](https://github.com/SNDST00M) for the great work on all that.
+
 ## [2.0.1]
 
 - Fix a security issue linked to the scope of the Matlab lint configuration. Those configuration settings are now defined at
