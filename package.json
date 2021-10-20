@@ -2,7 +2,7 @@
   "name": "matlab",
   "displayName": "Matlab",
   "description": "MATLAB support for Visual Studio Code",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "publisher": "Gimly81",
   "license": "MIT",
   "engines": {
@@ -117,22 +117,18 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run esbuild-base -- --minify",
-    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
-    "esbuild": "npm run esbuild-base -- --sourcemap",
-    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
-    "test-compile": "tsc -p ./",
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
     "deploy": "vsce publish --yarn"
   },
   "devDependencies": {
+    "@types/node": "^7.0.43",
     "@types/vscode": "^1.57.1",
-    "esbuild": "^0.13.4",
     "typescript": "^4.3.5",
     "vsce": "^1.100.1",
     "vscode-test": "^1.5.2"
   },
   "dependencies": {
-    "@types/node": "^16.10.2",
     "escape-string-regexp": "^5.0.0",
     "iconv-lite": "^0.6.3",
     "vscode-oniguruma": "^1.5.1",
