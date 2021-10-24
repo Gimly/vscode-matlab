@@ -71,6 +71,16 @@
         ],
         "scopeName": "validation.matlab.injection",
         "path": "./syntaxes/validation.matlab.injection.tmLanguage"
+      },
+      {
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "scopeName": "markdown.matlab.codeblock",
+        "path": "./syntaxes/matlab.markdown.injection.tmLanguage",
+        "embeddedLanguages": {
+          "meta.embedded.block.matlab": "matlab"
+        }
       }
     ],
     "snippets": [
