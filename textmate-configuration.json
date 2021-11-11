@@ -17,7 +17,7 @@
     "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
   },
   "assignment": {
-    "separator": "punctuation.separator.comma.matlab",
+    "separator": "punctuation.separator.comma.matlab - meta.parens.matlab",
     "single": "meta.assignment.variable.single.matlab",
     "multiple": "meta.assignment.variable.group.matlab"
   },
@@ -29,9 +29,9 @@
     ]
   },
   "declarations": [
-    " meta\\.([\\w-]+)\\.declaration\\.matlab entity\\.name(\\.type)?\\.\\1",
-    " meta\\.assignment\\.definition\\.([\\w-]+)\\.matlab entity\\.name(\\.type)?\\.\\1",
-    " comment\\.line\\.double-percentage\\.matlab entity\\.name\\.section\\.matlab$"    
+    "meta.declaration.matlab entity.name",
+    "meta.assignment.definition.matlab entity.name",
+    "comment.line.double-percentage.matlab entity.name.section.matlab"
   ],
   "dedentation": [
     "keyword.control.elseif.matlab",
@@ -78,24 +78,24 @@
     "end": "^\\s*#?end\\s?region\\b"
   },
   "symbols": {
-    "keyword.control.for.matlab": 2,
-    "keyword.control.if.matlab": 2,
-    "keyword.control.else.matlab": 2,
-    "keyword.control.elseif.matlab": 2,
-    "keyword.control.repeat.parallel.matlab": 2,
-    "keyword.control.switch.matlab": 2,
-    "keyword.control.try.matlab": 2,
-    "keyword.control.while.matlab": 2,
-    "entity.name.type.class.matlab": 4,
-    "variable.other.enummember.matlab": 21,
-    "entity.name.type.event.matlab": 23,
-    "keyword.control.enum.matlab": 2,
-    "keyword.control.events.matlab": 2,
-    "keyword.control.methods.matlab": 2,
-    "keyword.control.properties.matlab": 2,
-    "entity.name.function.matlab": 11,
-    "variable.object.property.matlab": 6,
-    "entity.name.section.matlab": 14,
+    "meta.for.matlab keyword.control.for.matlab": 2,
+    "meta.if.matlab keyword.control.if.matlab": 2,
+    "meta.else.matlab keyword.control.else.matlab": 2,
+    "meta.elseif.matlab keyword.control.elseif.matlab": 2,
+    "meta.repeat.parallel.matlab keyword.control.repeat.parallel.matlab": 2,
+    "meta.switch.matlab keyword.control.switch.matlab": 2,
+    "meta.try.matlab keyword.control.try.matlab": 2,
+    "meta.while.matlab keyword.control.while.matlab": 2,
+    "meta.class.matlab entity.name.type.class.matlab": 4,
+    "meta.enum.matlab variable.other.enummember.matlab": 21,
+    "meta.events.matlab entity.name.type.event.matlab": 23,
+    "meta.enum.matlab keyword.control.enum.matlab": 2,
+    "meta.events.matlab keyword.control.events.matlab": 2,
+    "meta.methods.matlab keyword.control.methods.matlab": 2,
+    "meta.properties.matlab keyword.control.properties.matlab": 2,
+    "meta.function.declaration.matlab entity.name.function.matlab": 11,
+    "meta.assignment.definition.property.matlab variable.object.property.matlab": 6,
+    "comment.line.double-percentage.matlab entity.name.section.matlab": 14,
     "meta.assignment.variable.single.matlab": 12,
     "meta.assignment.variable.group.matlab": 12
   }
