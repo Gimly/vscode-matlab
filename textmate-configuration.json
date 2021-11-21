@@ -29,9 +29,9 @@
     ]
   },
   "declarations": [
-    "meta.declaration.matlab entity.name",
-    "meta.assignment.definition.matlab entity.name",
-    "comment.line.double-percentage.matlab entity.name.section.matlab"
+    "meta.declaration entity.name",
+    "meta.assignment.definition entity.name",
+    "comment.line.double-percentage entity.name.section.matlab"
   ],
   "dedentation": [
     "keyword.control.elseif.matlab",
