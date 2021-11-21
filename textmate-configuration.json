@@ -29,7 +29,7 @@
     ]
   },
   "declarations": [
-    "meta.declaration entity.name",
+    "meta.*.declaration entity.name",
     "meta.assignment.definition entity.name",
     "comment.line.double-percentage entity.name.section"
   ],
