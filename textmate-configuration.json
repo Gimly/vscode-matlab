@@ -17,86 +17,86 @@
     "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
   },
   "assignment": {
-    "separator": "punctuation.separator.comma.matlab - meta.parens.matlab",
-    "single": "meta.assignment.variable.single.matlab",
-    "multiple": "meta.assignment.variable.group.matlab"
+    "separator": "punctuation.separator.comma - meta.parens",
+    "single": "meta.assignment.variable.single",
+    "multiple": "meta.assignment.variable.group"
   },
   "comments": {
-    "lineComment": "comment.line.percentage.matlab",
+    "lineComment": "comment.line.percentage",
     "blockComment": [
-      "punctuation.definition.comment.begin.matlab",
-      "punctuation.definition.comment.end.matlab"
+      "punctuation.definition.comment.begin",
+      "punctuation.definition.comment.end"
     ]
   },
   "declarations": [
     "meta.declaration entity.name",
     "meta.assignment.definition entity.name",
-    "comment.line.double-percentage entity.name.section.matlab"
+    "comment.line.double-percentage entity.name.section"
   ],
   "dedentation": [
-    "keyword.control.elseif.matlab",
-    "keyword.control.else.matlab"
+    "keyword.control.elseif",
+    "keyword.control.else"
   ],
   "exclude": "**/{external,mpm-packages}/**",
   "indentation": {
-    "punctuation.definition.comment.begin.matlab": 1,
-    "punctuation.definition.comment.end.matlab": -1,
-    "keyword.control.for.matlab": 1,
-    "keyword.control.end.for.matlab": -1,
-    "keyword.control.if.matlab": 1,
-    "keyword.control.end.if.matlab": -1,
-    "keyword.control.else.matlab": -1,
-    "keyword.control.elseif.matlab": -1,
-    "keyword.control.repeat.parallel.matlab": 1,
-    "keyword.control.end.repeat.parallel.matlab": -1,
-    "keyword.control.switch.matlab": 1,
-    "keyword.control.end.switch.matlab": -1,
-    "keyword.control.try.matlab": 1,
-    "keyword.control.end.try.matlab": -1,
-    "keyword.control.while.matlab": 1,
-    "keyword.control.end.while.matlab": -1,
-    "storage.type.class.matlab": 1,
-    "storage.type.class.end.matlab": -1,
-    "keyword.control.enum.matlab": 1,
-    "keyword.control.end.enum.matlab": -1,
-    "keyword.control.events.matlab": 1,
-    "keyword.control.end.events.matlab": -1,
-    "keyword.control.methods.matlab": 1,
-    "keyword.control.end.methods.matlab": -1,
-    "keyword.control.properties.matlab": 1,
-    "keyword.control.end.properties.matlab": -1,
-    "storage.type.function.matlab": 1,
-    "storage.type.function.end.matlab": -1,
-    "keyword.control.arguments.matlab": 1,
-    "keyword.control.end.arguments.matlab": -1
+    "punctuation.definition.comment.begin": 1,
+    "punctuation.definition.comment.end": -1,
+    "keyword.control.for": 1,
+    "keyword.control.end.for": -1,
+    "keyword.control.if": 1,
+    "keyword.control.end.if": -1,
+    "keyword.control.else": -1,
+    "keyword.control.elseif": -1,
+    "keyword.control.repeat.parallel": 1,
+    "keyword.control.end.repeat.parallel": -1,
+    "keyword.control.switch": 1,
+    "keyword.control.end.switch": -1,
+    "keyword.control.try": 1,
+    "keyword.control.end.try": -1,
+    "keyword.control.while": 1,
+    "keyword.control.end.while": -1,
+    "storage.type.class": 1,
+    "storage.type.class.end": -1,
+    "keyword.control.enum": 1,
+    "keyword.control.end.enum": -1,
+    "keyword.control.events": 1,
+    "keyword.control.end.events": -1,
+    "keyword.control.methods": 1,
+    "keyword.control.end.methods": -1,
+    "keyword.control.properties": 1,
+    "keyword.control.end.properties": -1,
+    "storage.type.function": 1,
+    "storage.type.function.end": -1,
+    "keyword.control.arguments": 1,
+    "keyword.control.end.arguments": -1
   },
   "punctuation": {
-    "continuation": "punctuation.separator.continuation.line.matlab"
+    "continuation": "punctuation.separator.continuation.line"
   },
   "markers": {
     "start": "^\\s*#?region\\b",
     "end": "^\\s*#?end\\s?region\\b"
   },
   "symbols": {
-    "meta.for.matlab keyword.control.for.matlab": 2,
-    "meta.if.matlab keyword.control.if.matlab": 2,
-    "meta.else.matlab keyword.control.else.matlab": 2,
-    "meta.elseif.matlab keyword.control.elseif.matlab": 2,
-    "meta.repeat.parallel.matlab keyword.control.repeat.parallel.matlab": 2,
-    "meta.switch.matlab keyword.control.switch.matlab": 2,
-    "meta.try.matlab keyword.control.try.matlab": 2,
-    "meta.while.matlab keyword.control.while.matlab": 2,
-    "meta.class.matlab entity.name.type.class.matlab": 4,
-    "meta.enum.matlab variable.other.enummember.matlab": 21,
-    "meta.events.matlab entity.name.type.event.matlab": 23,
-    "meta.enum.matlab keyword.control.enum.matlab": 2,
-    "meta.events.matlab keyword.control.events.matlab": 2,
-    "meta.methods.matlab keyword.control.methods.matlab": 2,
-    "meta.properties.matlab keyword.control.properties.matlab": 2,
-    "meta.function.declaration.matlab entity.name.function.matlab": 11,
-    "meta.assignment.definition.property.matlab variable.object.property.matlab": 6,
-    "comment.line.double-percentage.matlab entity.name.section.matlab": 14,
-    "meta.assignment.variable.single.matlab": 12,
-    "meta.assignment.variable.group.matlab": 12
+    "meta.for keyword.control.for": 2,
+    "meta.if keyword.control.if": 2,
+    "meta.else keyword.control.else": 2,
+    "meta.elseif keyword.control.elseif": 2,
+    "meta.repeat.parallel keyword.control.repeat.parallel": 2,
+    "meta.switch keyword.control.switch": 2,
+    "meta.try keyword.control.try": 2,
+    "meta.while keyword.control.while": 2,
+    "meta.class entity.name.type.class": 4,
+    "meta.enum variable.other.enummember": 21,
+    "meta.events entity.name.type.event": 23,
+    "meta.enum keyword.control.enum": 2,
+    "meta.events keyword.control.events": 2,
+    "meta.methods keyword.control.methods": 2,
+    "meta.properties keyword.control.properties": 2,
+    "meta.function.declaration entity.name.function": 11,
+    "meta.assignment.definition.property variable.object.property": 6,
+    "comment.line.double-percentage entity.name.section": 14,
+    "meta.assignment.variable.single": 12,
+    "meta.assignment.variable.group": 12
   }
 }
