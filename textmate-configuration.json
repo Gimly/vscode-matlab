@@ -96,7 +96,7 @@
     "meta.function.declaration entity.name.function": 11,
     "meta.assignment.definition.property variable.object.property": 6,
     "comment.line.double-percentage entity.name.section": 14,
-    "meta.assignment.variable.single": 12,
-    "meta.assignment.variable.group": 12
+    "meta.assignment.variable.single variable.other.readwrite": 12,
+    "meta.assignment.variable.group variable.other.readwrite": 12
   }
 }
