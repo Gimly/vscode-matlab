@@ -17,7 +17,7 @@
     "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
   },
   "assignment": {
-    "separator": "punctuation.separator.comma.matlab - meta.parens",
+    "separator": "punctuation.separator.comma.matlab - parens",
     "single": "meta.assignment.variable.single.matlab",
     "multiple": "meta.assignment.variable.group.matlab"
   },
