@@ -3,7 +3,8 @@
 ## [2.3.0]
 
 - Updates the Matlab syntax, for extended function definition syntax and superclass method `@` operator.
-- Update the VS Code Textmate service API to the latest version with multiple bugfixes and optimisations.
+- Update the VS Code Textmate service API to the latest version with multiple bugfixes and optimisati
+- Add injection grammar for Matlab code block highlighting in Markdown files.
 
 ## [2.2.1]
 
