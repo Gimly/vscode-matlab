@@ -1,5 +1,15 @@
 # Change Log
 
+## [2.3.0]
+
+- Updates the Matlab syntax, for extended function definition syntax and superclass method `@` operator.
+- Update the VS Code Textmate service API to the latest version with multiple bugfixes and optimisations.
+
+## [2.2.1]
+
+- Remove `node_modules` from `.vscodeignore`.
+- Add a GitHub Actions to automate the deployment.
+
 ## [2.1.0]
 
 - Add injection grammars for packages, validation and overloads
