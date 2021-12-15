@@ -19,7 +19,8 @@
     "url": "https://github.com/Gimly/matlab-vscode.git"
   },
   "activationEvents": [
-    "onLanguage:matlab"
+    "onLanguage:matlab",
+    "onLanguage:markdown"
   ],
   "main": "./out/src/extension",
   "icon": "images/icon.png",
