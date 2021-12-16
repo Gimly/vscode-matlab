@@ -29,8 +29,8 @@
     ]
   },
   "declarations": [
-    "meta.*.declaration entity.name",
-    "meta.assignment.definition entity.name",
+    "declaration entity.name",
+    "assignment.definition entity.name",
     "comment.line.double-percentage entity.name.section"
   ],
   "dedentation": [
