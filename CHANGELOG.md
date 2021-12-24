@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.3.1]
+
+Fix performance regressions
+- Update vscode-textmate-languageservice to 0.2.1
+- Enable extension for Markdown
+- Remove unsupported wildcard scope selector
+
 ## [2.3.0]
 
 - Updates the Matlab syntax, for extended function definition syntax and superclass method `@` operator.
