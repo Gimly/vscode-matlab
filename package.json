@@ -145,6 +145,6 @@
   },
   "dependencies": {
     "iconv-lite": "^0.6.3",
-    "vscode-textmate-languageservice": "^0.2.1"
+    "vscode-textmate-languageservice": "^0.2.3"
   }
 }
