@@ -47,11 +47,16 @@ Alternatively, saving the file with a `.m` extension, will allow VS Code to unde
 
 	For example, on a PC : 
 	
-	`"matlab.mlintpath": "C:\\Program Files (x86)\\MATLAB\\R2012a\\bin\\win32\\mlint.exe"`
+	`"matlab.mlintpath": "C:\\Program Files (x86)\\MATLAB\\R20XXY\\bin\\win32\\mlint.exe"`
 	
 	And on a Mac :
 	
-	`"matlab.mlintpath": "/Applications/MATLAB_R2016a.app/bin/maci64/mlint"`
+	`"matlab.mlintpath": "/Applications/MATLAB_R20XXY.app/bin/maci64/mlint"`
+  
+  And on Linux:
+  
+  `"matlab.mlintpath": "/usr/local/MATLAB/R20XXY/bin/glnxa64/mlint"`
+  
 * Save your *settings.json* file
 * Now, when you open a Matlab document (*.m*), VS Code displays warnings and errors. 
   
