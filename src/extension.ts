@@ -6,7 +6,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 import { window, workspace } from 'vscode';
-import * as vsctmls from 'vscode-textmate-languageservice';
+import LSP from 'vscode-textmate-languageservice';
 import { check, ICheckResult } from './matlabDiagnostics';
 let diagnosticCollection: vscode.DiagnosticCollection;
 
@@ -17,16 +17,16 @@ export async function activate(context: vscode.ExtensionContext) {
   console.log('Activating extension MATLAB');
 
   const selector: vscode.DocumentSelector = { language: 'matlab', scheme: 'file' };
-  const engine = new vsctmls.textmateEngine.TextmateEngine('matlab', 'source.matlab');
-  const documentSymbolProvider = new vsctmls.documentSymbols.DocumentSymbolProvider(engine);
-  const foldingProvider = new vsctmls.folding.FoldingProvider(engine);
-  const workspaceSymbolProvider = new vsctmls.workspaceSymbols.WorkspaceSymbolProvider('matlab', documentSymbolProvider);
-  const peekFileDefinitionProvider = new vsctmls.peekDefinitions.PeekDefinitionProvider(documentSymbolProvider);
+  const lsp = new LSP('matlab', context);
+  const documentSymbolProvider = await lsp.createDocumentSymbolProvider();
+  const foldingProvider = await lsp.createFoldingProvider();
+  const workspaceSymbolProvider = await lsp.createWorkspaceSymbolProvider();
+  const definitionProvider = await lsp.createDefinitionProvider();
 
   context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(selector, documentSymbolProvider));
   context.subscriptions.push(vscode.languages.registerFoldingRangeProvider(selector, foldingProvider));
   context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(workspaceSymbolProvider));
-  context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], peekFileDefinitionProvider));
+  context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], definitionProvider));
 
   var matlabConfig = workspace.getConfiguration('matlab');
 

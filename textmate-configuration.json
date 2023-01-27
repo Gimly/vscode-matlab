@@ -1,32 +1,8 @@
 {
-  "extension": "gimly81.matlab",
-  "language": {
-    "id": "matlab",
-    "aliases": [
-      "MATLAB",
-      "matlab"
-    ],
-    "extensions": [
-      ".m"
-    ],
-    "configuration": "language-configuration.json"
-  },
-  "grammar": {
-    "language": "matlab",
-    "scopeName": "source.matlab",
-    "path": "./syntaxes/MATLAB-Language-grammar/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage"
-  },
   "assignment": {
     "separator": "punctuation.separator.comma.matlab - parens",
     "single": "meta.assignment.variable.single.matlab",
     "multiple": "meta.assignment.variable.group.matlab"
-  },
-  "comments": {
-    "lineComment": "comment.line.percentage.matlab",
-    "blockComment": [
-      "punctuation.definition.comment.begin.matlab",
-      "punctuation.definition.comment.end.matlab"
-    ]
   },
   "declarations": [
     "meta.*.declaration entity.name",
@@ -34,8 +10,8 @@
     "comment.line.double-percentage entity.name.section"
   ],
   "dedentation": [
-    "keyword.control.elseif",
-    "keyword.control.else"
+    "keyword.control.elseif.matlab",
+    "keyword.control.else.matlab"
   ],
   "exclude": "**/{external,mpm-packages}/**",
   "indentation": {
