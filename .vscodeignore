@@ -1,8 +1,11 @@
 .vscode/**
+node_modules/**
 typings/**
 out/src/**
 out/test/**
 test/**
+out/src/**
+out/test/**
 src/**
 **/*.map
 .gitignore

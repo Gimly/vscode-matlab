@@ -1,8 +1,8 @@
 'use strict';
 
 import * as vscode from 'vscode';
-
 import LSP from 'vscode-textmate-languageservice';
+import * as fs from 'fs';
 import { check } from './matlabDiagnostics';
 let diagnosticCollection: vscode.DiagnosticCollection;
 
@@ -26,7 +26,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   var matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-  if (!matlabConfig['lintOnSave'] || !process?.versions?.node) {
+  if (!matlabConfig['lintOnSave']) {
     return;
   }
 
@@ -37,7 +37,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   var mlintPath = matlabConfig['mlintpath'];
 
-  if (!require('fs').existsSync(mlintPath)) {
+  if (!fs.existsSync(mlintPath)) {
     vscode.window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
     return;
   }
