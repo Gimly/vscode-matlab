@@ -1,13 +1,9 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import * as cp from 'child_process';
-import * as path from 'path';
-import * as fs from 'fs';
 
-import { window, workspace } from 'vscode';
 import LSP from 'vscode-textmate-languageservice';
-import { check, ICheckResult } from './matlabDiagnostics';
+import { check } from './matlabDiagnostics';
 let diagnosticCollection: vscode.DiagnosticCollection;
 
 // this method is called when your extension is activated
@@ -19,7 +15,7 @@ export async function activate(context: vscode.ExtensionContext) {
   const selector: vscode.DocumentSelector = { language: 'matlab', scheme: 'file' };
   const lsp = new LSP('matlab', context);
   const documentSymbolProvider = await lsp.createDocumentSymbolProvider();
-  const foldingProvider = await lsp.createFoldingProvider();
+  const foldingProvider = await lsp.createFoldingRangeProvider();
   const workspaceSymbolProvider = await lsp.createWorkspaceSymbolProvider();
   const definitionProvider = await lsp.createDefinitionProvider();
 
@@ -28,32 +24,32 @@ export async function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(workspaceSymbolProvider));
   context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], definitionProvider));
 
-  var matlabConfig = workspace.getConfiguration('matlab');
+  var matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-  if (!matlabConfig['lintOnSave']) {
+  if (!matlabConfig['lintOnSave'] || !process?.versions?.node) {
     return;
   }
 
   if (!matlabConfig.has('mlintpath') || matlabConfig['mlintpath'] == null) {
-    window.showErrorMessage('Could not find path to the mlint executable in the configuration file.')
+    vscode.window.showErrorMessage('Could not find path to the mlint executable in the configuration file.')
     return;
   }
 
   var mlintPath = matlabConfig['mlintpath'];
 
-  if (!fs.existsSync(mlintPath)) {
-    window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
+  if (!require('fs').existsSync(mlintPath)) {
+    vscode.window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
     return;
   }
 
   diagnosticCollection = vscode.languages.createDiagnosticCollection('matlab');
   context.subscriptions.push(diagnosticCollection);
 
-  context.subscriptions.push(workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
-  context.subscriptions.push(workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
+  context.subscriptions.push(vscode.workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
+  context.subscriptions.push(vscode.workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
 
   // Run mlint on any open documents since our onDidOpenTextDocument callback won't be hit for those
-  workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
+  vscode.workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
 
 }
 

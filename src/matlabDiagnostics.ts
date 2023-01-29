@@ -1,12 +1,9 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import * as path from 'path';
 import * as cp from 'child_process';
 import * as iconv from 'iconv-lite';
 import { ERROR_IDS } from './mlintErrors';
-
-import { window } from 'vscode';
 
 export interface ICheckResult {
   file: string;
