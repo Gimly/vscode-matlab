@@ -22,7 +22,7 @@
     "onLanguage:matlab",
     "onLanguage:markdown"
   ],
-  "main": "./out/main",
+  "main": "./out/main.js",
   "icon": "images/icon.png",
   "bugs": "https://github.com/Gimly/matlab-vscode/issues",
   "contributes": {

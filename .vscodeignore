@@ -1,5 +1,6 @@
 .vscode/**
 typings/**
+out/src/**
 out/test/**
 test/**
 src/**
