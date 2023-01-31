@@ -2,8 +2,6 @@
 
 import * as vscode from 'vscode';
 import LSP from 'vscode-textmate-languageservice';
-import * as fs from 'fs';
-import { check } from './matlabDiagnostics';
 let diagnosticCollection: vscode.DiagnosticCollection;
 
 // this method is called when your extension is activated
@@ -26,7 +24,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   var matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-  if (!matlabConfig['lintOnSave']) {
+  if (!matlabConfig['lintOnSave'] || !(['desktop', 'codespaces'].includes(vscode.env.appHost))) {
     return;
   }
 
@@ -36,6 +34,8 @@ export async function activate(context: vscode.ExtensionContext) {
   }
 
   var mlintPath = matlabConfig['mlintpath'];
+
+  const fs = require('fs');
 
   if (!fs.existsSync(mlintPath)) {
     vscode.window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
@@ -68,8 +68,9 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
   }
 
   let matlabConfig = vscode.workspace.getConfiguration('matlab');
+  const matlabDiagnostics = require('./matlabDiagnostics');
 
-  check(document, matlabConfig['lintOnSave'], mlintPath).then(errors => {
+  matlabDiagnostics.check(document, matlabConfig['lintOnSave'], mlintPath).then(errors => {
     diagnosticCollection.delete(document.uri);
 
     let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
