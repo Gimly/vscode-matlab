@@ -23,7 +23,7 @@
     "onLanguage:markdown"
   ],
   "main": "./out/main.js",
-  "browser": "./out/main.js",
+  "browser": "./out/web.js",
   "icon": "images/icon.png",
   "bugs": "https://github.com/Gimly/matlab-vscode/issues",
   "contributes": {
@@ -129,8 +129,10 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run esbuild-base -- --minify",
-    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "vscode:prepublish": "npm run esbuild-base",
+    "esbuild-base": "npm-run-all esbuild-base-node esbuild-base-web",
+    "esbuild-base-web": "esbuild ./src/extension.ts --bundle --outfile=out/web.js --external:vscode --external:fs --external:child_process --external:iconv-lite --external:crypto --format=iife --platform=browser --minify",
+    "esbuild-base-node": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node --minify",
     "esbuild": "npm run esbuild-base -- --sourcemap",
     "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
     "test-compile": "tsc -p ./",
