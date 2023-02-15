@@ -1,8 +1,11 @@
 'use strict';
 
-import * as vscode from 'vscode';
+import vscode = require('vscode');
 import LSP from 'vscode-textmate-languageservice';
 let diagnosticCollection: vscode.DiagnosticCollection;
+
+const isWeb = vscode.env.uiKind === vscode.UIKind.Web;
+const isRemote = typeof vscode.env.remoteName === 'string';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -24,7 +27,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   var matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-  if (!matlabConfig['lintOnSave'] || !(['desktop', 'codespaces'].includes(vscode.env.appHost))) {
+  if (!matlabConfig['lintOnSave'] || (isWeb && !isRemote)) {
     return;
   }
 
