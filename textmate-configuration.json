@@ -13,7 +13,7 @@
     "keyword.control.elseif.matlab",
     "keyword.control.else.matlab"
   ],
-  "exclude": "**/{external,mpm-packages}/**",
+  "exclude": "{external,mpm-packages}/**",
   "indentation": {
     "punctuation.definition.comment.begin.matlab": 1,
     "punctuation.definition.comment.end.matlab": -1,

@@ -13,7 +13,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   console.log('Activating extension MATLAB');
 
-  const selector: vscode.DocumentSelector = { language: 'matlab', scheme: 'file' };
+  const selector: vscode.DocumentSelector = 'matlab';
   const lsp = new LSP('matlab', context);
   const documentSymbolProvider = await lsp.createDocumentSymbolProvider();
   const foldingProvider = await lsp.createFoldingRangeProvider();
