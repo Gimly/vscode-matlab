@@ -22,7 +22,8 @@
     "onLanguage:matlab",
     "onLanguage:markdown"
   ],
-  "main": "./out/src/extension",
+  "main": "./out/main.js",
+  "browser": "./out/web.js",
   "icon": "images/icon.png",
   "bugs": "https://github.com/Gimly/matlab-vscode/issues",
   "contributes": {
@@ -128,8 +129,10 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run esbuild-base -- --minify",
-    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "vscode:prepublish": "npm run esbuild-base",
+    "esbuild-base": "npm-run-all esbuild-base-node esbuild-base-web",
+    "esbuild-base-web": "esbuild ./src/extension.ts --bundle --outfile=out/web.js --external:vscode --external:fs --external:child_process --external:iconv-lite --external:crypto --format=iife --platform=browser --minify",
+    "esbuild-base-node": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node --minify",
     "esbuild": "npm run esbuild-base -- --sourcemap",
     "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
     "test-compile": "tsc -p ./",
@@ -138,13 +141,13 @@
   "devDependencies": {
     "@types/node": "^16.10.2",
     "@types/vscode": "^1.57.1",
+    "@vscode/test-electron": "^2.2.2",
+    "@vscode/vsce": "^2.17.0",
     "esbuild": "^0.13.4",
-    "typescript": "^4.3.5",
-    "vsce": "^1.100.1",
-    "vscode-test": "^1.5.2"
+    "typescript": "^4.3.5"
   },
   "dependencies": {
     "iconv-lite": "^0.6.3",
-    "vscode-textmate-languageservice": "^0.2.1"
+    "vscode-textmate-languageservice": "^1.1.0"
   }
 }

@@ -1,12 +1,10 @@
 'use strict';
 
-import * as vscode from 'vscode';
-import * as path from 'path';
-import * as cp from 'child_process';
-import * as iconv from 'iconv-lite';
+import vscode = require('vscode');
 import { ERROR_IDS } from './mlintErrors';
 
-import { window } from 'vscode';
+const isWeb = vscode.env.uiKind === vscode.UIKind.Web;
+const isRemote = typeof vscode.env.remoteName === 'string';
 
 export interface ICheckResult {
   file: string;
@@ -17,6 +15,10 @@ export interface ICheckResult {
 }
 
 export function check(document: vscode.TextDocument, lintOnSave = true, mlintPath = ''): Promise<ICheckResult[]> {
+  if (isWeb && !isRemote) {
+    return Promise.resolve([]);
+  }
+
   var matlabLint = !lintOnSave ? Promise.resolve([]) : new Promise((resolve, reject) => {
     var filename = document.uri.fsPath;
 
@@ -34,11 +36,15 @@ export function check(document: vscode.TextDocument, lintOnSave = true, mlintPat
       fileEncoding = matlabConfig['linterEncoding'];
     }
 
+    const cp = require('child_process');
+
     cp.execFile(
       mlintPath,
       args,
       { encoding: 'buffer' },
       (err: Error, stdout, stderr) => {
+        const iconv = require('iconv-lite');
+
         try {
           let errorsString = iconv.decode(stderr, fileEncoding);
 

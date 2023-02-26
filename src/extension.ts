@@ -1,14 +1,11 @@
 'use strict';
 
-import * as vscode from 'vscode';
-import * as cp from 'child_process';
-import * as path from 'path';
-import * as fs from 'fs';
-
-import { window, workspace } from 'vscode';
-import * as vsctmls from 'vscode-textmate-languageservice';
-import { check, ICheckResult } from './matlabDiagnostics';
+import vscode = require('vscode');
+import LSP from 'vscode-textmate-languageservice';
 let diagnosticCollection: vscode.DiagnosticCollection;
+
+const isWeb = vscode.env.uiKind === vscode.UIKind.Web;
+const isRemote = typeof vscode.env.remoteName === 'string';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -16,44 +13,46 @@ export async function activate(context: vscode.ExtensionContext) {
 
   console.log('Activating extension MATLAB');
 
-  const selector: vscode.DocumentSelector = { language: 'matlab', scheme: 'file' };
-  const engine = new vsctmls.textmateEngine.TextmateEngine('matlab', 'source.matlab');
-  const documentSymbolProvider = new vsctmls.documentSymbols.DocumentSymbolProvider(engine);
-  const foldingProvider = new vsctmls.folding.FoldingProvider(engine);
-  const workspaceSymbolProvider = new vsctmls.workspaceSymbols.WorkspaceSymbolProvider('matlab', documentSymbolProvider);
-  const peekFileDefinitionProvider = new vsctmls.peekDefinitions.PeekDefinitionProvider(documentSymbolProvider);
+  const selector: vscode.DocumentSelector = 'matlab';
+  const lsp = new LSP('matlab', context);
+  const documentSymbolProvider = await lsp.createDocumentSymbolProvider();
+  const foldingProvider = await lsp.createFoldingRangeProvider();
+  const workspaceSymbolProvider = await lsp.createWorkspaceSymbolProvider();
+  const definitionProvider = await lsp.createDefinitionProvider();
 
   context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(selector, documentSymbolProvider));
   context.subscriptions.push(vscode.languages.registerFoldingRangeProvider(selector, foldingProvider));
   context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(workspaceSymbolProvider));
-  context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], peekFileDefinitionProvider));
+  context.subscriptions.push(vscode.languages.registerDefinitionProvider(['matlab'], definitionProvider));
 
-  var matlabConfig = workspace.getConfiguration('matlab');
+  var matlabConfig = vscode.workspace.getConfiguration('matlab');
 
-  if (!matlabConfig['lintOnSave']) {
+  if (!matlabConfig['lintOnSave'] || (isWeb && !isRemote)) {
     return;
   }
 
   if (!matlabConfig.has('mlintpath') || matlabConfig['mlintpath'] == null) {
-    window.showErrorMessage('Could not find path to the mlint executable in the configuration file.')
+    vscode.window.showErrorMessage('Could not find path to the mlint executable in the configuration file.')
     return;
   }
 
   var mlintPath = matlabConfig['mlintpath'];
 
+  const fs = require('fs');
+
   if (!fs.existsSync(mlintPath)) {
-    window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
+    vscode.window.showErrorMessage('Cannot find mlint at the given path, please check your configuration file.')
     return;
   }
 
   diagnosticCollection = vscode.languages.createDiagnosticCollection('matlab');
   context.subscriptions.push(diagnosticCollection);
 
-  context.subscriptions.push(workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
-  context.subscriptions.push(workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
+  context.subscriptions.push(vscode.workspace.onDidSaveTextDocument(document => { lintDocument(document, mlintPath) }));
+  context.subscriptions.push(vscode.workspace.onDidOpenTextDocument(document => { lintDocument(document, mlintPath) }));
 
   // Run mlint on any open documents since our onDidOpenTextDocument callback won't be hit for those
-  workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
+  vscode.workspace.textDocuments.forEach(document => lintDocument(document, mlintPath));
 
 }
 
@@ -72,8 +71,9 @@ function lintDocument(document: vscode.TextDocument, mlintPath: string) {
   }
 
   let matlabConfig = vscode.workspace.getConfiguration('matlab');
+  const matlabDiagnostics = require('./matlabDiagnostics');
 
-  check(document, matlabConfig['lintOnSave'], mlintPath).then(errors => {
+  matlabDiagnostics.check(document, matlabConfig['lintOnSave'], mlintPath).then(errors => {
     diagnosticCollection.delete(document.uri);
 
     let diagnosticMap: Map<vscode.Uri, vscode.Diagnostic[]> = new Map();;
