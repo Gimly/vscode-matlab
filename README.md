@@ -1,5 +1,18 @@
 # MATLAB for Visual Studio Code
 
+## News
+
+As I mentioned previously in GitHub's issues, managing this extension has become a challenge for me due to time constraints, despite the numerous contributions from users that have added functionalities and improved it over the years. I have been lagging to release new versions and add improvements.
+
+A few months ago, I was contacted by a team at Mathworks who expressed interest in the extension due to its popularity. They decided to create their own version with a better architecture and easier integration with Matlab, which I believe will benefit the user community. I appreciate the Mathworks team's interest and their kind and patient communication.
+You can read their official announcement of this release here: https://blogs.mathworks.com/matlab/2023/04/26/do-you-use-visual-studio-code-matlab-is-now-there-too/
+
+For those who have been using this extension, I regret to inform you that I will not be able to continue maintaining it due to my limited availability and will mark it as deprecated. I suggest that you migrate to the MathWorks official extension, which is now available and provides a better solution (see https://marketplace.visualstudio.com/items?itemName=MathWorks.language-matlab).
+
+Finally, I would like to express my sincere gratitude to everyone who has contributed to this extension over the years. I am humbled by its popularity and recognize that it would not have been possible without your valuable contributions. The MathWorks extension continues to be open source and welcomes contributions on their [GitHub repository](https://github.com/mathworks/matlab-extension-for-vscode).
+
+## Description
+
 This extension adds language support for MATLAB to Visual Studio Code.
 
 [![Marketplace](https://vsmarketplacebadges.dev/version-short/Gimly81.matlab.svg)](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab)

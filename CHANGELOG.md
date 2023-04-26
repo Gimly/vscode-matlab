@@ -1,5 +1,18 @@
 # Change Log
 
+## [3.0.2]
+- Name change
+- Update README
+
+## [3.0.1]
+Fixes missing grammar
+
+## [3.0.0]
+
+- Browser support for editor language features.
+- Update vscode-textmate-languageservice to 1.1.0.
+- Large performance optimization in folding provider indentation and header algorithms.
+
 ## [2.3.1]
 
 Fix performance regressions
